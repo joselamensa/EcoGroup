@@ -1,0 +1,89 @@
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-float:hover {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #1ab152;
+}
+
+.my-float {
+    margin-top: 16px;
+}
+
+
+/*PRODUCTOS*/
+/* Estilos modernos para la sidebar de productos */
+
+.sidebar-container {
+    padding-left: 0;
+}
+
+.sidebar {
+    background: linear-gradient(135deg, #f6f9fc, #e9f2f9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.sidebar h4 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.sidebar h4::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 3px;
+}
+
+.sidebar .list-group-item {
+    border: none;
+    background: transparent;
+    color: #34495e;
+    font-size: 1rem;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .list-group-item:hover {
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    color: #fff;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.sidebar .list-group-item::before {
+    content: '▹';
+    margin-right: 10px;
+    color: #3498db;
+    transition: all 0.3s ease;
+}
+
+.sidebar .list-group-item:hover::before {
+    color: #fff;
+}
