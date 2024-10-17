@@ -1,3 +1,11 @@
+.seccion1{
+    background-image: url('../imgs/banners/banner\ ecogroup2.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -25,6 +33,7 @@
 
 
 /*PRODUCTOS*/
+
 /* Estilos modernos para la sidebar de productos */
 
 .sidebar-container {
@@ -86,4 +95,44 @@
 
 .sidebar .list-group-item:hover::before {
     color: #fff;
+}
+
+.sub-list {
+    padding-left: 20px; /* Indentación para las subcategorías */
+    display: none; /* Ocultar por defecto */
+}
+
+.sub-list .list-group-item {
+    background: #f0f0f0; /* Color de fondo para las subcategorías */
+    color: #34495e; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background 0.3s ease; /* Transición suave */
+}
+
+/* Nueva regla para eliminar el subrayado de los enlaces */
+.sub-list a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: inherit; /* Heredar el color del texto */
+    display: block; /* Hacer que el enlace ocupe todo el espacio del li */
+}
+
+.sub-list .list-group-item:hover {
+    background: #3498db; /* Color al pasar el mouse */
+    color: #fff; /* Color del texto al pasar el mouse */
+}
+
+.card-img-top {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 200px; /* Establece una altura fija para las imágenes */
+    object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* Alinea el contenido verticalmente */
+    justify-content: space-between; /* Espacia el contenido para que el botón esté en la parte inferior */
+}
+
+.btn {
+    margin-top: auto; /* Asegura que el botón esté siempre en la parte inferior */
 }
