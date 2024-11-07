@@ -1,44 +1,56 @@
 const productos = {
     bolsas: [
     {
-        "nombre": "Bolsas de residuos",
+        "nombre": "Bolsas Residuo Negra",
         "categoria": "Bolsas",
-        "tipo": "residuos",
         "imagen": "../../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas diseñadas para la recolección de residuos."
+        "descripcion": "Bolsas 100 x 110"
+    },
+    {
+        "nombre": "Bolsas Residuo Tambor",
+        "categoria": "Bolsas",
+        "imagen": "../../imgs/productos/bolsas/Bolsas de residuos .jpg",
+        "descripcion": "Bolsas 100 x 120"
+    },
+    {
+        "nombre": "Bolsas Residuo Negra",
+        "categoria": "Bolsas",
+        "imagen": "../../imgs/productos/bolsas/Bolsas de residuos .jpg",
+        "descripcion": "Bolsas 60 x 90"
+    },
+    {
+        "nombre": "Bolsas Residuo Negra",
+        "categoria": "Bolsas",
+        "imagen": "../../imgs/productos/bolsas/Bolsas de residuos .jpg",
+        "descripcion": "Bolsas 45 x 60"
     },
     {
         "nombre": "Bolsa de residuos azul",
         "categoria": "Bolsas",
-        "tipo": "residuos",
         "imagen": "../../imgs/productos/bolsas/bolsa residuos azul.jpg",
         "descripcion": "Bolsas de residuos de color azul para una gestión eficiente."
     },
     {
         "nombre": "Bolsa transparente",
         "categoria": "Bolsas",
-        "tipo": "transparente",
         "imagen": "../../imgs/productos/bolsas/bolsa transparente.jpg",
         "descripcion": "Bolsas transparentes ideales para la visibilidad de su contenido."
     },
     {
         "nombre": "Bolsas de basura Eco",
         "categoria": "Bolsas",
-        "tipo": "ecobolsa",
         "imagen": "../../imgs/productos/bolsas/BolsaResiduoVerde.jpg",
         "descripcion": "Bolsas de basura biodegradables para un entorno más limpio."
     },
     {
         "nombre": "Bolsas amarillas",
         "categoria": "Bolsas",
-        "tipo": "amarillas",
         "imagen": "../../imgs/productos/bolsas/bolsas amarillas.jpg",
         "descripcion": "Bolsas amarillas para residuos específicos."
     },
     {
         "nombre": "Bolsas conjunto",
         "categoria": "Bolsas",
-        "tipo": "conjunto",
         "imagen": "../../imgs/productos/bolsas/bolsas conjunto.avif",
         "descripcion": "Conjunto de bolsas para diferentes usos."
     },
@@ -49,9 +61,57 @@ const productos = {
             "categoria": "Guantes",
             "tipo": "latex",
             "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de látex para protección."
+            "descripcion": "Guantes de látex tallle S"
         },
-        // ... otros productos de guantes
+        {
+            "nombre": "Guantes de látex",
+            "categoria": "Guantes",
+            "tipo": "latex",
+            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+            "descripcion": "Guantes de látex tallle M"
+        },
+        {
+            "nombre": "Guantes de látex",
+            "categoria": "Guantes",
+            "tipo": "latex",
+            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+            "descripcion": "Guantes de látex tallle L"
+        },
+        {
+            "nombre": "Guantes de látex",
+            "categoria": "Guantes",
+            "tipo": "latex",
+            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+            "descripcion": "Guantes de látex tallle XL"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+            "descripcion": "Guantes de Nitrilo tallle S"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+            "descripcion": "Guantes de Nitrilo tallle M"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+            "descripcion": "Guantes de Nitrilo tallle L"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+            "descripcion": "Guantes de Nitrilo tallle XL"
+        },
     ]
 };
 
@@ -85,7 +145,7 @@ function cargarProductos() {
                             <h5 class="card-title text-center">${producto.nombre}</h5>
                             <p class="card-text text-center">${producto.descripcion}</p>
                             <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary" onclick="verProducto('${producto.nombre}')">Ver más</a>
+                                <a href="#" class="btn btn-primary" onclick="verProducto('${producto.nombre}')">Agregar a presupuesto</a>
                             </div>
                         </div>
                     </div>

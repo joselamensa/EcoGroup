@@ -1,8 +1,8 @@
 .seccion1{
-    background-image: url('../imgs/banners/banner\ ecogroup2.png');
+    background-image: url('../imgs/banners/1280x600.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 600px;
 }
 
 
