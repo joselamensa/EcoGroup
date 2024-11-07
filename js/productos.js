@@ -55,62 +55,85 @@ const productos = {
         "descripcion": "Conjunto de bolsas para diferentes usos."
     },
     ],
+
+
     guantes: [
         {
             "nombre": "Guantes de látex",
             "categoria": "Guantes",
             "tipo": "latex",
-            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de látex tallle S"
+            "imagen": "../../imgs/productos/guantes/latexsinpolvo.png",
+            "descripcion": "Guantes de látex sin Polvo talle S"
         },
         {
             "nombre": "Guantes de látex",
             "categoria": "Guantes",
             "tipo": "latex",
-            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de látex tallle M"
+            "imagen": "../../imgs/productos/guantes/latexsinpolvo.png",
+            "descripcion": "Guantes de látex sin Polvo talle M"
         },
         {
             "nombre": "Guantes de látex",
             "categoria": "Guantes",
             "tipo": "latex",
-            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de látex tallle L"
-        },
-        {
-            "nombre": "Guantes de látex",
-            "categoria": "Guantes",
-            "tipo": "latex",
-            "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de látex tallle XL"
+            "imagen": "../../imgs/productos/guantes/latexsinpolvo.png",
+            "descripcion": "Guantes de látex sin Polvo talle L"
         },
         {
             "nombre": "Guantes de Nitrilo",
             "categoria": "Guantes",
             "tipo": "Nitrilo",
             "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo tallle S"
+            "descripcion": "Guantes de Nitrilo Negro Reforzado talle S"
         },
         {
             "nombre": "Guantes de Nitrilo",
             "categoria": "Guantes",
             "tipo": "Nitrilo",
             "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo tallle M"
+            "descripcion": "Guantes de Nitrilo Negro Reforzado talle M"
         },
         {
             "nombre": "Guantes de Nitrilo",
             "categoria": "Guantes",
             "tipo": "Nitrilo",
             "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo tallle L"
+            "descripcion": "Guantes de Nitrilo Negro Reforzado talle L"
         },
         {
             "nombre": "Guantes de Nitrilo",
             "categoria": "Guantes",
             "tipo": "Nitrilo",
             "imagen": "../../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo tallle XL"
+            "descripcion": "Guantes de Nitrilo Negro Reforzado talle XL"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/nitrilolila.png",
+            "descripcion": "Guantes de Nitrilo Lila talle S"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/nitrilolila.png",
+            "descripcion": "Guantes de Nitrilo Negro Lila talle M"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/nitrilolila.png",
+            "descripcion": "Guantes de Nitrilo Negro Lila talle L"
+        },
+        {
+            "nombre": "Guantes de Nitrilo",
+            "categoria": "Guantes",
+            "tipo": "Nitrilo",
+            "imagen": "../../imgs/productos/guantes/nitrilolila.png",
+            "descripcion": "Guantes de Nitrilo Negro Lila talle XL"
         },
     ]
 };

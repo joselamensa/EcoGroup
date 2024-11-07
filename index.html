@@ -16,9 +16,6 @@
             <a class="navbar-brand" href="#">
                 <img src="imgs/logos/logoecog.jpg" alt="Logo Empresa de Limpieza" height="50" class="d-inline-block align-top">
             </a>
-            <a class="navbar-brand" href="#">
-                <img src="imgs/logos/LOGO NEGRO.png" alt="Logo Empresa de Limpieza" height="50" class="d-inline-block align-top">
-            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,62 +47,78 @@
         </div>
     </section>
 
-    <!-- Productos -->
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Nuestros Productos</h2>
-        <div id="productosCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Gategorias Home -->
+    <section class="container my-5 categoriashome text-center">
+        <div id="productosCarouselHome" class="carousel slide mx-auto" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 1</h5>
-                                    <p class="card-text">Descripción breve del producto 1.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-2">
+                            <a href="./htmls/productos.html?categoria=bolsas">
+                                <div class="card border-0 text-center">
+                                    <div class="circular-image">
+                                        <img src="./imgs/productos/bolsas/Bolsas de residuos .jpg" class="logo-marcas" alt="Carros Y Equipamientos">
+                                    </div>
+                                    <p class="mt-2">Bolsas</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 2</h5>
-                                    <p class="card-text">Descripción breve del producto 2.</p>
+                        <div class="col-md-2">
+                            <a href="./htmls/productos.html?categoria=papelhigienco">
+                                <div class="card border-0 text-center">
+                                    <div class="circular-image">
+                                        <img src="imgs/productos/Papel/Elegante 1003 1 .webp" class="logo-marcas" alt="Cestos Y Contenedores">
+                                    </div>
+                                    <p class="mt-2">Papel</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 3</h5>
-                                    <p class="card-text">Descripción breve del producto 3.</p>
+                        <div class="col-md-2">
+                            <a href="./htmls/productos.html?categoria=guantes">
+                                <div class="card border-0 text-center">
+                                    <div class="circular-image">
+                                        <img src="imgs/productos/guantes/MedigloveNegroReforzado.jpg" class="logo-marcas" alt="Dispenser">
+                                    </div>
+                                    <p class="mt-2">Guantes</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 4</h5>
-                                    <p class="card-text">Descripción breve del producto 4.</p>
+                        <div class="col-md-2">
+                            <a href="productos.html?categoria=quimicos">
+                                <div class="card border-0 text-center">
+                                    <div class="circular-image">
+                                        <img src="imgs/productos/Qualiquimica/homeproduct.png" class="logo-marcas" alt="Papel">
+                                    </div>
+                                    <p class="mt-2">Quimicos</p>
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="productos.html?categoria=rollos">
+                                <div class="card border-0 text-center">
+                                    <div class="circular-image">
+                                        <img src="imgs/productos/rollosfiscales/rollosfiscales.jpg" class="logo-marcas" alt="Químicos Y Limpiadores">
+                                    </div>
+                                    <p class="mt-2">Rollos fiscales</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="productos.html?categoria=Quimicos">
+                                <div class="card border-0 text-center">
+                                    <div class="circular-image">
+                                        <img src="imgs/productos/rollosfiscales/rollosfiscales.jpg" class="logo-marcas" alt="Químicos Y Limpiadores">
+                                    </div>
+                                    <p class="mt-2">Aerosoles</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#productosCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productosCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
         </div>
     </section>
+
     <!-- Productos -->
     <section class="container my-5">
         <h2 class="text-center mb-4">Productos Destacados</h2>
@@ -115,54 +128,101 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 1">
+                                <img src="./imgs/productos/Papel/elgante 1047 .jpg" class="card-img-top" alt="Producto 1">
                                 <div class="card-body">
-                                    <h5 class="card-title">Producto 1</h5>
-                                    <p class="card-text">Descripción breve del producto 1.</p>
+                                    <h5 class="card-title">Papel higiénico 300mts</h5>
+                                    <p class="card-text">El papel higiénico elegante es suave y resistente, ideal para uso diario. Paquete x 8 unidades</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 2">
+                                <img src="./imgs/productos/Qualiquimica/homeproduct.png" class="card-img-top" alt="Producto 2" style="object-fit: scale-down;">
                                 <div class="card-body">
-                                    <h5 class="card-title">Producto 2</h5>
-                                    <p class="card-text">Descripción breve del producto 2.</p>
+                                    <h5 class="card-title">Cera Autobrillo Negra</h5>
+                                    <p class="card-text">Cera Autobrillo Negra de alta calidad para un brillo intenso y duradero. Pack x4 Unidades.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 3">
+                                <img src="./imgs/productos/bolsas/Bolsas de residuos .jpg" class="card-img-top" alt="Producto 3" style="object-fit: scale-down;">
                                 <div class="card-body">
-                                    <h5 class="card-title">Producto 3</h5>
-                                    <p class="card-text">Descripción breve del producto 3.</p>
+                                    <h5 class="card-title">Bolsa Residuo Negra</h5>
+                                    <p class="card-text">Bolsas negras para residuos, 100 x 120 pack x8 Unidades.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 4">
+                                <img src="./imgs/productos/rollosfiscales/rollosfiscales.jpg" class="card-img-top" alt="Producto 4">
                                 <div class="card-body">
-                                    <h5 class="card-title">Producto 4</h5>
-                                    <p class="card-text">Descripción breve del producto 4.</p>
+                                    <h5 class="card-title">Rollos Fiscales</h5>
+                                    <p class="card-text">Rollo de papel térmico, 80 mm x 60 mts. Para impresoras de ticket x50u.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#productosCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productosCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
         </div>
     </section>
 
+    <!-- Productos -->
+    <section class="container my-5 secciondemarcas">
+        <div id="productosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logosmarcas/logo QQ .jpg" class="card-img-top logo-marcas" alt="Producto 1">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logosmarcas/LOGO-ELEGANTE.png" class="card-img-top logo-marcas" alt="Producto 2" style="object-fit: scale-down; width: 70%; margin: auto;">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logosmarcas/Mediglove Logo.png" class="card-img-top logo-marcas" alt="Producto 3">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logos/LOGO NEGRO.png" class="card-img-top logo-marcas" alt="Producto 4" style="object-fit: scale-down; width: 70%; margin: auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logosmarcas/scj_logo1.svg" class="card-img-top logo-marcas" alt="Producto 5">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logosmarcas/newclor logo .png" class="card-img-top logo-marcas" alt="Producto 6">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logosmarcas/newclor logo .png" class="card-img-top logo-marcas" alt="Producto 7">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardmarcas border-0">
+                                <img src="imgs/logosmarcas/newclor logo .png" class="card-img-top logo-marcas" alt="Producto 8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Formulario de Contacto -->
     <section id="contacto" class="container my-5">
         <div class="row justify-content-center">

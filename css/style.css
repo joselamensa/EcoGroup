@@ -1,11 +1,13 @@
 .seccion1{
-    background-image: url('../imgs/banners/1280x600.jpg');
+    background-image: url('../imgs/banners/banner\ ecogroup2.png');
     background-size: cover;
     background-position: center;
-    min-height: 600px;
+    min-height: 500px;
 }
 
-
+.navbar {
+    border-bottom: 1px solid black;
+}
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -135,4 +137,61 @@
 
 .btn {
     margin-top: auto; /* Asegura que el botón esté siempre en la parte inferior */
+}
+/* Ajustes para las tarjetas del carrusel */
+.cardmarcas {
+    border: none; /* Eliminar bordes */
+}
+
+.logo-marcas {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 150px; /* Define una altura consistente para todas las imágenes */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    padding: 10px; /* Espacio alrededor de las imágenes */
+}
+/* Ajuste para las tarjetas de productos en la sección categoriashome */
+.categoriashome .card {
+    border: none; /* Eliminar bordes */
+    box-shadow: none; /* Sin sombras */
+}
+
+.categoriashome .circular-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Fondo para asegurar contraste */
+    border: 2px solid #3498db; /* Establece un borde estiloso alrededor del círculo */
+    margin: 0 auto;
+}
+
+.categoriashome .logo-marcas {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen para llenar el círculo */
+
+}
+
+.categoriashome p {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card {
+    display: flex; /* Hacer que la tarjeta use flexbox */
+    flex-direction: column; /* Alinear el contenido verticalmente */
+    height: 100%; /* Asegurar que todas las tarjetas tengan la misma altura */
+}
+
+/* Asegurar que el contenido de la tarjeta ocupe el espacio disponible */
+.card-body {
+    display: flex; /* Usar flexbox para alinear el contenido */
+    flex-direction: column; /* Alinear el contenido verticalmente */
+    justify-content: flex-start; /* Alinear el contenido desde la parte superior */
+    flex-grow: 1; /* Permitir que el cuerpo de la tarjeta crezca para llenar el espacio */
 }
