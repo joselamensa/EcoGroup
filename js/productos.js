@@ -136,50 +136,64 @@ const productos = {
             "descripcion": "Guantes de Nitrilo Negro Lila talle XL"
         },
     ],
-    Aerosoles/Aromatizadores: [
+    Desinfectantes: [
         {
             "nombre": "Desodorante de Ambientes",
-            "categoria": "Aerosoles/Aromatizadores",
+            "categoria": "Desinfectantes",
             "tipo": "Vainilla",
-            "imagen": "",
+            "imagen": "../../imgs/productos/Aromatizantes/AersolGlade.webp",
             "descripcion": "Glade Desodorante de Ambientes Aerosol 380 ml"
         },
         {
             "nombre": "Lustrador de Muebles Blem",
-            "categoria": "Aerosoles/Aromatizadores",
+            "categoria": "Desinfectantes",
             "tipo": "Original",
-            "imagen": "",
+            "imagen": "../../imgs/productos/Aromatizantes/Blem Original.png",
             "descripcion": "Aerosol Lustramuebles Blem Original 380 ml"
         },
         {
             "nombre": "Lysoform Aerosol Desinfectante",
-            "categoria": "Aerosoles/Aromatizadores",
+            "categoria": "Desinfectantes",
             "tipo": "Desinfectante",
-            "imagen": "",
+            "imagen": "../../imgs/productos/Aromatizantes/Lysoform-aerosol-desin.webp",
             "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
         },
         {
-            "nombre": "",
-            "categoria": "Aerosoles/Aromatizadores",
-            "tipo": "",
-            "imagen": "",
-            "descripcion": ""
+            "nombre": "Raid",
+            "categoria": "Desinfectantes",
+            "tipo": "Desinfectante",
+            "imagen": "../../imgs/productos/Aromatizantes/Raid .webp",
+            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
         },
         {
-  "nombre": "",
-            "categoria": "Aerosoles/Aromatizadores",
-            "tipo": "",
-            "imagen": "",
-            "descripcion": ""
+            "nombre": "Pato Purific",
+            "categoria": "Desinfectantes",
+            "tipo": "Desinfectante",
+            "imagen": "../../imgs/productos/Aromatizantes/Pato Purific.webp",
+            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
         },
         {
-            "nombre": "",
-            "categoria": "Aerosoles/Aromatizadores",
-            "tipo": "",
-            "imagen": "",
-            "descripcion": ""
+            "nombre": "Mister Musculo",
+            "categoria": "Desinfectantes",
+            "tipo": "Desinfectante",
+            "imagen": "../../imgs/productos/Aromatizantes/Mister Musculo Crema.jpg",
+            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
         },
-
+        {
+            "nombre": "Ceramicol",
+            "categoria": "Desinfectantes",
+            "tipo": "Desinfectante",
+            "imagen": "../../imgs/productos/Aromatizantes/lustramuebles ceramicol.webp",
+            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+        },
+        {
+            "nombre": "Off",
+            "categoria": "Desinfectantes",
+            "tipo": "Desinfectante",
+            "imagen": "../../imgs/productos/Aromatizantes/off.webp",
+            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+        },
+    ]
     
 };
 
