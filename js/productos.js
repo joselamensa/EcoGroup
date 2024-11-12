@@ -135,7 +135,52 @@ const productos = {
             "imagen": "../../imgs/productos/guantes/nitrilolila.png",
             "descripcion": "Guantes de Nitrilo Negro Lila talle XL"
         },
-    ]
+    ],
+    Aerosoles/Aromatizadores: [
+        {
+            "nombre": "Desodorante de Ambientes",
+            "categoria": "Aerosoles/Aromatizadores",
+            "tipo": "Vainilla",
+            "imagen": "",
+            "descripcion": "Glade Desodorante de Ambientes Aerosol 380 ml"
+        },
+        {
+            "nombre": "Lustrador de Muebles Blem",
+            "categoria": "Aerosoles/Aromatizadores",
+            "tipo": "Original",
+            "imagen": "",
+            "descripcion": "Aerosol Lustramuebles Blem Original 380 ml"
+        },
+        {
+            "nombre": "Lysoform Aerosol Desinfectante",
+            "categoria": "Aerosoles/Aromatizadores",
+            "tipo": "Desinfectante",
+            "imagen": "",
+            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+        },
+        {
+            "nombre": "",
+            "categoria": "Aerosoles/Aromatizadores",
+            "tipo": "",
+            "imagen": "",
+            "descripcion": ""
+        },
+        {
+  "nombre": "",
+            "categoria": "Aerosoles/Aromatizadores",
+            "tipo": "",
+            "imagen": "",
+            "descripcion": ""
+        },
+        {
+            "nombre": "",
+            "categoria": "Aerosoles/Aromatizadores",
+            "tipo": "",
+            "imagen": "",
+            "descripcion": ""
+        },
+
+    
 };
 
 // Función para cargar productos según la categoría y tipo
