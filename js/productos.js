@@ -672,7 +672,6 @@ const productos = {
     ]
 };
 // Función para cargar productos iniciales o por filtros
-// Función para cargar productos iniciales o por filtros
 function cargarProductos() {
     const urlParams = new URLSearchParams(window.location.search);
     const categoria = urlParams.get('categoria');
@@ -725,7 +724,10 @@ function mostrarProductos(productosFiltrados) {
                     <h5 class="card-title text-center">${producto.nombre}</h5>
                     <p class="card-text text-center flex-grow-1">${producto.descripcion}</p>
                     <div class="mt-auto text-center">
-                        <a href="#" class="btn btn-primary" onclick="verProducto('${producto.nombre}')">Agregar a presupuesto</a>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" value="1" min="1" id="cantidad-${producto.nombre.replace(/\s+/g, '-')}">
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('${producto.nombre.replace(/\s+/g, '-')}', parseInt(document.getElementById('cantidad-${producto.nombre.replace(/\s+/g, '-')}').value))">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>`;
@@ -757,25 +759,118 @@ function buscarProductos(query) {
     mostrarProductos(resultados);
 }
 
-// Lógica principal al cargar la página
+
+// Function to add product to cart
+function agregarAlCarrito(nombre, cantidad) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let productoExistente = carrito.find(item => item.nombre === nombre);
+    
+    if (productoExistente) {
+        productoExistente.cantidad += cantidad;
+    } else {
+        const productoCompleto = Object.values(productos).flat().find(p => p.nombre.replace(/\s+/g, '-') === nombre);
+        carrito.push({ ...productoCompleto, cantidad });
+    }
+    
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarIconoCarrito();
+    mostrarCarrito();
+}
+
+// Function to update cart icon
+function actualizarIconoCarrito() {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+}
+
+// Function to display cart contents
+function mostrarCarrito() {
+    const cartItems = document.getElementById('cart-items');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    cartItems.innerHTML = '';
+
+    if (carrito.length === 0) {
+        cartItems.innerHTML = '<p>El carrito está vacío.</p>';
+        return;
+    }
+
+    carrito.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item d-flex align-items-center mb-3';
+        itemElement.innerHTML = `
+            <img src="${item.imagen}" alt="${item.nombre}" class="cart-item-image me-3" style="width: 50px; height: 50px; object-fit: cover;">
+            <div class="flex-grow-1">
+                <h6 class="mb-0">${item.nombre}</h6>
+                <p class="mb-0">${item.descripcion}</p>
+                <small>Cantidad: ${item.cantidad}</small>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
+        `;
+        cartItems.appendChild(itemElement);
+    });
+}
+
+// Function to remove item from cart
+function eliminarDelCarrito(nombre) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito = carrito.filter(item => item.nombre !== nombre);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarIconoCarrito();
+    mostrarCarrito();
+}
+
+// Function to send quote
+function enviarCotizacion() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    if (carrito.length === 0) {
+        alert('El carrito está vacío. Agregue productos antes de enviar la cotización.');
+        return;
+    }
+
+    let mensaje = 'Solicitud de cotización:\n\n';
+    carrito.forEach(item => {
+        mensaje += `${item.nombre} - Cantidad: ${item.cantidad}\n`;
+    });
+
+    // Replace this with your preferred method of sending the quote (e.g., email, WhatsApp)
+    alert(mensaje);
+    console.log(mensaje);
+
+    // Clear cart after sending quote
+    localStorage.removeItem('carrito');
+    actualizarIconoCarrito();
+    mostrarCarrito();
+}
+
+// Main logic when loading the page
 document.addEventListener('DOMContentLoaded', () => {
-    cargarProductos(); // Cargar productos iniciales
+    cargarProductos(); // Load initial products
 
     const searchButton = document.getElementById('search-button');
     const searchInput = document.getElementById('search-input');
 
-    // Escuchar el clic en el botón de búsqueda
+    // Listen for click on search button
     searchButton.addEventListener('click', () => {
         const query = searchInput.value.trim().toLowerCase();
         buscarProductos(query);
     });
 
-    // Escuchar el evento "Enter" en el campo de búsqueda
+    // Listen for "Enter" event in search field
     searchInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
-            event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+            event.preventDefault(); // Prevent default form behavior
             const query = searchInput.value.trim().toLowerCase();
             buscarProductos(query);
         }
     });
+
+    // Initialize cart icon and modal
+    actualizarIconoCarrito();
+    document.getElementById('cart-icon').addEventListener('click', mostrarCarrito);
+
+    // Add event listener for sending quote
+    document.getElementById('send-quote').addEventListener('click', enviarCotizacion);
 });
+
