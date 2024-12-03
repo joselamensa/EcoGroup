@@ -149,42 +149,42 @@ const productos = {
             "tipo": "Desinfectante",
             "marca": "scjhonson",
             "imagen": "../imgs/productos/Aromatizantes/scjhonson/Lysoform-aerosol-desin.webp",
-            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+            "descripcion": "Desinfectante de ambientes en aerosol"
         },
         {
             "nombre": "Raid",
             "tipo": "Desinfectante",
             "marca": "scjhonson",
             "imagen": "../imgs/productos/Aromatizantes/scjhonson/Raid .webp",
-            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+            "descripcion": "Insecticida en aerosol para el control de plagas."
         },
         {
             "nombre": "Pato Purific",
             "tipo": "Desinfectante",
             "marca": "scjhonson",
             "imagen": "../imgs/productos/Aromatizantes/scjhonson/Pato Purific.webp",
-            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+            "descripcion": "Gel limpiador para el inodoro."
         },
         {
             "nombre": "Mister Musculo",
             "tipo": "Desinfectante",
             "marca": "scjhonson",
             "imagen": "../imgs/productos/Aromatizantes/scjhonson/Mister Musculo Crema.jpg",
-            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+            "descripcion": "Crema limpiadora de hornos, elimina grasa y suciedad de manera efectiva."
         },
         {
             "nombre": "Ceramicol",
             "tipo": "Desinfectante",
             "marca": "scjhonson",
             "imagen": "../imgs/productos/Aromatizantes/scjhonson/lustramuebles ceramicol.webp",
-            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+            "descripcion": "Lustrador para muebles y más..."
         },
         {
             "nombre": "Off",
             "tipo": "Desinfectante",
             "marca": "scjhonson",
             "imagen": "../imgs/productos/Aromatizantes/scjhonson/off.webp",
-            "descripcion": "Lysoform Aerosol Desinfectante de Ambientes 495 ml"
+            "descripcion": "Insecticida en aerosol."
         },        
         {
             "nombre": "Limpia Metales Acero Inox Würth",
@@ -725,8 +725,8 @@ function mostrarProductos(productosFiltrados) {
                     <p class="card-text text-center flex-grow-1">${producto.descripcion}</p>
                     <div class="mt-auto text-center">
                         <div class="input-group mb-3">
-                            <input type="number" class="form-control" value="1" min="1" id="cantidad-${producto.nombre.replace(/\s+/g, '-')}">
-                            <button class="btn btn-primary" onclick="agregarAlCarrito('${producto.nombre.replace(/\s+/g, '-')}', parseInt(document.getElementById('cantidad-${producto.nombre.replace(/\s+/g, '-')}').value))">Agregar al carrito</button>
+                            <input type="number" class="form-control" value="1" min="1" id="cantidad-${producto.descripcion.replace(/\s+/g, '-')}">
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('${producto.descripcion.replace(/\s+/g, '-')}', parseInt(document.getElementById('cantidad-${producto.descripcion.replace(/\s+/g, '-')}').value))">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -759,22 +759,33 @@ function buscarProductos(query) {
     mostrarProductos(resultados);
 }
 
-
 // Function to add product to cart
-function agregarAlCarrito(nombre, cantidad) {
+function agregarAlCarrito(descripcion, cantidad) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let productoExistente = carrito.find(item => item.nombre === nombre);
+    let productoExistente = carrito.find(item => item.descripcion === descripcion);
     
     if (productoExistente) {
         productoExistente.cantidad += cantidad;
     } else {
-        const productoCompleto = Object.values(productos).flat().find(p => p.nombre.replace(/\s+/g, '-') === nombre);
+        const productoCompleto = Object.values(productos).flat().find(p => p.descripcion.replace(/\s+/g, '-') === descripcion);
         carrito.push({ ...productoCompleto, cantidad });
     }
     
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarIconoCarrito();
     mostrarCarrito();
+    mostrarMensajeAgregado();
+}
+
+// Function to show "Added to cart" message
+function mostrarMensajeAgregado() {
+    const mensaje = document.createElement('div');
+    mensaje.textContent = 'Agregado al carrito';
+    mensaje.className = 'mensaje-agregado';
+    document.body.appendChild(mensaje);
+    setTimeout(() => {
+        mensaje.remove();
+    }, 2000);
 }
 
 // Function to update cart icon
@@ -806,16 +817,16 @@ function mostrarCarrito() {
                 <p class="mb-0">${item.descripcion}</p>
                 <small>Cantidad: ${item.cantidad}</small>
             </div>
-            <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
+            <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito('${item.descripcion}')">Eliminar</button>
         `;
         cartItems.appendChild(itemElement);
     });
 }
 
 // Function to remove item from cart
-function eliminarDelCarrito(nombre) {
+function eliminarDelCarrito(descripcion) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito = carrito.filter(item => item.nombre !== nombre);
+    carrito = carrito.filter(item => item.descripcion !== descripcion);
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarIconoCarrito();
     mostrarCarrito();
@@ -829,16 +840,47 @@ function enviarCotizacion() {
         return;
     }
 
+    const opcionesEnvio = document.createElement('div');
+    opcionesEnvio.innerHTML = `
+        <h5>Seleccione el método de envío:</h5>
+        <button id="enviar-correo" class="btn btn-primary me-2">Enviar por correo</button>
+        <button id="enviar-whatsapp" class="btn btn-success">Enviar por WhatsApp</button>
+    `;
+
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.appendChild(opcionesEnvio);
+
+    document.getElementById('enviar-correo').addEventListener('click', enviarPorCorreo);
+    document.getElementById('enviar-whatsapp').addEventListener('click', enviarPorWhatsApp);
+}
+
+function enviarPorCorreo() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let mensaje = 'Solicitud de cotización:\n\n';
     carrito.forEach(item => {
-        mensaje += `${item.nombre} - Cantidad: ${item.cantidad}\n`;
+        mensaje += `${item.nombre} - ${item.descripcion} - Cantidad: ${item.cantidad}\n`;
     });
 
-    // Replace this with your preferred method of sending the quote (e.g., email, WhatsApp)
-    alert(mensaje);
-    console.log(mensaje);
+    const mailtoLink = `mailto:?subject=Solicitud de Cotización&body=${encodeURIComponent(mensaje)}`;
+    window.location.href = mailtoLink;
 
-    // Clear cart after sending quote
+    limpiarCarrito();
+}
+
+function enviarPorWhatsApp() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let mensaje = 'Solicitud de cotización:\n\n';
+    carrito.forEach(item => {
+        mensaje += `${item.nombre} - ${item.descripcion} - Cantidad: ${item.cantidad}\n`;
+    });
+
+    const whatsappLink = `https://wa.me/5491136267653?text=${encodeURIComponent(mensaje)}`;
+    window.open(whatsappLink, '_blank');
+
+    limpiarCarrito();
+}
+
+function limpiarCarrito() {
     localStorage.removeItem('carrito');
     actualizarIconoCarrito();
     mostrarCarrito();
@@ -873,4 +915,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener for sending quote
     document.getElementById('send-quote').addEventListener('click', enviarCotizacion);
 });
+
 
