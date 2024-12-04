@@ -128,6 +128,42 @@ const productos = {
             "imagen": "../imgs/productos/guantes/nitrilolila.png",
             "descripcion": "Guantes de Nitrilo Negro Lila talle XL"
         },
+        {
+            "nombre": "Guante de Kevlar",
+            "tipo": "Seguridad",
+            "imagen": "../imgs/productos/guantes/guantekevlar.jpg",
+            "marca": "Prentex",
+            "descripcion": "Guante Kevlar Tejido Forrado En Lana Grueso 50cm Hornero 350"
+       },
+        {
+            "nombre": "Guante PVC",
+            "tipo": "Seguridad",
+            "imagen": "../imgs/productos/guantes/guantepvc.jpg",
+            "marca": "Prentex",
+            "descripcion": "Guante PVC Hidrocarburo Largo Liviano 40cm Azul/Rojo"
+       },
+        {
+            "nombre": "Guante De Nitrilo Anticorte",
+            "tipo": "Seguridad",
+            "imagen": "../imgs/productos/guantes/anticorte.webp",
+            "marca": "Prentex",
+            "descripcion": "Guante Mapa Titan 392 Puño Elastizado"
+        },
+        {
+            "nombre": "Manopla De Polietileno",
+            "tipo": "Higiene",
+            "imagen": "../imgs/productos/guantes/polietileno.webp",
+            "marca": "Mediglove",
+            "descripcion": "Manopla Descartable x 100 u."
+
+       },
+        {
+            "nombre": "Guantes De Limpieza Amarrillo",
+            "tipo": "Latex",
+            "imagen": "../imgs/productos/guantes/amarillolatex.webp",
+            "marca": "Romyl",
+            "descripcion": "Guantes Goma Limpieza Latex 12 Pares"
+       },
     ],
     Desinfectantes: [
         {
@@ -285,7 +321,7 @@ const productos = {
         {
             "nombre": "Bobina de Papel 24 cm x 400mts",
             "tipo": "bobina",
-            "imagen": "../imgs/productos/Papel/elegante10031.webp",
+            "imagen": "../imgs/productos/Papel/Elegante10031.webp",
             "marca": "Elegante", 
             "descripcion": "Toalla Premium en Bobina Elegante, x 2 u, COD 1003."
        },
@@ -668,7 +704,250 @@ const productos = {
             "imagen": "../imgs/productos/Indumentaria/Calzado/botinmarron421.webp",
             "marca": "Bladi",
             "descripcion": "Botin Bladi Cuero Puntera De Acero 421 Flor Marron"
-    }
+    },
+    {
+        "nombre": "Anteojo de seguridad Libus",
+        "tipo": "Anteojos",
+        "imagen": "../imgs/productos/Indumentaria/anteojos.png",
+        "marca": "Libus",
+        "descripcion": "Anteojo de seguridad Libus Ecoline 900558 con cristal x 10 u."
+
+   },
+    {
+        "nombre": "Bandolera Poliester",
+        "tipo": "Seguridadvial",
+        "imagen": "../imgs/productos/Indumentaria/bandolera.png",
+        "marca": "Prentex",
+        "descripcion": "Bandolera Poliester Amarillo/Naranja Fluo con Reflex"
+    },
+    ],
+    Barridoylimpieza:
+    [
+        {
+            "nombre": "Escobillón Laqueado Caramelo",
+            "tipo": "Escobillon",
+            "imagen": "../imgs/productos/Romyl/Escobillon caramelo .webp",
+            "marca": "Romyl",
+            "descripcion": "Escobillón Laqueado, 30 cm De Ancho, 6 Hileras"
+       },
+        {
+            "nombre": "Escobillón Recto Bicolor",
+            "tipo": "Escobillon",
+            "imagen": "../imgs/productos/Romyl/Escobillon Bicolor.jpg",
+            "marca": "Romyl",
+            "descripcion": "Escobillon Bicolor, 6 Hileras"
+       },
+        {
+            "nombre": "Escobilla De Inodoro",
+            "tipo": "Escobillon",
+            "imagen": "../imgs/productos/Romyl/escobilla inodoro.webp",
+            "marca": "Romyl",
+            "descripcion": "Cepillo Con Bocha Inodoro"
+       },
+        {
+            "nombre": "Secador De Goma",
+            "tipo": "Secadores",
+            "imagen": "../imgs/productos/Romyl/secador-premium.webp",
+            "marca": "Romyl",
+            "descripcion": "Secador de Doble Goma 40 cm"
+      },
+        {
+            "nombre": "Sopapa Con Cabo",
+            "tipo": "Sopapa",
+            "imagen": "../imgs/productos/Romyl/sopapa.jpg",
+            "marca": "Romyl",
+            "descripcion": "Sopapa Negra Con Cabo Plástico"
+       },
+        {
+            "nombre": "Escobillon Barrendero Pesado",
+            "tipo": "Escobillon",
+            "imagen": "../imgs/productos/Romyl/escobillon.webp",
+            "marca": "Romyl",
+            "descripcion": "Escobillon Barrendero Industrial 35 cm"
+      },
+        {
+            "nombre": "Trapo de Piso",
+            "tipo": "Trapos",
+            "imagen": "../imgs/productos/Romyl/trapo de piso gris.jpg",
+            "marca": "Romyl",
+            "descripcion": "Trapo de Piso Profesional 60x70 cm Gris"
+       },
+        {
+            "nombre": "Trapo de Piso",
+            "tipo": "Trapos",
+            "imagen": "../imgs/productos/Romyl/trapo de piso blanco.jpg",
+            "marca": "Romyl",
+            "descripcion": "Trapo de Piso Profesional 60x70 cm Blanco"
+       },
+        {
+            "nombre": "Esponja Metálica",
+            "tipo": "Esponjas",
+            "imagen": "../imgs/productos/Romyl/esponja acero inox.webp",
+            "marca": "Romyl",
+            "descripcion": "Esponja Metálica Acero Inox"
+       },
+        {
+            "nombre": "Fibra Verde",
+            "tipo": "Esponjas",
+            "imagen": "../imgs/productos/Romyl/fibra verde .webp",
+            "marca": "Romyl",
+            "descripcion": "Fibra Verde Extra Fuerte Parrillera"
+       },
+        {
+            "nombre": "Pala Con Cabo",
+            "tipo": "Cabos",
+            "imagen": "../imgs/productos/Romyl/pala plastica.webp",
+            "marca": "Romyl",
+            "descripcion": "Pala Plastica Con Goma y Cabo Plastico"
+       },
+        {
+            "nombre": "Pasa Cera",
+            "tipo": "Escobillon",
+            "imagen": "../imgs/productos/Romyl/super pasa cera romyl.jpg",
+            "marca": "Romyl",
+            "descripcion": "Super Pasa Cera Con Toalla"
+       },
+        {
+            "nombre": "Spin Mop 360",
+            "tipo": "Balde",
+            "imagen": "../imgs/productos/Romyl/spin mop .png",
+            "marca": "Romyl",
+            "descripcion": "Spin Mop 360 con Balde + 2 Mopas."
+       },
+        {
+            "nombre": "Balde Ovalado",
+            "tipo": "Balde",
+            "imagen": "../imgs/productos/Romyl/blade ovalado .jpg",
+            "marca": "Romyl",
+            "descripcion": "Balde Plastico Ovalado Azul 12 lts"
+       },
+        {
+            "nombre": "Rejilla Liviana Americana",
+            "tipo": "Trapos",
+            "imagen": "../imgs/productos/Romyl/rejillaromyl.jpg",
+            "marca": "Romyl",
+            "descripcion": "Rejilla Liviana 33 x 45 cm 12 u."
+       },
+        {
+            "nombre": "Franela Naranja",
+            "tipo": "Trapos",
+            "imagen": "../imgs/productos/Romyl/super franela romyl.jpg",
+            "marca": "Romyl",
+            "descripcion": "Super Franela Naranja 50 x 60 cm x 5 u."
+       },
+        {
+            "nombre": "Paño Multiuso",
+            "tipo": "Trapos",
+            "imagen": "../imgs/productos/Romyl/panosballerina.webp",
+            "marca": "Romyl",
+            "descripcion": "Paño Multiuso color a elección 40 x 40 cm x 5 u."
+      },
+        {
+            "nombre": "Paño Microfibra",
+            "tipo": "Trapos",
+            "imagen": "../imgs/productos/Romyl/microfib.jpeg",
+            "marca": "Romyl",
+            "descripcion": "Paños Microfibra Multiuso 30 x 30 cm x 5 u Colores Varios"
+       },
+        {
+            "nombre": "Mopin Lampazo",
+            "tipo": "Mopas",
+            "imagen": "../imgs/productos/Romyl/mopinlampazo.jpg",
+            "marca": "Romyl",
+            "descripcion": "Mopin Blanco 100% Algodón"
+        },
+        {
+            "nombre": "Cepillo Auto",
+            "tipo": "Cepillo",
+            "imagen": "../imgs/productos/Romyl/cepilloauto.jpg",
+            "marca": "Royco",
+            "descripcion": "Cepillo De Mano Fibra Extra Suave"
+       },
+        {
+            "nombre": "Cepillo Camión",
+            "tipo": "Cepillo",
+            "imagen": "../imgs/productos/Romyl/cepillocamion.jpg",
+            "marca": "Romyl",
+            "descripcion": "Cepillo Camión Para Uso Con Cabo- Fibra Extra Suave"
+       },
+        {
+            "nombre": "Secador Aluminio 1 mt",
+            "tipo": "Secadores",
+            "imagen": "../imgs/productos/Romyl/secador.jpg",
+            "marca": "Royco",
+            "descripcion": "Secador de Piso Blanco De Aluminio Reforzado 1 mt."
+       },
+        {
+            "nombre": "Mopa 20 Hilos",
+            "tipo": "Mopas",
+            "imagen": "../imgs/productos/Romyl/mopa.png",
+            "marca": "Royco",
+            "descripcion": "Mopa de 20 hilos retorcidos de 100% algodón con punta Boucle 500 grs."
+      },
+        {
+            "nombre": "Mopa 20 Hilos",
+            "tipo": "Mopas",
+            "imagen":  "../imgs/productos/Romyl/mopa20hilos2.jpg",
+            "marca": "Royco",
+            "descripcion": "Mopa de 20 hilos retorcidos de 100% algodón con punta Boucle 350 grs."
+       },
+        {
+            "nombre": "Cabos De Acero",
+            "tipo": "Cabos",
+            "imagen":  "../imgs/productos/Romyl/Cabos.PNG",
+            "marca": "Royco",
+            "descripcion": "Cabo De Acero Reforzado 22 mm x 1.5 mts Colores Varios"
+       },
+        {
+            "nombre": "Extensor Telescopico",
+            "tipo": "Cabos",
+            "imagen":  "../imgs/productos/Romyl/extensor.jpg",
+            "marca": "Royco",
+            "descripcion": "Extensor Telescopico De Aluminio Templado 3x2 mts"
+       },
+        {
+            "nombre": "Cabo De Madera",
+            "tipo": "Cabos",
+            "imagen":  "../imgs/productos/Romyl/cabomadera.jpg",
+            "marca": "Romyl",
+            "descripcion": "Cabo de Madera 1.20 mt"
+       },
+        {
+            "nombre": "Barrendero Fenix PVC",
+            "tipo": "Escobillon",
+            "imagen":  "../imgs/productos/Romyl/barrenderofenix.jpeg",
+            "marca": "Royco",
+            "descripcion": "Barrendero Fenix PVC 60 cm Azul"
+       },
+        {
+            "nombre": "Pinza Mopa",
+            "tipo": "Mopas",
+            "imagen":  "../imgs/productos/Romyl/pinzamopa.jpg",
+            "marca": "Royco",
+            "descripcion": "Pinza Para Mopa y Mopines - Para Cabo Universal"
+       },
+        {
+            "nombre": "Señal Piso Mojado",
+            "tipo": "Señales",
+            "imagen":  "../imgs/productos/Romyl/pisomojado.jpg",
+            "marca": "Royco",
+            "descripcion": "Señal De Piso Mojado Plegable - Plastico Amarilo"
+       },
+        {
+            "nombre": "Carro Multiservicio Top 57",
+            "tipo": "Carro",
+            "imagen":  "../imgs/productos/Romyl/carritomultiserv.jpg",
+            "marca": "Royco",
+            "descripcion": "Carro Multiservicios TOP. Carro Organizador. 57 x 116 x 100 cm."
+       },
+        {
+            "nombre": "Carro Auxiliar TOP",
+            "tipo": "Carro",
+            "imagen":  "../imgs/productos/Romyl/carroauxiliar.jpg",
+            "marca": "Royco",
+            "descripcion": "Carro Auxiliar con tres bandejas y manijas laterales para su fácil manejo."
+        },
+
     ]
 };
 // Función para cargar productos iniciales o por filtros
@@ -759,10 +1038,9 @@ function buscarProductos(query) {
     mostrarProductos(resultados);
 }
 
-// Function to add product to cart
 function agregarAlCarrito(descripcion, cantidad) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let productoExistente = carrito.find(item => item.descripcion === descripcion);
+    let productoExistente = carrito.find(item => item.descripcion.replace(/\s+/g, '-') === descripcion);
     
     if (productoExistente) {
         productoExistente.cantidad += cantidad;
@@ -795,7 +1073,6 @@ function actualizarIconoCarrito() {
     document.getElementById('cart-count').textContent = totalItems;
 }
 
-// Function to display cart contents
 function mostrarCarrito() {
     const cartItems = document.getElementById('cart-items');
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -806,7 +1083,6 @@ function mostrarCarrito() {
         cartItems.innerHTML = '<p>El carrito está vacío.</p>';
         return;
     }
-
     carrito.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.className = 'cart-item d-flex align-items-center mb-3';
@@ -815,7 +1091,11 @@ function mostrarCarrito() {
             <div class="flex-grow-1">
                 <h6 class="mb-0">${item.nombre}</h6>
                 <p class="mb-0">${item.descripcion}</p>
-                <small>Cantidad: ${item.cantidad}</small>
+                <div class="d-flex align-items-center mt-2">
+                    <button class="btn btn-sm btn-outline-secondary me-2" onclick="actualizarCantidad('${item.descripcion}', -1)" ${item.cantidad <= 1 ? 'disabled' : ''}>-</button>
+                    <span class="cantidad-item">${item.cantidad}</span>
+                    <button class="btn btn-sm btn-outline-secondary ms-2" onclick="actualizarCantidad('${item.descripcion}', 1)">+</button>
+                </div>
             </div>
             <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito('${item.descripcion}')">Eliminar</button>
         `;
@@ -823,7 +1103,21 @@ function mostrarCarrito() {
     });
 }
 
-// Function to remove item from cart
+function actualizarCantidad(descripcion, cambio) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const index = carrito.findIndex(item => item.descripcion === descripcion);
+    
+    if (index !== -1) {
+        carrito[index].cantidad += cambio;
+        if (carrito[index].cantidad <= 0) {
+            carrito.splice(index, 1);
+        }
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarIconoCarrito();
+        mostrarCarrito();
+    }
+}
+
 function eliminarDelCarrito(descripcion) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito = carrito.filter(item => item.descripcion !== descripcion);
@@ -864,7 +1158,6 @@ function enviarPorCorreo() {
     const mailtoLink = `mailto:?subject=Solicitud de Cotización&body=${encodeURIComponent(mensaje)}`;
     window.location.href = mailtoLink;
 
-    limpiarCarrito();
 }
 
 function enviarPorWhatsApp() {
@@ -877,7 +1170,6 @@ function enviarPorWhatsApp() {
     const whatsappLink = `https://wa.me/5491136267653?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappLink, '_blank');
 
-    limpiarCarrito();
 }
 
 function limpiarCarrito() {
@@ -915,5 +1207,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener for sending quote
     document.getElementById('send-quote').addEventListener('click', enviarCotizacion);
 });
-
 
