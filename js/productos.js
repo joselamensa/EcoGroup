@@ -3,47 +3,47 @@ const productos = {
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 100 x 110"
+        "descripcion": "Bolsas 100 x 110 de 40 Micrones x 200 u. "
     },
     {
         "nombre": "Bolsas Residuo Tambor",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 100 x 120"
+        "descripcion": "Bolsas 100 x 120 de 36 Micrones x 200 u."
     },
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 60 x 90"
+        "descripcion": "Bolsas 60 x 90 de 30 Micrones x 200 u."
     },
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 45 x 60"
+        "descripcion": "Bolsas 45 x 60 de 25 Micrones x 200 u."
     },
     {
         "nombre": "Bolsa de residuos azul",
         "imagen": "../imgs/productos/bolsas/bolsa residuos azul.jpg",
-        "descripcion": "Bolsas de residuos de color azul para una gestión eficiente."
+        "descripcion": "Bolsas 100 x 110 - Residuos Peligrosos Azul de 45 Micrones x 100 u."
     },
     {
         "nombre": "Bolsa transparente",
         "imagen": "../imgs/productos/bolsas/bolsa transparente.jpg",
-        "descripcion": "Bolsas transparentes ideales para la visibilidad de su contenido."
+        "descripcion": "Bolsas 100 x 110 Residuos Transparentes de 45 Micrones x 200 u."
     },
     {
         "nombre": "Bolsas de basura Eco",
         "imagen": "../imgs/productos/bolsas/BolsaResiduoVerde.jpg",
-        "descripcion": "Bolsas de basura biodegradables para un entorno más limpio."
+        "descripcion": "Bolsas 100 x 110 de Residuos Verde x 200 u - Ideal Reciclaje."
     },
     {
         "nombre": "Bolsas amarillas",
         "imagen": "../imgs/productos/bolsas/bolsas amarillas.jpg",
-        "descripcion": "Bolsas amarillas para residuos específicos."
+        "descripcion":  "Bolsas 100 x 110 Residuos Peligrosos de 45 Micrones x 100 u."
     },
     {
         "nombre": "Bolsas conjunto",
         "imagen": "../imgs/productos/bolsas/bolsas conjunto.avif",
-        "descripcion": "Conjunto de bolsas para diferentes usos."
+        "descripcion": "Conjunto de bolsas para Reciclar y Residuos Peligrosos x 100 u de c/u."
     },
     ],
 
@@ -376,122 +376,122 @@ const productos = {
          "tipo": "Cera",
          "imagen": "../imgs/productos/Qualiquimica/Cera Autobrillo.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Cera Autobrillo Negra 5 lt x 4u."
+         "descripcion": "Cera Autobrillo Negra 5 lts."
     },
      {
          "nombre": "Cera Brillo Intenso Natural",
          "tipo": "Cera",
          "imagen": "../imgs/productos/Qualiquimica/Cera incolora .jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Cera Brillo Intenso 5 lt x 4u."
+         "descripcion": "Cera Brillo Intenso 5 lts."
     },     
      {
          "nombre": "Detergente Lavavajilla",
          "tipo": "Detergente",
          "imagen": "../imgs/productos/Qualiquimica/Multilimpiador Vajilla.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Detergente Lavavajilla 5 lt x 4u."
+         "descripcion": "Detergente Lavavajilla 5 lts."
     },
      {
          "nombre": "Eliminador de Olores",
          "tipo": "Desinfectantes",
          "imagen": "../imgs/productos/Qualiquimica/Eliminador de olores.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Eliminador de Olores 5 lt x 4u. Ideal para baños. "
+         "descripcion": "Eliminador de Olores 5 lts. Ideal para baños. "
     },
      {
          "nombre": "Jabón Líquido QualiBest",
          "tipo": "Jabondemano",
          "imagen": "../imgs/productos/Qualiquimica/Higiene de manos.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Jabón Líquido para Manos Floral 5 lt x 4u."
+         "descripcion": "Jabón Líquido para Manos Floral 5 lts."
     },
      {
          "nombre": "Jabón Líquido QualiBest",
          "tipo": "Jabondemano",
          "imagen": "../imgs/productos/Qualiquimica/Higiene de manos.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Jabón Líquido para Manos Lavanda 5 lt x 4u."
+         "descripcion": "Jabón Líquido para Manos Lavanda 5 lts."
     },
      {
          "nombre": "Removedor de Grasas Carbonizadas QualiBest",
          "tipo": "Antigrasa",
          "imagen": "../imgs/productos/Qualiquimica/Removedordegrasas.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Removedor de grasas 5 lt x 4 u. Ideal para Hornos y Freidoras."
+         "descripcion": "Removedor de grasas 5 lts. Ideal para Hornos y Freidoras."
     },
      {
          "nombre": "Limpiador de Vidrios QualiBest",
          "tipo": "Limpiavidrios",
          "imagen": "../imgs/productos/Qualiquimica/Limpia Vidrios.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Limpiador Profesional de Vidrios 5 lt x 4 u."
+         "descripcion": "Limpiador Profesional de Vidrios 5 lts."
     },
      {
          "nombre": "Desengrasante para Piso D500 QualiBest",
          "tipo": "Antigrasa",
          "imagen": "../imgs/productos/Qualiquimica/D-500.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Desengrasante Profesional Ideal Grasas Pesadas 5 lt x 4 u."
+         "descripcion": "Desengrasante Profesional Ideal Grasas Pesadas 5 lts."
     },
      {
          "nombre": "Limpiador Amonio de Cuaternario Qualibest",
          "tipo": "Desinfectantes",
          "imagen": "../imgs/productos/Qualiquimica/Cuaternario.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Limpiador Profesional Cuaternario Perfumado 5 lt x 4 u." 
+         "descripcion": "Limpiador Profesional Cuaternario Perfumado 5 lts." 
     },
      {
          "nombre": "Limpiador Multiuso Qualibest",
          "tipo": "Antigrasa",
          "imagen": "../imgs/productos/Qualiquimica/Limpiador Multiuso.jpg",
          "marca": "QualiQuimica",
-         "descripcion": "Limpiador Para todo tipo de Grasas 5 lt x 4 u."
+         "descripcion": "Limpiador Para todo tipo de Grasas 5 lts."
     },
      {
          "nombre": "Limpiador Desodorante Qualibest",
          "tipo": "Desodorantesdepiso",
          "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
-         "descripcion": "Limpiador Desodorante de Piso Lavanda 5 lt x 4 u"
+         "descripcion": "Limpiador Desodorante de Piso Lavanda 5 lts."
     },
      {
          "nombre": "Limpiador Desodorante Qualibest",
          "tipo": "Desodorantesdepiso",
          "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
-         "descripcion": "Limpiador Desodorante de Piso Limon 5 lt x 4 u"
+         "descripcion": "Limpiador Desodorante de Piso Limon 5 lts."
     },
      {
          "nombre": "Limpiador Desodorante Qualibest",
          "tipo": "Desodorantesdepiso",
          "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
-         "descripcion": "Limpiador Desodorante de Piso Cherry 5 lt x 4 u"
+         "descripcion": "Limpiador Desodorante de Piso Cherry 5 lts."
     },
      {
          "nombre": "Limpiador Desodorante Qualibest",
          "tipo": "Desodorantesdepiso",
          "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
-         "descripcion": "Limpiador Desodorante de Piso Floral 5 lt x 4 u."
+         "descripcion": "Limpiador Desodorante de Piso Floral 5 lts"
      },
      {
         "nombre": "Lavandina",
         "tipo": "Lavandina",
         "imagen": "../imgs/productos/newclor/Lavandina.png",
         "marca": "New Clor",
-        "descripcion": "Lavandina Concentrada 5 lt x 4 u."
+        "descripcion": "Lavandina Concentrada 5 lts.."
    },
     {
         "nombre": "Cloro Líquido",
         "tipo": "Cloro",
         "imagen": "../imgs/productos/newclor/Cloro.png",
         "marca": "New Clor",
-        "descripcion": "Cloro Concentrado 5lt x 4 u."
+        "descripcion": "Cloro Concentrado 5lts."
    },
    {
         "nombre": "Alcohol en Gel",
         "tipo": "Alcohol",
         "imagen": "../imgs/productos/newclor/Alcoholengel.png",
         "marca": "New Clor",
-        "descripcion": "Alcohol en Gel Desinfectante 5lt x 4u."
+        "descripcion": "Alcohol en Gel Desinfectante 5lts."
    }
     ],
     Dispensadores:
@@ -572,6 +572,13 @@ const productos = {
             "marca": "Ecoplastico",
             "descripcion": "Pulverizador con Gatillo 1 Litro x 4 u."
 
+    },
+    {
+        "nombre": "Pulverizador Giber",
+        "tipo": "Pulverizador",
+        "imagen":"../imgs/productos/dispensers/gilber.png",
+        "marca": "Giber",
+        "descripcion": "Pulverizador A Presión Giber H- 1.5lts"
     },
         {
             "nombre": "Regadera Plástica Azul",
@@ -716,7 +723,7 @@ const productos = {
     {
         "nombre": "Bandolera Poliester",
         "tipo": "Seguridadvial",
-        "imagen": "../imgs/productos/Indumentaria/bandolera.png",
+        "imagen": "../imgs/productos/Indumentaria/bandolera.PNG",
         "marca": "Prentex",
         "descripcion": "Bandolera Poliester Amarillo/Naranja Fluo con Reflex"
     },
@@ -765,10 +772,17 @@ const productos = {
             "marca": "Romyl",
             "descripcion": "Escobillon Barrendero Industrial 35 cm"
       },
+      {
+        "nombre": "Escobilla Limpia Vidrio",
+        "tipo": "Escobillones",
+        "imagen": "../imgs/productos/Romyl/Limpiavidrio.webp",
+        "marca": "La Gauchita",
+        "descripcion": "Limpiavidrios Con Cabo La Gauchita Lava Y Seca Color Blanco"
+      },
         {
             "nombre": "Trapo de Piso",
             "tipo": "Trapos",
-            "imagen": "../imgs/productos/Romyl/trapo de piso gris.jpg",
+            "imagen": "../imgs/productos/Romyl/trapodepisogris.jpg",
             "marca": "Romyl",
             "descripcion": "Trapo de Piso Profesional 60x70 cm Gris"
        },
@@ -947,7 +961,79 @@ const productos = {
             "marca": "Royco",
             "descripcion": "Carro Auxiliar con tres bandejas y manijas laterales para su fácil manejo."
         },
-
+    ],
+    Herramientas:
+    [
+        {
+            "nombre": "Aspiradora Hogareña",
+            "tipo": "Aspiradoras",
+            "imagen": "../imgs/productos/herramientas/gamma/aspiradorag2204.webp",
+            "marca": "Gamma",
+            "descripcion": "Aspiradora Gamma G2204ara 35 Lts polvo/liquido 1400w"
+       },
+        {
+            "nombre": "Aspiradora Industrial",
+            "tipo": "Aspiradoras",
+            "imagen": "../imgs/productos/herramientas/gamma/aspiradora1000.jpg",
+            "marca": "Gamma",
+            "descripcion": "Aspiradora Industrial 2x 1000 60 Litros Color Acero inoxidable/Azul"
+       },
+        {
+            "nombre": "Compresor De Aire",
+            "tipo": "Compresores",
+            "imagen": "../imgs/productos/herramientas/gamma/compresor150lt.webp",
+            "marca": "Gamma",
+            "descripcion": "Compresor De Aire 150 Lt Correa Gamma Trifasico 380v Trifásica Frecuencia 50 Hz"
+       },
+        {
+            "nombre": "Compresor De Aire",
+            "tipo": "Compresores",
+            "imagen": "../imgs/productos/herramientas/gamma/compresor50lt.webp",
+            "marca": "Gamma",
+            "descripcion": "Compresor Gamma 2,5 Hp 50 L 220 V Frecuencia 50 Khz - G2851"
+       },
+        {
+            "nombre": "Escalera Aluminio",
+            "tipo": "Escalera",
+            "imagen": "../imgs/productos/herramientas/gamma/escalerag216.jpg",
+            "marca": "Gamma",
+            "descripcion": "Escalera Reforzada De Aluminio 4 Escalones Gamma - G216ar"
+       },
+        {
+            "nombre": "Escalera Aluminio ",
+            "tipo": "Escalera",
+            "imagen": "../imgs/productos/herramientas/gamma/escalerag218.webp",
+            "marca": "Gamma",
+            "descripcion": "Escalera Aluminio Reforzada 6 Escalones - G218ar"
+       },
+        {
+            "nombre": "Escalera Articulada",
+            "tipo": "Escalera",
+            "imagen": "../imgs/productos/herramientas/gamma/escalerag215.webp",
+            "marca": "Gamma",
+            "descripcion": "Escalera aluminio Articulada Dielectrica X 4 - G215ar"
+       },
+        {
+            "nombre": "Escalera Extensible",
+            "tipo": "Escalera",
+           "imagen": "../imgs/productos/herramientas/gamma/escalera213.jpg",
+            "marca": "Gamma",
+            "descripcion": "Escalera Aluminio Extensible Dieléctrica 2 X 10 - G213ar"
+       },
+        {
+            "nombre": "Taladro Atornillador",
+            "tipo": "Taladros",
+            "imagen": "../imgs/productos/herramientas/gamma/taladrog12103.webp",
+            "marca": "Gamma",
+            "descripcion": "Taladro Atornillador Gamma 21 Vcc Bateria Ion Litio - G12103ar"
+       },
+        {
+            "nombre": "Taladro Atornillador",
+            "tipo": "Taladro",
+            "imagen": "../imgs/productos/herramientas/gamma/taladro13mm.webp",
+            "marca": "Gamma",
+            "descripcion": "Taladro Atornillador Percutor 13mm Gamma 20v Brushless 2 Bat"
+       }
     ]
 };
 // Función para cargar productos iniciales o por filtros
