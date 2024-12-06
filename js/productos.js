@@ -1241,7 +1241,7 @@ function enviarPorCorreo() {
         mensaje += `${item.nombre} - ${item.descripcion} - Cantidad: ${item.cantidad}\n`;
     });
 
-    const mailtoLink = `mailto:?subject=Solicitud de Cotización&body=${encodeURIComponent(mensaje)}`;
+    const mailtoLink = `mailto:info@ecogroupservice.com.ar?subject=Solicitud de Cotización&body=${encodeURIComponent(mensaje)}`;
     window.location.href = mailtoLink;
 
 }

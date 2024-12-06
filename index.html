@@ -12,13 +12,19 @@
 <body>
     <!-- Navbar -->
     <div class="mini-div" style="background-color: rgb(48, 48, 48); padding: 10px; text-align: center; font-size: 14px; color: #ffffff; margin-bottom: 0px;">
-        <marquee behavior="scroll" direction="left" scrollamount="6">DESCUBRE NUESTROS PRODUCTOS DE LIMPIEZA! - ENVÍOS A TODO EL PAÍS - PRESUPUESTO INMEDIATO</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="6">¡DESCUBRE NUESTROS PRODUCTOS DE LIMPIEZA! - ENVÍOS A TODO EL PAÍS - PRESUPUESTO INMEDIATO<span style="margin-left: 20vh;">¡DESCUBRE NUESTROS PRODUCTOS DE LIMPIEZA! - ENVÍOS A TODO EL PAÍS - PRESUPUESTO INMEDIATO</span></marquee> 
     </div>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="imgs/logos/logoecogrouppng.png" alt="Logo Empresa de Limpieza" height="50" class="d-inline-block align-top">
             </a>
+            <div class="d-flex justify-content-center w-100">
+                <form id="search-form-index" class="d-flex" action="./htmls/productos.html" method="GET" style="width: 50%;">
+                    <input name="query" class="form-control me-2" type="text" placeholder="Buscar productos..." aria-label="Buscar">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -197,30 +203,30 @@
                 <div class="carousel-item active">
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=QualiQuimica">
-                                    <img src="imgs/logosmarcas/logo QQ .jpg" class="card-img-top logo-marcas mx-auto" alt="Producto 1" style="object-fit: scale-down; width: 90%; margin: none;">
+                                    <img src="imgs/logosmarcas/logo QQ .jpg" class="card-img-top logo-marcas mx-auto" alt="Producto 1" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=Elegante">
-                                    <img src="imgs/logosmarcas/LOGO-ELEGANTE.png" class="card-img-top logo-marcas mx-auto" alt="Producto 2" style="object-fit: scale-down; width: 80%; margin: none;">
+                                    <img src="imgs/logosmarcas/LOGO-ELEGANTE.png" class="card-img-top logo-marcas mx-auto" alt="Producto 2" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=Mediglove">
-                                    <img src="imgs/logosmarcas/Mediglove Logo.png" class="card-img-top logo-marcas mx-auto" alt="Producto 3" style="object-fit: scale-down; width: 100%; margin: none;">
+                                    <img src="imgs/logosmarcas/Mediglove Logo.png" class="card-img-top logo-marcas mx-auto" alt="Producto 3" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=Paper Pro">
-                                    <img src="imgs/logos/LOGO NEGRO.png" class="card-img-top logo-marcas mx-auto" alt="Producto 4" style="object-fit: scale-down; width: 70%; margin: none;">
+                                    <img src="imgs/logos/LOGO NEGRO.png" class="card-img-top logo-marcas mx-auto" alt="Producto 4" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
@@ -229,30 +235,62 @@
                 <div class="carousel-item">
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=scjhonson">
-                                    <img src="imgs/logosmarcas/scj_logo1.svg" class="card-img-top logo-marcas mx-auto" alt="Producto 5" style="object-fit: scale-down; width: 90%; margin: auto;">
+                                    <img src="imgs/logosmarcas/scj_logo1.svg" class="card-img-top logo-marcas mx-auto" alt="Producto 5" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
                         <div class="col-6  col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=New Clor">
-                                    <img src="imgs/logosmarcas/newclor logo .png" class="card-img-top logo-marcas mx-auto" alt="Producto 6" style="object-fit: scale-down; width: 80%; margin: auto;">
+                                    <img src="imgs/logosmarcas/newclor logo .png" class="card-img-top logo-marcas mx-auto" alt="Producto 6" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=wurth">
-                                    <img src="./imgs/logosmarcas/wurth.png" class="card-img-top logo-marcas mx-auto" alt="Producto 7" style="object-fit: scale-down; width: 100%; margin: auto;">
+                                    <img src="./imgs/logosmarcas/wurth.png" class="card-img-top logo-marcas mx-auto" alt="Producto 7" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="card cardmarcas border-0">
+                            <div class="card cardmarcas border-0 h-100">
                                 <a href="./htmls/productos.html?marca=maxaroma">
-                                    <img src="imgs/logosmarcas/byMaxAromaHome.png" class="card-img-top logo-marcas mx-auto" alt="Producto 8" style="object-fit: scale-down; width: 70%; margin: auto;">
+                                    <img src="imgs/logosmarcas/byMaxAromaHome.png" class="card-img-top logo-marcas mx-auto" alt="Producto 8" style="object-fit: contain; height: 150px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-6  col-md-3">
+                            <div class="card cardmarcas border-0 h-100">
+                                <a href="./htmls/productos.html?marca=Gamma">
+                                    <img src="imgs/logosmarcas/gamma.png" class="card-img-top logo-marcas mx-auto" alt="Producto 8" style="object-fit: contain; height: 150px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="card cardmarcas border-0 h-100">
+                                <a href="./htmls/productos.html?marca=Romyl">
+                                    <img src="imgs/logosmarcas/logo-genio.png" class="card-img-top logo-marcas mx-auto" alt="Producto 7" style="object-fit: contain; height: 150px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="card cardmarcas border-0 h-100">
+                                <a href="./htmls/productos.html?marca=Conoflex">
+                                    <img src="./imgs/logosmarcas/logoconoflexnaranja.png" class="card-img-top logo-marcas mx-auto" alt="Producto 9" style="object-fit: contain; height: 150px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="card cardmarcas border-0 h-100">
+                                <a href="./htmls/productos.html?marca=Prentex">
+                                    <img src="imgs/logosmarcas/prentexlogo.png" class="card-img-top logo-marcas mx-auto" alt="Producto 10" style="object-fit: contain; height: 150px;">
                                 </a>
                             </div>
                         </div>
