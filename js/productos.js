@@ -13,22 +13,22 @@ const productos = {
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 60 x 90 de 30 Micrones x 200 u."
+        "descripcion": "Bolsas 60 x 90 de 30 Micrones x 200u."
     },
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 45 x 60 de 25 Micrones x 200 u."
+        "descripcion": "Bolsas 45 x 60 de 25 Micrones x 200u."
     },
     {
         "nombre": "Bolsa de residuos azul",
         "imagen": "../imgs/productos/bolsas/bolsa residuos azul.jpg",
-        "descripcion": "Bolsas 100 x 110 - Residuos Peligrosos Azul de 45 Micrones x 100 u."
+        "descripcion": "Bolsas 100 x 110 Residuos Peligrosos Azul de 45 Micrones x 100 u."
     },
     {
         "nombre": "Bolsa transparente",
         "imagen": "../imgs/productos/bolsas/bolsa transparente.jpg",
-        "descripcion": "Bolsas 100 x 110 Residuos Transparentes de 45 Micrones x 200 u."
+        "descripcion": "Bolsas 100 x 110 Residuos Transparentes de 45 Micrones x 50 u."
     },
     {
         "nombre": "Bolsas de basura Eco",
@@ -77,28 +77,28 @@ const productos = {
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro Reforzado talle S"
+            "descripcion": "Guantes de Nitrilo Negro talle S"
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro Reforzado talle M"
+            "descripcion": "Guantes de Nitrilo Negro talle M"
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro Reforzado talle L"
+            "descripcion": "Guantes de Nitrilo Negro talle L"
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro Reforzado talle XL"
+            "descripcion": "Guantes de Nitrilo Negro talle XL"
         },
         {
             "nombre": "Guantes de Nitrilo",
@@ -644,7 +644,7 @@ const productos = {
         {
             "nombre": "Cuña Tope Calza Seguridad Camión Conoflex",
             "tipo": "topes",
-            "imagen": "../imgs/productos/Seguridadvial/cuña.webp",
+            "imagen": "../imgs/productos/Seguridadvial/cuna.webp",
             "marca": "Conoflex",
             "descripcion": "Cuña Tope Calza Seguridad Camion 5,5 kg."
 
