@@ -17,8 +17,6 @@ carousel-inner {
 .seccion1 {
     padding: 0 !important; /* Eliminar los paddings */
     margin: 0 !important; /* Eliminar los márgenes */
-    margin-bottom: 15vh !important; /* Eliminar los márgenes */
-    height: 64vh; /* Ocupa toda la altura del viewport */
 }
 .navbar {
     background-size: cover;
