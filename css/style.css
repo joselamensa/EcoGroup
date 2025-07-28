@@ -100,10 +100,12 @@ carousel-inner {
 }
 
 .sidebar .list-group-item:hover {
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background: linear-gradient(135deg, #3498db, #2ecc71);
     color: #fff;
     transform: translateX(5px);
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    background-size: 200% 100%;
+    animation: waves 1.5s infinite;
 }
 
 .sidebar .list-group-item::before {
@@ -137,7 +139,7 @@ carousel-inner {
 }
 
 .sub-list .list-group-item:hover {
-    background: #3498db; /* Color al pasar el mouse */
+    background: #0070bb; /* Color al pasar el mouse */
     color: #fff; /* Color del texto al pasar el mouse */
 }
 
@@ -385,4 +387,93 @@ carousel-inner {
     body.sidebar-open .col-md-9 {
         margin-left: 80%;
     }
+}
+
+/* Estilos para la visualización de productos en móviles */
+@media (max-width: 767px) {
+    .row {
+        margin-left: 0; /* Eliminar margen izquierdo */
+        margin-right: 0; /* Eliminar margen derecho */
+        padding-left: 0; /* Eliminar margen izquierdo */
+        padding-right: 0; /* Eliminar margen derecho */
+    }
+
+    .col {
+        padding: 5px; /* Espaciado entre columnas */
+    }
+
+    .card {
+        border: 1px solid #e0e0e0; /* Borde ligero para las tarjetas */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        transition: transform 0.2s; /* Transición suave al hacer hover */
+        max-width: 100%; /* Asegura que la tarjeta no se estire demasiado */
+        margin: auto; /* Centra la tarjeta */
+    }
+
+    .card-body {
+        padding: 10px; /* Espaciado interno en el cuerpo de la tarjeta */
+    }
+
+    .card-title {
+        font-size: 1.1rem; /* Tamaño de fuente más grande para el título */
+        text-align: center; /* Centrar el texto */
+    }
+
+    .card-text {
+        font-size: 0.85rem; /* Tamaño de fuente más pequeño para la descripción */
+        text-align: center; /* Centrar el texto */
+        overflow: hidden; /* Evitar que el texto se desborde */
+        text-overflow: ellipsis; /* Agregar puntos suspensivos si el texto es muy largo */
+        display: -webkit-box; /* Para el truncamiento */
+        -webkit-box-orient: vertical; /* Orientación vertical */
+    }
+    .boton-agregar {
+        width: 100%; /* Hacer que el botón ocupe todo el ancho disponible */
+        font-size: 0.8rem; /* Ajustar el tamaño de fuente para que sea más legible */
+        text-align: center; /* Centrar el texto */
+        border-radius: 20px; /* Agregar borde redondeado */
+    }
+}
+
+/* Estilos para el preview de imágenes en el admin */
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-preview:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* Estilos para el input de archivo personalizado */
+.form-control[type="file"] {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    background-color: #fff;
+}
+
+.form-control[type="file"]:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilos para las imágenes en la tabla de productos */
+.producto-imagen {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.producto-imagen:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
 }

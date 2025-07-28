@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Eco Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .admin-header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+        }
+        .product-card {
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .price-input {
+            width: 100px;
+        }
+        .image-preview {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: cover;
+        }
+        .sidebar {
+            background: #34495e;
+            min-height: calc(100vh - 76px);
+        }
+        .sidebar .nav-link {
+            color: #ecf0f1;
+            transition: all 0.3s;
+        }
+        .sidebar .nav-link:hover {
+            background: #2c3e50;
+            color: #3498db;
+        }
+        .sidebar .nav-link.active {
+            background: #3498db;
+            color: white;
+        }
+        .stats-card {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="loginSection" class="admin-container d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-card p-4">
+                        <div class="text-center mb-4">
+                            <img src="imgs/logos/logoempresanav.png" alt="Eco Group" height="60" class="mb-3">
+                            <h3>Panel de Administrador</h3>
+                            <p class="text-muted">Ingresa tus credenciales</p>
+                        </div>
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <a href="index.html" class="text-decoration-none">
+                                <i class="fas fa-arrow-left me-2"></i>Volver al sitio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="d-none">
+        <!-- Header -->
+        <nav class="admin-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h4 class="mb-0">
+                            <i class="fas fa-cog me-2"></i>Panel de Administrador
+                        </h4>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <span class="me-3">Bienvenido, <span id="adminUsername"></span></span>
+                        <button class="btn btn-outline-light btn-sm" onclick="cerrarSesion()">
+                            <i class="fas fa-sign-out-alt me-1"></i>Cerrar Sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-3 col-lg-2 p-0">
+                    <div class="sidebar p-3">
+                        <nav class="nav flex-column">
+                            <a class="nav-link active" href="#" onclick="mostrarSeccion('dashboard')">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                            <a class="nav-link" href="#" onclick="mostrarSeccion('productos')">
+                                <i class="fas fa-box me-2"></i>Gestionar Productos
+                            </a>
+                            <a class="nav-link" href="#" onclick="mostrarSeccion('categorias')">
+                                <i class="fas fa-tags me-2"></i>Categorías
+                            </a>
+                            <a class="nav-link" href="#" onclick="mostrarSeccion('banners')">
+                                <i class="fas fa-images me-2"></i>Banners
+                            </a>
+                            <a class="nav-link" href="#" onclick="mostrarSeccion('configuracion')">
+                                <i class="fas fa-cog me-2"></i>Configuración
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-md-9 col-lg-10 p-4">
+                    <!-- Dashboard Section -->
+                    <div id="dashboardSection" class="seccion-admin">
+                        <h2 class="mb-4">Dashboard</h2>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div class="stats-card p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4 id="totalProductos">0</h4>
+                                            <p class="mb-0">Total Productos</p>
+                                        </div>
+                                        <i class="fas fa-box fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="stats-card p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4 id="totalCategorias">0</h4>
+                                            <p class="mb-0">Categorías</p>
+                                        </div>
+                                        <i class="fas fa-tags fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="stats-card p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4 id="productosSinPrecio">0</h4>
+                                            <p class="mb-0">Sin Precio</p>
+                                        </div>
+                                        <i class="fas fa-exclamation-triangle fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="stats-card p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4 id="totalBanners">0</h4>
+                                            <p class="mb-0">Total Banners</p>
+                                        </div>
+                                        <i class="fas fa-images fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="stats-card p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4 id="ultimaActualizacion">-</h4>
+                                            <p class="mb-0">Última Actualización</p>
+                                        </div>
+                                        <i class="fas fa-clock fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Productos Section -->
+                    <div id="productosSection" class="seccion-admin d-none">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Gestionar Productos</h2>
+                            <div>
+                                <button class="btn btn-info me-2" onclick="verificarPreciosGuardados()">
+                                    <i class="fas fa-eye me-2"></i>Ver Precios
+                                </button>
+                                <button class="btn btn-warning me-2" onclick="limpiarTodosLosPrecios()">
+                                    <i class="fas fa-eraser me-2"></i>Limpiar Precios
+                                </button>
+                                <button class="btn btn-success me-2" onclick="generarArchivoJS()">
+                                    <i class="fas fa-download me-2"></i>Generar JS
+                                </button>
+                                <button class="btn btn-secondary me-2" onclick="forzarRecargaProductos()">
+                                    <i class="fas fa-sync-alt me-2"></i>Recargar Productos
+                                </button>
+                                <button class="btn btn-primary" onclick="mostrarModalProducto()">
+                                    <i class="fas fa-plus me-2"></i>Agregar Producto
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Filtros -->
+                        <div class="row mb-4">
+                            <div class="col-md-3">
+                                <select class="form-select" id="filtroCategoria">
+                                    <option value="">Todas las categorías</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="buscarProducto" placeholder="Buscar producto...">
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select" id="filtroPrecio">
+                                    <option value="">Todos los precios</option>
+                                    <option value="sin-precio">Sin precio</option>
+                                    <option value="con-precio">Con precio</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-secondary w-100" onclick="aplicarFiltros()">
+                                    <i class="fas fa-filter me-2"></i>Aplicar Filtros
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tabla de Productos -->
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Categoría</th>
+                                        <th>Precio</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaProductos">
+                                    <!-- Los productos se cargarán dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Categorías Section -->
+                    <div id="categoriasSection" class="seccion-admin d-none">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Gestionar Categorías</h2>
+                            <button class="btn btn-primary" onclick="mostrarModalCategoria()">
+                                <i class="fas fa-plus me-2"></i>Agregar Categoría
+                            </button>
+                        </div>
+                        <div class="row" id="categoriasGrid">
+                            <!-- Las categorías se cargarán dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Banners Section -->
+                    <div id="bannersSection" class="seccion-admin d-none">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Gestionar Banners</h2>
+                            <button class="btn btn-primary" onclick="mostrarModalBanner()">
+                                <i class="fas fa-plus me-2"></i>Agregar Banner
+                            </button>
+                        </div>
+                        
+                        <div class="row" id="bannersGrid">
+                            <!-- Los banners se cargarán dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Configuración Section -->
+                    <div id="configuracionSection" class="seccion-admin d-none">
+                        <h2>Configuración del Sistema</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Configuración General</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Moneda</label>
+                                            <select class="form-select" id="moneda">
+                                                <option value="ARS">Peso Argentino (ARS)</option>
+                                                <option value="USD">Dólar Estadounidense (USD)</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">IVA (%)</label>
+                                            <input type="number" class="form-control" id="iva" value="21">
+                                        </div>
+                                        <button class="btn btn-primary" onclick="guardarConfiguracion()">
+                                            Guardar Configuración
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Respaldo de Datos</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-success mb-2 w-100" onclick="exportarDatos()">
+                                            <i class="fas fa-download me-2"></i>Exportar Datos
+                                        </button>
+                                        <button class="btn btn-warning mb-2 w-100" onclick="importarDatos()">
+                                            <i class="fas fa-upload me-2"></i>Importar Datos
+                                        </button>
+                                        <input type="file" id="archivoImportar" accept=".json" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto -->
+    <div class="modal fade" id="modalProducto" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProductoTitulo">Agregar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formProducto">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre del Producto</label>
+                                    <input type="text" class="form-control" id="productoNombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Categoría</label>
+                                    <select class="form-select" id="productoCategoria" required>
+                                        <!-- Se llenará dinámicamente -->
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tipo</label>
+                                    <input type="text" class="form-control" id="productoTipo">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Marca</label>
+                                    <input type="text" class="form-control" id="productoMarca">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Precio</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" id="productoPrecio" step="0.01" min="0">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="productoDescripcion" rows="3" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Imagen</label>
+                                    <input type="file" class="form-control" id="productoImagen" accept="image/*">
+                                    <div class="mt-2">
+                                        <img id="previewImagen" class="image-preview d-none" alt="Preview">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarProducto()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Categoría -->
+    <div class="modal fade" id="modalCategoria" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Categoría</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formCategoria">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de la Categoría</label>
+                            <input type="text" class="form-control" id="categoriaNombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea class="form-control" id="categoriaDescripcion" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Icono (FontAwesome)</label>
+                            <input type="text" class="form-control" id="categoriaIcono" placeholder="fas fa-box">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarCategoria()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Banner -->
+    <div class="modal fade" id="modalBanner" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBannerTitulo">Agregar Banner</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formBanner">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Título del Banner</label>
+                                    <input type="text" class="form-control" id="bannerTitulo" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="bannerDescripcion" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tipo de Banner</label>
+                                    <select class="form-select" id="bannerTipo" required>
+                                        <option value="desktop">Desktop</option>
+                                        <option value="mobile">Mobile</option>
+                                        <option value="ambos">Ambos</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Orden de Visualización</label>
+                                    <input type="number" class="form-control" id="bannerOrden" value="1" min="1">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Imagen del Banner</label>
+                                    <input type="file" class="form-control" id="bannerImagen" accept="image/webp,.webp">
+                                    <div class="mt-2">
+                                        <img id="previewBannerImagen" class="image-preview d-none" alt="Preview" style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 4px;">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">URL de Enlace (opcional)</label>
+                                    <input type="url" class="form-control" id="bannerUrl" placeholder="https://...">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="bannerActivo" checked>
+                                        <label class="form-check-label" for="bannerActivo">
+                                            Banner Activo
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarBanner()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/productos-cargador.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html> 

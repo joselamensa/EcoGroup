@@ -1,0 +1,1158 @@
+{
+    "bolsas": [
+        {
+            "nombre": "Bolsas Residuo Negra",
+            "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
+            "descripcion": "Bolsas 100 x 110 de 40 Micrones x 200 u. ",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsas Residuo Tambor",
+            "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
+            "descripcion": "Bolsas 100 x 120 de 36 Micrones x 200 u.",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsas Residuo Negra",
+            "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
+            "descripcion": "Bolsas 60 x 90 de 30 Micrones x 200u.",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsas Residuo Negra",
+            "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
+            "descripcion": "Bolsas 45 x 60 de 25 Micrones x 200u.",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsa de residuos azul",
+            "imagen": "../imgs/productos/bolsas/bolsa residuos azul.jpg",
+            "descripcion": "Bolsas 100 x 110 Residuos Peligrosos Azul de 45 Micrones x 100 u.",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsa transparente",
+            "imagen": "../imgs/productos/bolsas/bolsa transparente.jpg",
+            "descripcion": "Bolsas 100 x 110 Residuos Transparentes de 45 Micrones x 50 u.",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsas de basura Eco",
+            "imagen": "../imgs/productos/bolsas/BolsaResiduoVerde.jpg",
+            "descripcion": "Bolsas 100 x 110 de Residuos Verde x 200 u - Ideal Reciclaje.",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsas amarillas",
+            "imagen": "../imgs/productos/bolsas/bolsas amarillas.jpg",
+            "descripcion":  "Bolsas 100 x 110 Residuos Peligrosos de 45 Micrones x 100 u.",
+            "precio": 0
+        },
+        {
+            "nombre": "Bolsas conjunto",
+            "imagen": "../imgs/productos/bolsas/bolsas conjunto.avif",
+            "descripcion": "Conjunto de bolsas para Reciclar y Residuos Peligrosos x 100 u de c/u.",
+            "precio": 0
+        }
+        ],
+    
+    
+        "guantes": [
+            {
+                "nombre": "Guantes de látex",
+                "tipo": "latex",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/latexsinpolvo.png",
+                "descripcion": "Guantes de látex sin Polvo talle S x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de látex",
+                "categoria": "Guantes",
+                "tipo": "latex",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/latexsinpolvo.png",
+                "descripcion": "Guantes de látex sin Polvo talle M x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de látex",
+                "categoria": "Guantes",
+                "tipo": "latex",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/latexsinpolvo.png",
+                "descripcion": "Guantes de látex sin Polvo talle L x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+                "descripcion": "Guantes de Nitrilo Negro talle S x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+                "descripcion": "Guantes de Nitrilo Negro talle M x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+                "descripcion": "Guantes de Nitrilo Negro talle L x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
+                "descripcion": "Guantes de Nitrilo Negro talle XL x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/nitrilolila.png",
+                "descripcion": "Guantes de Nitrilo Lila talle S x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/nitrilolila.png",
+                "descripcion": "Guantes de Nitrilo Negro Lila talle M x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/nitrilolila.png",
+                "descripcion": "Guantes de Nitrilo Negro Lila talle L x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guantes de Nitrilo",
+                "tipo": "Nitrilo",
+                "marca": "Mediglove",
+                "imagen": "../imgs/productos/guantes/nitrilolila.png",
+                "descripcion": "Guantes de Nitrilo Negro Lila talle XL x 100 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Guante de Kevlar",
+                "tipo": "Seguridad",
+                "imagen": "../imgs/productos/guantes/guantekevlar.jpg",
+                "marca": "Prentex",
+                "descripcion": "Guante Kevlar Tejido Forrado En Lana Grueso 50cm Hornero 350",
+                "precio": 0
+           },
+            {
+                "nombre": "Guante PVC",
+                "tipo": "Seguridad",
+                "imagen": "../imgs/productos/guantes/guantepvc.jpg",
+                "marca": "Prentex",
+                "descripcion": "Guante PVC Hidrocarburo Largo Liviano 40cm Azul/Rojo",
+                "precio": 0
+           },
+            {
+                "nombre": "Guante De Nitrilo Anticorte",
+                "tipo": "Seguridad",
+                "imagen": "../imgs/productos/guantes/anticorte.webp",
+                "marca": "Prentex",
+                "descripcion": "Guante Mapa Titan 392 Puño Elastizado",
+                "precio": 0
+            },
+            {
+                "nombre": "Manopla De Polietileno",
+                "tipo": "Higiene",
+                "imagen": "../imgs/productos/guantes/polietileno.webp",
+                "marca": "Mediglove",
+                "descripcion": "Manopla Descartable x 100 u.",
+                "precio": 0
+    
+           },
+            {
+                "nombre": "Guantes De Limpieza Amarrillo",
+                "tipo": "Latex",
+                "imagen": "../imgs/productos/guantes/amarillolatex.webp",
+                "marca": "Romyl",
+                "descripcion": "Guantes Goma Limpieza Latex 12 Pares",
+                "precio": 0
+           }
+        ],
+        "Desinfectantes": [
+            {
+                "nombre": "Desodorante de Ambientes",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/AersolGlade.webp",
+                "descripcion": "Glade Desodorante de Ambientes Aerosol 380 ml",
+                "precio": 0
+            },
+            {
+                "nombre": "Lustrador de Muebles Blem",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/Blem Original.png",
+                "descripcion": "Aerosol Lustramuebles Blem Original 380 ml",
+                "precio": 0
+            },
+            {
+                "nombre": "Lysoform Aerosol Desinfectante",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/Lysoform-aerosol-desin.webp",
+                "descripcion": "Desinfectante de ambientes en aerosol",
+                "precio": 0
+            },
+            {
+                "nombre": "Raid",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/Raid .webp",
+                "descripcion": "Insecticida en aerosol para el control de plagas.",
+                "precio": 0
+            },
+            {
+                "nombre": "Pato Purific",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/Pato Purific.webp",
+                "descripcion": "Gel limpiador para el inodoro.",
+                "precio": 0
+            },
+            {
+                "nombre": "Mister Musculo",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/Mister Musculo Crema.jpg",
+                "descripcion": "Crema limpiadora de hornos, elimina grasa y suciedad de manera efectiva.",
+                "precio": 0
+            },
+            {
+                "nombre": "Ceramicol",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/lustramuebles ceramicol.webp",
+                "descripcion": "Lustrador para muebles y más...",
+                "precio": 0
+            },
+            {
+                "nombre": "Off",
+                "tipo": "Desinfectante",
+                "marca": "scjhonson",
+                "imagen": "../imgs/productos/Aromatizantes/scjhonson/off.webp",
+                "descripcion": "Insecticida en aerosol.",
+                "precio": 0
+            },        
+            {
+                "nombre": "Limpia Metales Acero Inox Würth",
+                "tipo": "Wurth",
+                "imagen": "../imgs/productos/Aromatizantes/wurth/limpiadordemetals.webp",
+                "marca": "wurth",
+                "descripcion": "Limpiador En Spray Para Acero Inoxidable Würth 400 Ml",
+                "precio": 0
+            },
+            {
+                "nombre": "Aromatizante de Ambiente Max Aroma",
+                "tipo": "Max Aroma",
+                "imagen": "../imgs/productos/Aromatizantes/maxaroma/maxaroma.jpg",
+                "marca": "maxaroma",
+                "descripcion": "Aromatizante x12 u, Max Aroma Fragancias Mixtas",
+                "precio": 0
+            }    
+        ],
+        "Resmas": [
+            {
+                "nombre": "Resma Ledesma Autor 75 grs.",
+                "tipo": "PapelImpresora",
+                "imagen": "../imgs/productos/resmas/a4caja.webp",
+                "marca": "Ledesma",
+                "descripcion": "Resma Autor 75 grs Blanco Caja x10u.",
+                "precio": 0       
+           },
+            {
+                "nombre": "Resma Ledesma Autor 75 grs.",
+                "tipo": "PapelImpresora",
+                "imagen": "../imgs/productos/resmas/autor75.png",
+                "marca": "Ledesma",
+                "descripcion": "Resma Autor 75 grs Blanco Caja x1u.",
+                "precio": 0
+           },
+            {
+                "nombre": "Resma Ledesma Punax 75grs",
+                "tipo": "PapelImpresora",
+                "imagen": "../imgs/productos/resmas/punax10.png",
+                "marca": "Ledesma",
+                "descripcion": "Resma Punax 75 grs Blanco Caja x 10u.",
+                "precio": 0
+           },
+            {
+                "nombre": "Resma Ledesma Punax 75grs",
+                "tipo": "PapelImpresora",
+                "imagen": "../imgs/productos/resmas/punax.webp",
+                "marca": "Ledesma",
+                "descripcion": "Resma Punax 75 grs Blanco Caja x1u.",
+                "precio": 0
+            }
+        ],
+        "Papel": [
+            {
+                "nombre": "Papel Higienico Elegante 300mts",
+                "tipo": "higienico",
+                "imagen": "../imgs/productos/Papel/elegante1047.jpg",
+                "marca": "Elegante",
+                "descripcion": "Papel Higienico Elegante, x 8 u, COD 1047, (cono grande).",
+                "precio": 0
+            },
+            {
+                "nombre": "Papel Higienico Elegante 300mts",
+                "tipo": "higienico",
+                "imagen": "../imgs/productos/Papel/1046.png",
+                "marca": "Elegante",
+                "descripcion": "Papel Higienico Elegante, x 8 u, COD 1046, (cono chico).",
+                "precio": 0
+            },
+             {
+                "nombre": "Papel Higienico Elegante 500mts",
+                "tipo": "higienico",
+                "imagen": "../imgs/productos/Papel/elegante1018.jpeg",
+                "marca": "Elegante",
+                "descripcion": "Papel Higienico Elegante, x 4 u, COD 1018.",
+                "precio": 0
+           },
+            {
+                "nombre": "Papel Higienico Elegante 30mts",
+                "tipo": "higienico",
+                "imagen": "../imgs/productos/Papel/elegante919.webp",
+                "marca": "Elegante",
+                "descripcion": "Papel Higienico Elegante Premium, x 12 u, COD 919.",
+                "precio": 0
+            },
+            {
+                "nombre": "Bobina de Papel 300mts",
+                "tipo": "bobina",
+                "imagen": "../imgs/productos/Papel/1028.png",
+                "marca": "Elegante",
+                "descripcion": "Toalla Premium en Bobina Elegante, x 2 u, COD 1028.",
+                "precio": 0
+           },
+            {
+                "nombre": "Bobina de Papel 19 cm x 400mts",
+                "tipo": "bobina",
+                "imagen": "../imgs/productos/Papel/elegante1004.jpg",
+                "marca": "Elegante",
+                "descripcion": "Toalla Premium en Bobina Elegante, x 2 u, COD 1004.",
+                "precio": 0
+           },
+            {
+                "nombre": "Bobina de Papel 24 cm x 400mts",
+                "tipo": "bobina",
+                "imagen": "../imgs/productos/Papel/Elegante10031.webp",
+                "marca": "Elegante", 
+                "descripcion": "Toalla Premium en Bobina Elegante, x 2 u, COD 1003.",
+                "precio": 0
+           },
+            {
+                "nombre": "Servilleta Papel de Mesa x 1000 u.",
+                "tipo": "servilleta",
+                "imagen": "../imgs/productos/Papel/elegante 290.webp",
+                "marca": "Elegante",
+                "descripcion": "Servillete de Mesa Elegante Papel Blanco Tissue COD 290.",
+                "precio": 0
+           },
+            {
+                "nombre": "Toalla De Papel Blancas Intercaladas",
+                "tipo": "intercalada",
+                "imagen": "../imgs/productos/Papel/elegante10292.jpg",
+                "marca": "Elegante",
+                "descripcion": "Toalla Intercalada Premium x 2500 u.",
+                "precio": 0
+            },
+            {
+                "nombre": "Rollo de Papel Fiscal Térmico ",
+                "tipo": "Papeltermico",
+                "imagen": "../imgs/productos/rollosfiscales/rollosfiscales.jpg",
+                "marca": "Paper Pro",
+                "descripcion": "Rollos de Papel Térmico Fiscales 80x80 x 50 u.",
+                "precio": 0
+           },
+            {
+                "nombre": "Rollo de Papel Fiscal Térmico",
+                "tipo": "Papeltermico",
+                "imagen": "../imgs/productos/rollosfiscales/rollosfiscales.jpg",
+                "marca": "Paper Pro",
+                "descripcion": "Rollos de Papel Térmico Fiscales 80x50 x 50 u.",
+                "precio": 0
+           },
+            {
+                "nombre": "Rollo de Papel Fiscal Térmico",
+                "tipo": "Papeltermico",
+                "imagen": "../imgs/productos/rollosfiscales/rollosfiscales.jpg",
+                "marca": "Paper Pro",
+                "descripcion": "Rollos de Papel Térmico Fiscales 80x45 x 50 u.",
+                "precio": 0
+           },
+            {
+                "nombre": "Rollo de Papel Fiscal Térmico",
+                "tipo": "Papeltermico",
+                "imagen": "../imgs/productos/rollosfiscales/57.webp",
+                "marca": "Paper Pro",
+                "descripcion": "Rollos de Papel Térmico Fiscales 57x20 x 50 u.",
+                "precio": 0
+            }
+        ],
+        "Quimicos": [
+         {
+             "nombre": "Cera Brillo Intenso Negro",
+             "tipo": "Cera",
+             "imagen": "../imgs/productos/Qualiquimica/Cera Autobrillo.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Cera Autobrillo Negra 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Cera Brillo Intenso Natural",
+             "tipo": "Cera",
+             "imagen": "../imgs/productos/Qualiquimica/Cera incolora .jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Cera Brillo Intenso 5 lts.",
+             "precio": 0
+        },     
+         {
+             "nombre": "Detergente Lavavajilla",
+             "tipo": "Detergente",
+             "imagen": "../imgs/productos/Qualiquimica/Multilimpiador Vajilla.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Detergente Lavavajilla 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Eliminador de Olores",
+             "tipo": "Desinfectantes",
+             "imagen": "../imgs/productos/Qualiquimica/Eliminador de olores.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Eliminador de Olores 5 lts. Ideal para baños. ",
+             "precio": 0
+        },
+         {
+             "nombre": "Jabón Líquido QualiBest",
+             "tipo": "Jabondemano",
+             "imagen": "../imgs/productos/Qualiquimica/Higiene de manos.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Jabón Líquido para Manos Floral 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Jabón Líquido QualiBest",
+             "tipo": "Jabondemano",
+             "imagen": "../imgs/productos/Qualiquimica/Higiene de manos.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Jabón Líquido para Manos Lavanda 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Removedor de Grasas Carbonizadas QualiBest",
+             "tipo": "Antigrasa",
+             "imagen": "../imgs/productos/Qualiquimica/Removedordegrasas.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Removedor de grasas 5 lts. Ideal para Hornos y Freidoras.",
+             "precio": 0
+        },
+         {
+             "nombre": "Limpiador de Vidrios QualiBest",
+             "tipo": "Limpiavidrios",
+             "imagen": "../imgs/productos/Qualiquimica/Limpia Vidrios.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Limpiador Profesional de Vidrios 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Desengrasante para Piso D500 QualiBest",
+             "tipo": "Antigrasa",
+             "imagen": "../imgs/productos/Qualiquimica/D-500.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Desengrasante Profesional Ideal Grasas Pesadas 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Limpiador Amonio de Cuaternario Qualibest",
+             "tipo": "Desinfectantes",
+             "imagen": "../imgs/productos/Qualiquimica/Cuaternario.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Limpiador Profesional Cuaternario Perfumado 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Limpiador Multiuso Qualibest",
+             "tipo": "Antigrasa",
+             "imagen": "../imgs/productos/Qualiquimica/Limpiador Multiuso.jpg",
+             "marca": "QualiQuimica",
+             "descripcion": "Limpiador Para todo tipo de Grasas 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Limpiador Desodorante Qualibest",
+             "tipo": "Desodorantesdepiso",
+             "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
+             "descripcion": "Limpiador Desodorante de Piso Lavanda 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Limpiador Desodorante Qualibest",
+             "tipo": "Desodorantesdepiso",
+             "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
+             "descripcion": "Limpiador Desodorante de Piso Limon 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Limpiador Desodorante Qualibest",
+             "tipo": "Desodorantesdepiso",
+             "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
+             "descripcion": "Limpiador Desodorante de Piso Cherry 5 lts.",
+             "precio": 0
+        },
+         {
+             "nombre": "Limpiador Desodorante Qualibest",
+             "tipo": "Desodorantesdepiso",
+             "imagen": "../imgs/productos/Qualiquimica/Limpiador Desodorante.jpg",
+             "descripcion": "Limpiador Desodorante de Piso Floral 5 lts",
+             "precio": 0
+         },
+         {
+            "nombre": "Lavandina",
+            "tipo": "Lavandina",
+            "imagen": "../imgs/productos/newclor/Lavandina.png",
+            "marca": "New Clor",
+            "descripcion": "Lavandina Concentrada 5 lts..",
+            "precio": 0
+       },
+        {
+            "nombre": "Cloro Líquido",
+            "tipo": "Cloro",
+            "imagen": "../imgs/productos/newclor/Cloro.png",
+            "marca": "New Clor",
+            "descripcion": "Cloro Concentrado 5lts.",
+            "precio": 0
+       },
+       {
+            "nombre": "Alcohol en Gel",
+            "tipo": "Alcohol",
+            "imagen": "../imgs/productos/newclor/Alcoholengel.png",
+            "marca": "New Clor",
+            "descripcion": "Alcohol en Gel Desinfectante 5lts.",
+            "precio": 0
+       }
+        ],
+        "Dispensadores":
+        [
+            {
+                "nombre": "Dispenser De Toalla En Rollo Palanca",
+                "tipo": "Dispenser",
+                "imagen": "../imgs/productos/dispensers/dispenserpalanca.webp",
+                "marca": "Ecoplastico",
+                "descripcion": "Dispenser En Rollo Papel Baño Bar Cocina.",
+                "precio": 0
+           },
+            {
+                "nombre": "Dispenser Jabonera Con Sensor",
+                "tipo": "Dispenser",
+                "imagen": "../imgs/productos/dispensers/dispensadorauto.jpg",
+                "marca": "Ecoplastico",
+                "descripcion": "Jabonera con Sensor Ideal Jabón Liquido y Alcohol en Gel.",
+                "precio": 0
+          },
+            {
+                "nombre": "Dispenser Para Jabón Líquido Nova",
+                "tipo": "Dispenser",
+                "imagen": "../imgs/productos/dispensers/dispenserjabon.jpg",
+                "marca": "Ecoplastico",
+                "descripcion": "Dispenser Para Jabón Líquido Nova Tecla Gris",
+                "precio": 0
+          },
+            {
+                "nombre": "Dispenser Para Jabón Líquido Nova",
+                "tipo": "Dispenser",
+                "imagen": "../imgs/productos/dispensers/dispenserjabonazul.jpg",
+                "marca": "Ecoplastico",
+                "descripcion": "Dispenser Para Jabón Líquido Nova Tecla Azul",
+                "precio": 0
+        },
+        {
+            "nombre": "Dispenser Acero Inox Para Jabón Líquido",
+            "tipo": "Dispenser",
+            "imagen": "../imgs/productos/dispensers/dispensadoracero.png",
+            "marca": "Ecometal",
+            "descripcion": "Jabonera Acero 304 Inox Esmerilado ",
+            "precio": 0
+        },
+        {
+            "nombre": "Dispenser de Papel Higiénico Acero Inox",
+            "tipo": "Dispenser",
+            "imagen": "../imgs/productos/dispensers/dispensadorpapel.jpg",
+            "marca": "Ecometal",
+            "descripcion": "Dispenser de Papel Higienico Acero 304 Esmerilado",
+            "precio": 0
+        },
+            {
+                "nombre": "Dispenser de Toalla Intercalada Acero Inox",
+                "tipo": "Dispenser",
+                "imagen": "../imgs/productos/dispensers/toallaintercalada.png",
+                "marca": "Ecometal",
+                "descripcion": "Dispenser de Toalla Intercalada Acero 304.",
+                "precio": 0
+            },
+            {
+                "nombre": "Dispensador Con Bomba Para Alcohol en Gel",
+                "tipo": "Dispenser",
+                "imagen": "../imgs/productos/dispensers/dispenseralcoholengel.webp",
+                "marca": "Ecoplastico",
+                "descripcion": "Dispensador Para Alcohol en Gel 250 cc x4 u.",
+                "precio": 0
+        },
+            {
+                "nombre": "Pulverizador Plástico con Gatillo",
+                "tipo": "Pulverizador",
+                "imagen": "../imgs/productos/dispensers/pulverizador.jpg",
+                "marca": "Ecoplastico",
+                "descripcion": "Pulverizador con Gatillo ½ Litro x 4 u.",
+                "precio": 0
+        },
+            {
+                "nombre": "Pulverizador Plástico con Gatillo",
+                "tipo": "Pulverizador",
+                "imagen": "../imgs/productos/dispensers/pulverizador.jpg",
+                "marca": "Ecoplastico",
+                "descripcion": "Pulverizador con Gatillo 1 Litro x 4 u.",
+                "precio": 0
+        },
+        {
+            "nombre": "Pulverizador Giber",
+            "tipo": "Pulverizador",
+            "imagen":"../imgs/productos/dispensers/gilber.png",
+            "marca": "Giber",
+            "descripcion": "Pulverizador A Presión Giber H- 1.5lts",
+            "precio": 0
+        },
+            {
+                "nombre": "Regadera Plástica Azul",
+                "tipo": "Regadera",
+                "imagen": "../imgs/productos/dispensers/regaderaazul.jpg",
+                "marca": "Ecoplastico",
+                "descripcion": "Regadera Plastica Azul 12 Lts.",
+                "precio": 0
+        },
+            {
+                "nombre": "Canasto Plástico Apilable Reforzado",
+                "tipo": "Canasto",
+                "imagen": "../imgs/productos/dispensers/canasto.webp",
+                "marca": "Ecoplastico",
+                "descripcion": "Canasto Reforzado Carga Máxima 25kg.",
+                "precio": 0
+        },
+        {
+            "nombre": "Tanque De 1000 Litros",
+            "tipo": "Tanque",
+            "imagen": "../imgs/productos/dispensers/Tanque.jpg",
+            "marca": "Ecoplastico",
+            "descripcion": "Tanque 1350 mm x 1220 mm x 1025 mm Certificado Inal.",
+            "precio": 0
+        }
+        ],
+        "Segvial": [
+            {
+                "nombre": "Cono De Seguridad Conoflex",
+                "tipo": "Cono",
+                "imagen": "../imgs/productos/Seguridadvial/Cono120x6.5kg.webp",
+                "marca": "Conoflex",
+                "descripcion": "Cono Vencedor Reflex 120cm 6,5kg.",
+                "precio": 0
+            },
+            {
+                "nombre": "Delineador Rebatible Conoflex",
+                "tipo": "delineador",
+                "imagen": "../imgs/productos/Seguridadvial/80cmdelineador.webp",
+                "marca": "Conoflex",
+                "descripcion": "Poste Vial Delineador 80cm Una Pieza Flexible Conoflex Dr800",
+                "precio": 0
+           },
+            {
+                "nombre": "Tacha Reductora Velocidad Conoflex",
+                "tipo": "tachas",
+                "imagen": "../imgs/productos/Seguridadvial/tachas.webp",
+                "marca": "Conoflex",
+                "descripcion": "Tacha Reductora Velocidad 20cm Reflectiva Tortuga Conoflex",
+                "precio": 0
+           },
+            {
+                "nombre": "Tacha Reductora Velocidad Conoflex",
+                "tipo": "tachas",
+                "imagen":"../imgs/productos/Seguridadvial/15cm.jpg",
+                "marca": "Conoflex",
+                "descripcion": "Tacha Reductora Velocidad 15cm Reflectiva Tortuga Conoflex",
+                "precio": 0
+           },
+            {
+                "nombre": "Tope De Estacionamiento Conoflex",
+                "tipo": "topes",
+                "imagen": "../imgs/productos/Seguridadvial/topeestacionamiento.jpg",
+                "marca": "Conoflex", 
+                "descripcion": "Tope De Estacionamiento Original Conoflex 36x13x10",
+                "precio": 0
+           },
+            {
+                "nombre": "Cuña Tope Calza Seguridad Camión Conoflex",
+                "tipo": "topes",
+                "imagen": "../imgs/productos/Seguridadvial/cuna.webp",
+                "marca": "Conoflex",
+                "descripcion": "Cuña Tope Calza Seguridad Camion 5,5 kg.",
+                "precio": 0
+           },
+            {
+                "nombre": "Valla Delimitadora Plástica Conoflex",
+                "tipo": "Valla",
+                "imagen": "../imgs/productos/Seguridadvial/valla.webp",
+                "marca": "Conoflex",
+                "descripcion": "Valla Delimitadora Plastica Light Reflectiva Conoflex Azul",
+                "precio": 0
+            }
+        ],
+        "Electrodomesticos":
+        [
+            {
+                "nombre": "Pava Jarra Electrica Cookline",
+                "tipo": "Pava",
+                "imagen": "../imgs/productos/electrodomesticos/Pava.jpg",
+                "marca": "Cookline",
+                "descripcion": "Pava Corte Automatico Ideal Mate Cafe 1.8lts",
+                "precio": 0
+            },
+            {
+                "nombre": "Horno Electrico Cookline",
+                "tipo": "Horno",
+                "imagen": "../imgs/productos/electrodomesticos/hornito.webp",
+                "marca": "Cookline",
+                "descripcion": "Horno Electrico De Mesa Con Grill Acero Inoxidable 60lts 220v",
+                "precio": 0
+            }
+        ],
+        "Indumentaria":
+        [
+            {
+                "nombre": "Zapato Botin Seguridad Bladi 221",
+                "tipo": "Zapato",
+                "imagen": "../imgs/productos/Indumentaria/Calzado/bladi221eco.jpg",
+                "marca": "Bladi",
+                "descripcion": "Zapato de Seguridad Cuero Flor Negro",
+                "precio": 0
+           },
+            {
+                "nombre": "Zapato Botin Seguridad Bladi 221",
+                "tipo": "Zapato",
+                "imagen": "../imgs/productos/Indumentaria/Calzado/221marron.jpg",
+                "marca": "Bladi",
+                "descripcion": "Zapato de Seguridad Cuero Flor Marrón",
+                "precio": 0
+           },
+            {
+                "nombre": "Zapato Botin Seguridad Bladi 221",
+                "tipo": "Zapato", 
+                "imagen":"../imgs/productos/Indumentaria/Calzado/221bladinegro.webp",
+                "marca": "Bladi",
+                "descripcion": "Zapato de Seguridad Punta Acero Negro",
+                "precio": 0
+           },
+            {
+                "nombre": "Botin Seguridad Bladi 421 Eco",
+                "tipo": "Zapato",
+                "imagen": "../imgs/productos/Indumentaria/Calzado/botinnegro421.webp",
+                "marca": "Bladi",
+                "descripcion": "Botin Bladi Cuero Puntera De Acero 421 Eco",
+                "precio": 0
+        },
+            {
+                "nombre": "Botin Seguridad Bladi 421 Flor",
+                "tipo": "Zapato",
+                "imagen": "../imgs/productos/Indumentaria/Calzado/botinmarron421.webp",
+                "marca": "Bladi",
+                "descripcion": "Botin Bladi Cuero Puntera De Acero 421 Flor Marron",
+                "precio": 0
+        },
+        {
+            "nombre": "Anteojo de seguridad Libus",
+            "tipo": "Anteojos",
+            "imagen": "../imgs/productos/Indumentaria/anteojos.png",
+            "marca": "Libus",
+            "descripcion": "Anteojo de seguridad Libus Ecoline 900558 con cristal x 10 u.",
+            "precio": 0
+       },
+        {
+            "nombre": "Bandolera Poliester",
+            "tipo": "Seguridadvial",
+            "imagen": "../imgs/productos/Indumentaria/bandolera.PNG",
+            "marca": "Prentex",
+            "descripcion": "Bandolera Poliester Amarillo/Naranja Fluo con Reflex",
+            "precio": 0
+        }
+        ],
+        "Barridoylimpieza":
+        [
+            {
+                "nombre": "Escobillón Laqueado Caramelo",
+                "tipo": "Escobillon",
+                "imagen": "../imgs/productos/Romyl/Escobillon caramelo .webp",
+                "marca": "Romyl",
+                "descripcion": "Escobillón Laqueado, 30 cm De Ancho, 6 Hileras",
+                "precio": 0
+           },
+            {
+                "nombre": "Escobillón Recto Bicolor",
+                "tipo": "Escobillon",
+                "imagen": "../imgs/productos/Romyl/Escobillon Bicolor.jpg",
+                "marca": "Romyl",
+                "descripcion": "Escobillon Bicolor, 6 Hileras",
+                "precio": 0
+           },
+            {
+                "nombre": "Escobilla De Inodoro",
+                "tipo": "Escobillon",
+                "imagen": "../imgs/productos/Romyl/escobilla inodoro.webp",
+                "marca": "Romyl",
+                "descripcion": "Cepillo Con Bocha Inodoro",
+                "precio": 0
+           },
+            {
+                "nombre": "Secador De Goma",
+                "tipo": "Secadores",
+                "imagen": "../imgs/productos/Romyl/secador-premium.webp",
+                "marca": "Romyl",
+                "descripcion": "Secador de Doble Goma 40 cm",
+                "precio": 0
+          },
+            {
+                "nombre": "Sopapa Con Cabo",
+                "tipo": "Sopapa",
+                "imagen": "../imgs/productos/Romyl/sopapa.jpg",
+                "marca": "Romyl",
+                "descripcion": "Sopapa Negra Con Cabo Plástico",
+                "precio": 0
+           },
+            {
+                "nombre": "Escobillon Barrendero Pesado",
+                "tipo": "Escobillon",
+                "imagen": "../imgs/productos/Romyl/escobillon.webp",
+                "marca": "Romyl",
+                "descripcion": "Escobillon Barrendero Industrial 35 cm",
+                "precio": 0
+          },
+          {
+            "nombre": "Escobilla Limpia Vidrio",
+            "tipo": "Escobillones",
+            "imagen": "../imgs/productos/Romyl/Limpiavidrio.webp",
+            "marca": "La Gauchita",
+            "descripcion": "Limpiavidrios Con Cabo La Gauchita Lava Y Seca Color Blanco",
+            "precio": 0
+          },
+            {
+                "nombre": "Trapo de Piso",
+                "tipo": "Trapos",
+                "imagen": "../imgs/productos/Romyl/trapodepisogris.jpg",
+                "marca": "Romyl",
+                "descripcion": "Trapo de Piso Profesional 60x70 cm Gris",
+                "precio": 0
+           },
+            {
+                "nombre": "Trapo de Piso",
+                "tipo": "Trapos",
+                "imagen": "../imgs/productos/Romyl/trapo de piso blanco.jpg",
+                "marca": "Romyl",
+                "descripcion": "Trapo de Piso Profesional 60x70 cm Blanco",
+                "precio": 0
+           },
+            {
+                "nombre": "Esponja Metálica",
+                "tipo": "Esponjas",
+                "imagen": "../imgs/productos/Romyl/esponja acero inox.webp",
+                "marca": "Romyl",
+                "descripcion": "Esponja Metálica Acero Inox",
+                "precio": 0
+           },
+            {
+                "nombre": "Fibra Verde",
+                "tipo": "Esponjas",
+                "imagen": "../imgs/productos/Romyl/fibra verde .webp",
+                "marca": "Romyl",
+                "descripcion": "Fibra Verde Extra Fuerte Parrillera",
+                "precio": 0
+           },
+            {
+                "nombre": "Pala Con Cabo",
+                "tipo": "Cabos",
+                "imagen": "../imgs/productos/Romyl/pala plastica.webp",
+                "marca": "Romyl",
+                "descripcion": "Pala Plastica Con Goma y Cabo Plastico",
+                "precio": 0
+           },
+            {
+                "nombre": "Pasa Cera",
+                "tipo": "Escobillon",
+                "imagen": "../imgs/productos/Romyl/super pasa cera romyl.jpg",
+                "marca": "Romyl",
+                "descripcion": "Super Pasa Cera Con Toalla",
+                "precio": 0
+           },
+            {
+                "nombre": "Spin Mop 360",
+                "tipo": "Balde",
+                "imagen": "../imgs/productos/Romyl/spin mop .png",
+                "marca": "Romyl",
+                "descripcion": "Spin Mop 360 con Balde + 2 Mopas.",
+                "precio": 0
+           },
+            {
+                "nombre": "Balde Ovalado",
+                "tipo": "Balde",
+                "imagen": "../imgs/productos/Romyl/blade ovalado .jpg",
+                "marca": "Romyl",
+                "descripcion": "Balde Plastico Ovalado Azul 12 lts",
+                "precio": 0
+           },
+            {
+                "nombre": "Rejilla Liviana Americana",
+                "tipo": "Trapos",
+                "imagen": "../imgs/productos/Romyl/rejillaromyl.jpg",
+                "marca": "Romyl",
+                "descripcion": "Rejilla Liviana 33 x 45 cm 12 u.",
+                "precio": 0
+           },
+            {
+                "nombre": "Franela Naranja",
+                "tipo": "Trapos",
+                "imagen": "../imgs/productos/Romyl/super franela romyl.jpg",
+                "marca": "Romyl",
+                "descripcion": "Super Franela Naranja 50 x 60 cm x 5 u.",
+                "precio": 0
+           },
+            {
+                "nombre": "Paño Multiuso",
+                "tipo": "Trapos",
+                "imagen": "../imgs/productos/Romyl/panosballerina.webp",
+                "marca": "Romyl",
+                "descripcion": "Paño Multiuso color a elección 40 x 40 cm x 5 u.",
+                "precio": 0
+          },
+            {
+                "nombre": "Paño Microfibra",
+                "tipo": "Trapos",
+                "imagen": "../imgs/productos/Romyl/microfib.jpeg",
+                "marca": "Romyl",
+                "descripcion": "Paños Microfibra Multiuso 30 x 30 cm x 5 u Colores Varios",
+                "precio": 0
+           },
+            {
+                "nombre": "Mopin Lampazo",
+                "tipo": "Mopas",
+                "imagen": "../imgs/productos/Romyl/mopinlampazo.jpg",
+                "marca": "Romyl",
+                "descripcion": "Mopin Blanco 100% Algodón",
+                "precio": 0
+            },
+            {
+                "nombre": "Cepillo Auto",
+                "tipo": "Cepillo",
+                "imagen": "../imgs/productos/Romyl/cepilloauto.jpg",
+                "marca": "Royco",
+                "descripcion": "Cepillo De Mano Fibra Extra Suave",
+                "precio": 0
+           },
+            {
+                "nombre": "Cepillo Camión",
+                "tipo": "Cepillo",
+                "imagen": "../imgs/productos/Romyl/cepillocamion.jpg",
+                "marca": "Romyl",
+                "descripcion": "Cepillo Camión Para Uso Con Cabo- Fibra Extra Suave",
+                "precio": 0
+           },
+            {
+                "nombre": "Secador Aluminio 1 mt",
+                "tipo": "Secadores",
+                "imagen": "../imgs/productos/Romyl/secador.jpg",
+                "marca": "Royco",
+                "descripcion": "Secador de Piso Blanco De Aluminio Reforzado 1 mt.",
+                "precio": 0
+           },
+            {
+                "nombre": "Mopa 20 Hilos",
+                "tipo": "Mopas",
+                "imagen": "../imgs/productos/Romyl/mopa.png",
+                "marca": "Royco",
+                "descripcion": "Mopa de 20 hilos retorcidos de 100% algodón con punta Boucle 500 grs.",
+                "precio": 0
+          },
+            {
+                "nombre": "Mopa 20 Hilos",
+                "tipo": "Mopas",
+                "imagen":  "../imgs/productos/Romyl/mopa20hilos2.jpg",
+                "marca": "Royco",
+                "descripcion": "Mopa de 20 hilos retorcidos de 100% algodón con punta Boucle 350 grs.",
+                "precio": 0
+           },
+            {
+                "nombre": "Cabos De Acero",
+                "tipo": "Cabos",
+                "imagen":  "../imgs/productos/Romyl/Cabos.PNG",
+                "marca": "Royco",
+                "descripcion": "Cabo De Acero Reforzado 22 mm x 1.5 mts Colores Varios",
+                "precio": 0
+           },
+            {
+                "nombre": "Extensor Telescopico",
+                "tipo": "Cabos",
+                "imagen":  "../imgs/productos/Romyl/extensor.jpg",
+                "marca": "Royco",
+                "descripcion": "Extensor Telescopico De Aluminio Templado 3x2 mts",
+                "precio": 0
+           },
+            {
+                "nombre": "Cabo De Madera",
+                "tipo": "Cabos",
+                "imagen":  "../imgs/productos/Romyl/cabomadera.jpg",
+                "marca": "Romyl",
+                "descripcion": "Cabo de Madera 1.20 mt",
+                "precio": 0
+           },
+            {
+                "nombre": "Barrendero Fenix PVC",
+                "tipo": "Escobillon",
+                "imagen":  "../imgs/productos/Romyl/barrenderofenix.jpeg",
+                "marca": "Royco",
+                "descripcion": "Barrendero Fenix PVC 60 cm Azul",
+                "precio": 0
+           },
+            {
+                "nombre": "Pinza Mopa",
+                "tipo": "Mopas",
+                "imagen":  "../imgs/productos/Romyl/pinzamopa.jpg",
+                "marca": "Royco",
+                "descripcion": "Pinza Para Mopa y Mopines - Para Cabo Universal",
+                "precio": 0
+           },
+            {
+                "nombre": "Señal Piso Mojado",
+                "tipo": "Señales",
+                "imagen":  "../imgs/productos/Romyl/pisomojado.jpg",
+                "marca": "Royco",
+                "descripcion": "Señal De Piso Mojado Plegable - Plastico Amarilo",
+                "precio": 0
+           },
+            {
+                "nombre": "Carro Multiservicio Top 57",
+                "tipo": "Carro",
+                "imagen":  "../imgs/productos/Romyl/carritomultiserv.jpg",
+                "marca": "Royco",
+                "descripcion": "Carro Multiservicios TOP. Carro Organizador. 57 x 116 x 100 cm.",
+                "precio": 0
+           },
+            {
+                "nombre": "Carro Auxiliar TOP",
+                "tipo": "Carro",
+                "imagen":  "../imgs/productos/Romyl/carroauxiliar.jpg",
+                "marca": "Royco",
+                "descripcion": "Carro Auxiliar con tres bandejas y manijas laterales para su fácil manejo.",
+                "precio": 0
+            }
+        ],
+        "Herramientas":
+        [
+            {
+                "nombre": "Aspiradora Hogareña",
+                "tipo": "Aspiradoras",
+                "imagen": "../imgs/productos/herramientas/gamma/aspiradorag2204.webp",
+                "marca": "Gamma",
+                "descripcion": "Aspiradora Gamma G2204ara 35 Lts polvo/liquido 1400w",
+                "precio": 0
+           },
+            {
+                "nombre": "Aspiradora Industrial",
+                "tipo": "Aspiradoras",
+                "imagen": "../imgs/productos/herramientas/gamma/aspiradora1000.jpg",
+                "marca": "Gamma",
+                "descripcion": "Aspiradora Industrial 2x 1000 60 Litros Color Acero inoxidable/Azul",
+                "precio": 0
+           },
+            {
+                "nombre": "Compresor De Aire",
+                "tipo": "Compresores",
+                "imagen": "../imgs/productos/herramientas/gamma/compresor150lt.webp",
+                "marca": "Gamma",
+                "descripcion": "Compresor De Aire 150 Lt Correa Gamma Trifasico 380v Trifásica Frecuencia 50 Hz",
+                "precio": 0
+           },
+            {
+                "nombre": "Compresor De Aire",
+                "tipo": "Compresores",
+                "imagen": "../imgs/productos/herramientas/gamma/compresor50lt.webp",
+                "marca": "Gamma",
+                "descripcion": "Compresor Gamma 2,5 Hp 50 L 220 V Frecuencia 50 Khz - G2851",
+                "precio": 0
+           },
+            {
+                "nombre": "Escalera Aluminio",
+                "tipo": "Escalera",
+                "imagen": "../imgs/productos/herramientas/gamma/escalerag216.jpg",
+                "marca": "Gamma",
+                "descripcion": "Escalera Reforzada De Aluminio 4 Escalones Gamma - G216ar",
+                "precio": 0
+           },
+            {
+                "nombre": "Escalera Aluminio ",
+                "tipo": "Escalera",
+                "imagen": "../imgs/productos/herramientas/gamma/escalerag218.webp",
+                "marca": "Gamma",
+                "descripcion": "Escalera Aluminio Reforzada 6 Escalones - G218ar",
+                "precio": 0
+           },
+            {
+                "nombre": "Escalera Articulada",
+                "tipo": "Escalera",
+                "imagen": "../imgs/productos/herramientas/gamma/escalerag215.webp",
+                "marca": "Gamma",
+                "descripcion": "Escalera aluminio Articulada Dielectrica X 4 - G215ar",
+                "precio": 0
+           },
+            {
+                "nombre": "Escalera Extensible",
+                "tipo": "Escalera",
+               "imagen": "../imgs/productos/herramientas/gamma/escalera213.jpg",
+                "marca": "Gamma",
+                "descripcion": "Escalera Aluminio Extensible Dieléctrica 2 X 10 - G213ar",
+                "precio": 0
+           },
+            {
+                "nombre": "Taladro Atornillador",
+                "tipo": "Taladros",
+                "imagen": "../imgs/productos/herramientas/gamma/taladrog12103.webp",
+                "marca": "Gamma",
+                "descripcion": "Taladro Atornillador Gamma 21 Vcc Bateria Ion Litio - G12103ar",
+                "precio": 0
+           },
+            {
+                "nombre": "Taladro Atornillador",
+                "tipo": "Taladro",
+                "imagen": "../imgs/productos/herramientas/gamma/taladro13mm.webp",
+                "marca": "Gamma",
+                "descripcion": "Taladro Atornillador Percutor 13mm Gamma 20v Brushless 2 Bat",
+                "precio": 0
+           }
+        ]
+} 

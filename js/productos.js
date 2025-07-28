@@ -1,49 +1,63 @@
+// Función para formatear precios argentinos (sin decimales, con separadores de miles)
+function formatearPrecioArgentino(precio) {
+    return precio.toLocaleString('es-AR');
+}
+
 const productos = {
     bolsas: [
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 100 x 110 de 40 Micrones x 200 u. "
+        "descripcion": "Bolsas 100 x 110 de 40 Micrones x 200 u. ",
+        "precio": 1000
     },
     {
         "nombre": "Bolsas Residuo Tambor",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 100 x 120 de 36 Micrones x 200 u."
+        "descripcion": "Bolsas 100 x 120 de 36 Micrones x 200 u.",
+        "precio": 1200
     },
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 60 x 90 de 30 Micrones x 200u."
+        "descripcion": "Bolsas 60 x 90 de 30 Micrones x 200u.",
+        "precio": 0
     },
     {
         "nombre": "Bolsas Residuo Negra",
         "imagen": "../imgs/productos/bolsas/Bolsas de residuos .jpg",
-        "descripcion": "Bolsas 45 x 60 de 25 Micrones x 200u."
+        "descripcion": "Bolsas 45 x 60 de 25 Micrones x 200u.",
+        "precio": 0
     },
     {
         "nombre": "Bolsa de residuos azul",
         "imagen": "../imgs/productos/bolsas/bolsa residuos azul.jpg",
-        "descripcion": "Bolsas 100 x 110 Residuos Peligrosos Azul de 45 Micrones x 100 u."
+        "descripcion": "Bolsas 100 x 110 Residuos Peligrosos Azul de 45 Micrones x 100 u.",
+        "precio": 2500
     },
     {
         "nombre": "Bolsa transparente",
         "imagen": "../imgs/productos/bolsas/bolsa transparente.jpg",
-        "descripcion": "Bolsas 100 x 110 Residuos Transparentes de 45 Micrones x 50 u."
+        "descripcion": "Bolsas 100 x 110 Residuos Transparentes de 45 Micrones x 50 u.",
+        "precio": 0
     },
     {
         "nombre": "Bolsas de basura Eco",
         "imagen": "../imgs/productos/bolsas/BolsaResiduoVerde.jpg",
-        "descripcion": "Bolsas 100 x 110 de Residuos Verde x 200 u - Ideal Reciclaje."
+        "descripcion": "Bolsas 100 x 110 de Residuos Verde x 200 u - Ideal Reciclaje.",
+        "precio": 1800
     },
     {
         "nombre": "Bolsas amarillas",
         "imagen": "../imgs/productos/bolsas/bolsas amarillas.jpg",
-        "descripcion":  "Bolsas 100 x 110 Residuos Peligrosos de 45 Micrones x 100 u."
+        "descripcion":  "Bolsas 100 x 110 Residuos Peligrosos de 45 Micrones x 100 u.",
+        "precio": 0
     },
     {
         "nombre": "Bolsas conjunto",
         "imagen": "../imgs/productos/bolsas/bolsas conjunto.avif",
-        "descripcion": "Conjunto de bolsas para Reciclar y Residuos Peligrosos x 100 u de c/u."
+        "descripcion": "Conjunto de bolsas para Reciclar y Residuos Peligrosos x 100 u de c/u.",
+        "precio": 0
     },
     ],
 
@@ -54,7 +68,8 @@ const productos = {
             "tipo": "latex",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/latexsinpolvo.png",
-            "descripcion": "Guantes de látex sin Polvo talle S"
+            "descripcion": "Guantes de látex sin Polvo talle S x 100 u.",
+            "precio": 3500
         },
         {
             "nombre": "Guantes de látex",
@@ -62,7 +77,8 @@ const productos = {
             "tipo": "latex",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/latexsinpolvo.png",
-            "descripcion": "Guantes de látex sin Polvo talle M"
+            "descripcion": "Guantes de látex sin Polvo talle M x 100 u.",
+            "precio": 0
         },
         {
             "nombre": "Guantes de látex",
@@ -70,63 +86,65 @@ const productos = {
             "tipo": "latex",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/latexsinpolvo.png",
-            "descripcion": "Guantes de látex sin Polvo talle L"
+            "descripcion": "Guantes de látex sin Polvo talle L x 100 u.",
+            "precio": 0
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro talle S"
+            "descripcion": "Guantes de Nitrilo Negro talle S x 100 u."
+            
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro talle M"
+            "descripcion": "Guantes de Nitrilo Negro talle M x 100 u."
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro talle L"
+            "descripcion": "Guantes de Nitrilo Negro talle L x 100 u."
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/MedigloveNegroReforzado.jpg",
-            "descripcion": "Guantes de Nitrilo Negro talle XL"
+            "descripcion": "Guantes de Nitrilo Negro talle XL x 100 u."
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/nitrilolila.png",
-            "descripcion": "Guantes de Nitrilo Lila talle S"
+            "descripcion": "Guantes de Nitrilo Lila talle S x 100 u."
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/nitrilolila.png",
-            "descripcion": "Guantes de Nitrilo Negro Lila talle M"
+            "descripcion": "Guantes de Nitrilo Negro Lila talle M x 100 u."
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/nitrilolila.png",
-            "descripcion": "Guantes de Nitrilo Negro Lila talle L"
+            "descripcion": "Guantes de Nitrilo Negro Lila talle L x 100 u."
         },
         {
             "nombre": "Guantes de Nitrilo",
             "tipo": "Nitrilo",
             "marca": "Mediglove",
             "imagen": "../imgs/productos/guantes/nitrilolila.png",
-            "descripcion": "Guantes de Nitrilo Negro Lila talle XL"
+            "descripcion": "Guantes de Nitrilo Negro Lila talle XL x 100 u."
         },
         {
             "nombre": "Guante de Kevlar",
@@ -1044,6 +1062,10 @@ function cargarProductos() {
     const marca = urlParams.get('marca');
 
     const container = document.getElementById('productos-container');
+    if (!container) {
+        console.log('Contenedor de productos no encontrado');
+        return;
+    }
     container.innerHTML = ''; // Limpiar el contenedor
 
     // Determinar qué productos mostrar
@@ -1077,7 +1099,7 @@ function mostrarProductos(productosFiltrados) {
     }
 
     const row = document.createElement('div');
-    row.className = 'row row-cols-1 row-cols-md-3 g-4 margentop';
+    row.className = 'row row-cols-2 row-cols-md-3 g-4 margentop';
 
     productosFiltrados.forEach(producto => {
         const col = document.createElement('div');
@@ -1088,10 +1110,11 @@ function mostrarProductos(productosFiltrados) {
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-center">${producto.nombre}</h5>
                     <p class="card-text text-center flex-grow-1">${producto.descripcion}</p>
+                    ${producto.precio && producto.precio > 0 ? `<p class="card-text text-center text-success fw-bold">$${formatearPrecioArgentino(producto.precio)}</p>` : ''}
                     <div class="mt-auto text-center">
                         <div class="input-group mb-3">
                             <input type="number" class="form-control" value="1" min="1" id="cantidad-${producto.descripcion.replace(/\s+/g, '-')}">
-                            <button class="btn btn-primary" onclick="agregarAlCarrito('${producto.descripcion.replace(/\s+/g, '-')}', parseInt(document.getElementById('cantidad-${producto.descripcion.replace(/\s+/g, '-')}').value))">Agregar al carrito</button>
+                            <button class="btn btn-primary boton-agregar" onclick="agregarAlCarrito('${producto.descripcion.replace(/\s+/g, '-')}', parseInt(document.getElementById('cantidad-${producto.descripcion.replace(/\s+/g, '-')}').value))">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -1169,7 +1192,13 @@ function mostrarCarrito() {
         cartItems.innerHTML = '<p>El carrito está vacío.</p>';
         return;
     }
+    
+    let total = 0;
     carrito.forEach(item => {
+        const precio = item.precio || 0;
+        const subtotal = precio * item.cantidad;
+        total += subtotal;
+        
         const itemElement = document.createElement('div');
         itemElement.className = 'cart-item d-flex align-items-center mb-3';
         itemElement.innerHTML = `
@@ -1177,16 +1206,24 @@ function mostrarCarrito() {
             <div class="flex-grow-1">
                 <h6 class="mb-0">${item.nombre}</h6>
                 <p class="mb-0">${item.descripcion}</p>
+                <p class="mb-0 text-success fw-bold">Precio: $${formatearPrecioArgentino(precio)}</p>
                 <div class="d-flex align-items-center mt-2">
                     <button class="btn btn-sm btn-outline-secondary me-2" onclick="actualizarCantidad('${item.descripcion}', -1)" ${item.cantidad <= 1 ? 'disabled' : ''}>-</button>
                     <span class="cantidad-item">${item.cantidad}</span>
                     <button class="btn btn-sm btn-outline-secondary ms-2" onclick="actualizarCantidad('${item.descripcion}', 1)">+</button>
+                    <span class="ms-2 text-success fw-bold">Subtotal: $${formatearPrecioArgentino(subtotal)}</span>
                 </div>
             </div>
             <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito('${item.descripcion}')">Eliminar</button>
         `;
         cartItems.appendChild(itemElement);
     });
+    
+    // Agregar total al final
+    const totalElement = document.createElement('div');
+    totalElement.className = 'text-end mt-3 p-3 bg-light border-top';
+    totalElement.innerHTML = `<h5 class="text-success fw-bold">Total: $${formatearPrecioArgentino(total)}</h5>`;
+    cartItems.appendChild(totalElement);
 }
 
 function actualizarCantidad(descripcion, cambio) {
@@ -1237,9 +1274,16 @@ function enviarCotizacion() {
 function enviarPorCorreo() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let mensaje = 'Solicitud de cotización:\n\n';
+    let total = 0;
+    
     carrito.forEach(item => {
-        mensaje += `${item.nombre} - ${item.descripcion} - Cantidad: ${item.cantidad}\n`;
+        const precio = item.precio || 0;
+        const subtotal = precio * item.cantidad;
+        total += subtotal;
+        mensaje += `${item.nombre} - ${item.descripcion} - Cantidad: ${item.cantidad} - Precio: $${formatearPrecioArgentino(precio)} - Subtotal: $${formatearPrecioArgentino(subtotal)}\n`;
     });
+    
+    mensaje += `\nTotal: $${formatearPrecioArgentino(total)}`;
 
     const mailtoLink = `mailto:info@ecogroupservice.com.ar?subject=Solicitud de Cotización&body=${encodeURIComponent(mensaje)}`;
     window.location.href = mailtoLink;
@@ -1249,9 +1293,16 @@ function enviarPorCorreo() {
 function enviarPorWhatsApp() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let mensaje = 'Solicitud de cotización:\n\n';
+    let total = 0;
+    
     carrito.forEach(item => {
-        mensaje += `${item.nombre} - ${item.descripcion} - Cantidad: ${item.cantidad}\n`;
+        const precio = item.precio || 0;
+        const subtotal = precio * item.cantidad;
+        total += subtotal;
+        mensaje += `${item.nombre} - ${item.descripcion} - Cantidad: ${item.cantidad} - Precio: $${formatearPrecioArgentino(precio)} - Subtotal: $${formatearPrecioArgentino(subtotal)}\n`;
     });
+    
+    mensaje += `\nTotal: $${formatearPrecioArgentino(total)}`;
 
     const whatsappLink = `https://wa.me/5491136267653?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappLink, '_blank');
@@ -1266,31 +1317,43 @@ function limpiarCarrito() {
 
 // Main logic when loading the page
 document.addEventListener('DOMContentLoaded', () => {
-    cargarProductos(); // Load initial products
+    // Verificar que estamos en la página de productos
+    const productosContainer = document.getElementById('productos-container');
+    if (productosContainer) {
+        cargarProductos(); // Load initial products
 
-    const searchButton = document.getElementById('search-button');
-    const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const searchInput = document.getElementById('search-input');
 
-    // Listen for click on search button
-    searchButton.addEventListener('click', () => {
-        const query = searchInput.value.trim().toLowerCase();
-        buscarProductos(query);
-    });
+        // Listen for click on search button
+        if (searchButton && searchInput) {
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value.trim().toLowerCase();
+                buscarProductos(query);
+            });
 
-    // Listen for "Enter" event in search field
-    searchInput.addEventListener('keypress', (event) => {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent default form behavior
-            const query = searchInput.value.trim().toLowerCase();
-            buscarProductos(query);
+            // Listen for "Enter" event in search field
+            searchInput.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Prevent default form behavior
+                    const query = searchInput.value.trim().toLowerCase();
+                    buscarProductos(query);
+                }
+            });
         }
-    });
 
-    // Initialize cart icon and modal
-    actualizarIconoCarrito();
-    document.getElementById('cart-icon').addEventListener('click', mostrarCarrito);
+        // Initialize cart icon and modal
+        actualizarIconoCarrito();
+        const cartIcon = document.getElementById('cart-icon');
+        if (cartIcon) {
+            cartIcon.addEventListener('click', mostrarCarrito);
+        }
 
-    // Add event listener for sending quote
-    document.getElementById('send-quote').addEventListener('click', enviarCotizacion);
+        // Add event listener for sending quote
+        const sendQuote = document.getElementById('send-quote');
+        if (sendQuote) {
+            sendQuote.addEventListener('click', enviarCotizacion);
+        }
+    }
 });
 
