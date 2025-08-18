@@ -21,14 +21,27 @@
             <a class="navbar-brand" href="../index.html">
                 <img src="../imgs/logos/logoempresanav.png" alt="Logo Empresa de Limpieza" height="50" class="d-inline-block align-top">
             </a>
-            <a class="nav-link d-flex align-items-center" href="#" id="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
-                <i class="fas fa-shopping-cart me-4"></i>
-                <span id="cart-count" class="badge bg-primary">0</span>
-            </a>
+            
+            <!-- Buscador centrado - visible en desktop -->
+            <div class="navbar-search-wrapper d-none d-lg-flex justify-content-center flex-grow-1">
+                <form id="search-form-navbar" class="d-flex" style="width: 50%; max-width: 400px;">
+                    <input id="search-input-navbar" class="form-control me-2" type="text" placeholder="Buscar productos..." aria-label="Buscar">
+                    <button id="search-button-navbar" type="button" class="btn btn-primary">Buscar</button>
+                </form>
+            </div>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Buscador móvil - visible en mobile -->
+                <div class="d-lg-none mb-3">
+                    <form id="search-form-navbar-mobile" class="d-flex">
+                        <input id="search-input-navbar-mobile" class="form-control me-2" type="text" placeholder="Buscar productos..." aria-label="Buscar">
+                        <button id="search-button-navbar-mobile" type="button" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
+                
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
@@ -44,159 +57,22 @@
         </div>
     </nav>
 
-    <!-- Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="cart-items">
-                    <!-- Cart items will be dynamically added here -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" onclick="limpiarCarrito();" style="margin-left: 0; margin-right: auto;">Vaciar Carrito</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="send-quote">Enviar Cotización</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Sidebar y Productos -->
     <div class="container my-5">
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3 sidebar-container" id="sidebar">
-                <div class="sidebar">
-                    <h4>Categorías</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Guantes
-                            <ul class="sub-list" style="display: none;">
-                                <a href=./productos.html?categoria=guantes><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?categoria=guantes&tipo=latex"><li class="list-group-item">Guantes de látex</li></a>
-                                <a href="./productos.html?categoria=guantes&tipo=Nitrilo"><li class="list-group-item">Guantes de nitrilo</li></a>
-                                <a href="./productos.html?categoria=guantes&tipo=Seguridad"><li class="list-group-item">Seguridad</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Quimicos
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Quimicos"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?tipo=Desinfectantes"><li class="list-group-item">Desinfectantes</li></a>
-                                <a href="./productos.html?tipo=Desodorantesdepiso"><li class="list-group-item">Desodorante de Piso</li></a>
-                                <a href="./productos.html?tipo=Cera"><li class="list-group-item">Ceras</li></a>
-                                <a href="./productos.html?tipo=Antigrasa"><li class="list-group-item">Antigrasa</li></a>
-                                <a href="./productos.html?tipo=Jabondemano"><li class="list-group-item">Jabón de Mano</li></a>
-                                <a href="./productos.html?tipo=Detergente"><li class="list-group-item">Detergente</li></a>
-                                <a href="./productos.html?tipo=Cloro"><li class="list-group-item">Cloro</li></a>
-                                <a href="./productos.html?tipo=Lavandina"><li class="list-group-item">Lavandina</li></a>
-                                <a href="./productos.html?tipo=Alcohol"><li class="list-group-item">Alcohol</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Resmas
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Resmas"><li class="list-group-item">Todos</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Papel
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Papel"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?tipo=higienico"><li class="list-group-item">Papel higiénico</li></a>
-                                <a href="./productos.html?tipo=bobina"><li class="list-group-item">Bobina</li></a>
-                                <a href="./productos.html?tipo=servilleta"><li class="list-group-item">Servilleta</li></a>
-                                <a href="./productos.html?tipo=intercalada"><li class="list-group-item">Intercalada</li></a>
-                                <a href="./productos.html?tipo=Papeltermico"><li class="list-group-item">Térmico</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Bolsas
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=bolsas"><li class="list-group-item">Todos</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Aerosoles/Aromatizadores
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Desinfectantes"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?marca=scjhonson"><li class="list-group-item">SC Jhonson</li></a>
-                                <a href="./productos.html?marca=wurth"><li class="list-group-item">Wurth</li></a>
-                                <a href="./productos.html?marca=maxaroma"><li class="list-group-item">Max Aroma</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Dispensadores
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Dispensadores"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?tipo=Dispenser"><li class="list-group-item">Dispenser</li></a>
-                                <a href="./productos.html?tipo=Pulverizador"><li class="list-group-item">Pulverizador</li></a>
-                                <a href="./productos.html?tipo=Regadera"><li class="list-group-item">Regadera</li></a>
-                                <a href="./productos.html?tipo=Canasto"><li class="list-group-item">Canasto</li></a>
-                                <a href="./productos.html?tipo=Tanque"><li class="list-group-item">Tanque</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Seguridad Vial
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Segvial"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?tipo=Cono"><li class="list-group-item">Conos</li></a>
-                                <a href="./productos.html?tipo=delineador"><li class="list-group-item">Delineadores</li></a>
-                                <a href="./productos.html?tipo=tachas"><li class="list-group-item">Tachas</li></a>
-                                <a href="./productos.html?tipo=topes"><li class="list-group-item">Topes</li></a>
-                                <a href="./productos.html?tipo=Valla"><li class="list-group-item">Valla</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Electrodomésticos
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Electrodomesticos"><li class="list-group-item">Todos</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Indumentaria
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Indumentaria"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?tipo=Zapato"><li class="list-group-item">Calzado</li></a>
-                                <a href="./productos.html?tipo=Seguridadvial"><li class="list-group-item">Seguridad Vial</li></a>
-                                <a href="./productos.html?tipo=Anteojos"><li class="list-group-item">Anteojos</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Barrido y Limpieza
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Barridoylimpieza"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?tipo=Mopas"><li class="list-group-item">Mopas</li></a>
-                                <a href="./productos.html?tipo=Trapos"><li class="list-group-item">Trapo</li></a>
-                                <a href="./productos.html?tipo=Balde"><li class="list-group-item">Baldes</li></a>
-                                <a href="./productos.html?tipo=Escobillon"><li class="list-group-item">Escobillon</li></a>
-                                <a href="./productos.html?tipo=Secadores"><li class="list-group-item">Secadores</li></a>
-                                <a href="./productos.html?tipo=Cabos"><li class="list-group-item">Cabos</li></a>
-                                <a href="./productos.html?tipo=Esponjas"><li class="list-group-item">Esponjas</li></a>
-                                <a href="./productos.html?tipo=Sopapa"><li class="list-group-item">Sopapa</li></a>
-                                <a href="./productos.html?tipo=Cepillo"><li class="list-group-item">Cepillos</li></a>
-                                <a href="./productos.html?tipo=Carro"><li class="list-group-item">Carros</li></a>
-                                <a href="./productos.html?tipo=Señales><li class="list-group-item">Señalización</li></a>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" onclick="toggleSubcategories(this)">Herramientas
-                            <ul class="sub-list" style="display: none;">
-                                <a href="./productos.html?categoria=Herramientas"><li class="list-group-item">Todos</li></a>
-                                <a href="./productos.html?tipo=Aspiradoras"><li class="list-group-item">Aspiradoras</li></a>
-                                <a href="./productos.html?tipo=Compresores"><li class="list-group-item">Compresores</li></a>
-                                <a href="./productos.html?tipo=Escalera"><li class="list-group-item">Escaleras</li></a>
-                                <a href="./productos.html?tipo=Taladro"><li class="list-group-item">Taladros</li></a>
-                            </ul>
-                        </li>
-                    </ul>
+                <!-- La sidebar se generará dinámicamente -->
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Cargando categorías...</span>
+                    </div>
+                    <p class="mt-2">Cargando categorías...</p>
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="container my-4" style="width: 50vh; max-width: 90%;">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form id="search-form" class="d-flex">
-                                <button class="navbar-toggler sidebar-toggler d-md-none" type="button" aria-label="Toggle sidebar" style="margin-right: 5vh;">
-                                    <i class="fas fa-list"></i>
-                                </button>
-                                <input id="search-input" class="form-control me-2" type="text" placeholder="Buscar productos..." aria-label="Buscar">
-                                <button id="search-button" type="button" class="btn btn-primary">Buscar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
                 <div class="row" id="productos-container">
                     <!-- Aquí se cargarán los productos -->
                 </div>
@@ -332,6 +208,33 @@
     </div>
 
 
+    <!-- Carrito Flotante -->
+    <div class="cart-float" onclick="abrirCarritoFlotante()">
+        <i class="fas fa-shopping-cart"></i>
+        <div class="cart-count" id="cart-float-count">0</div>
+    </div>
+
+    <!-- Modal del Carrito Flotante -->
+    <div id="cart-float-modal" class="cart-float-modal">
+        <div class="cart-float-modal-content">
+            <span class="cart-float-close" onclick="cerrarCarritoFlotante()">&times;</span>
+            <h3>Carrito de Compras</h3>
+            <div id="cart-float-items" class="cart-float-items">
+                <!-- Los items del carrito se cargarán aquí -->
+            </div>
+            <div id="cart-float-total" class="cart-float-total">
+                <!-- El total se mostrará aquí -->
+            </div>
+            <div class="cart-float-disclaimer">
+                <small class="text-muted"><i class="fas fa-info-circle"></i> Los precios incluyen IVA</small>
+            </div>
+            <div class="cart-float-actions">
+                <button class="cart-float-clear" onclick="limpiarCarritoFlotante()">Vaciar Carrito</button>
+                <button class="cart-float-send" onclick="enviarCotizacionFlotante()">Enviar Cotización</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/5491136267653?text=%20Me%20contacto%20desde%20la%20web,%20tengo%20dudas%20sobre" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp my-float"></i>
@@ -339,6 +242,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/productos-cargador.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/carrito-flotante.js"></script>
+    <script src="../js/sidebar-dinamica.js"></script>
+    <script src="../js/buscador-navbar.js"></script>
 </body>
 </html>
 

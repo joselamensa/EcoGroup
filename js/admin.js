@@ -420,6 +420,39 @@ function formatearPrecioArgentino(precio) {
     return precio.toLocaleString('es-AR');
 }
 
+// Función para obtener todos los tipos únicos de productos
+function obtenerTiposUnicos() {
+    const tipos = new Set();
+    
+    // Recorrer todos los productos existentes para obtener tipos únicos
+    Object.values(productosActuales).forEach(categoria => {
+        categoria.forEach(producto => {
+            if (producto.tipo && producto.tipo.trim() !== '') {
+                tipos.add(producto.tipo.trim());
+            }
+        });
+    });
+    
+    // Agregar tipos comunes que podrían no estar en los productos actuales
+    const tiposComunes = [
+        'higienico', 'bobina', 'servilleta', 'intercalada', 'Papeltermico',
+        'latex', 'Nitrilo', 'Seguridad', 'Higiene', 'Latex',
+        'Desinfectantes', 'Desodorantesdepiso', 'Cera', 'Antigrasa', 
+        'Jabondemano', 'Detergente', 'Cloro', 'Lavandina', 'Alcohol',
+        'Dispenser', 'Pulverizador', 'Regadera', 'Canasto', 'Tanque',
+        'Cono', 'delineador', 'tachas', 'topes', 'Valla',
+        'Zapato', 'Seguridadvial', 'Anteojos',
+        'Mopas', 'Trapos', 'Balde', 'Escobillon', 'Secadores', 
+        'Cabos', 'Esponjas', 'Sopapa', 'Cepillo', 'Carro', 'Señales',
+        'Aspiradoras', 'Compresores', 'Escalera', 'Taladro',
+        'PapelImpresora', 'Max Aroma', 'Wurth'
+    ];
+    
+    tiposComunes.forEach(tipo => tipos.add(tipo));
+    
+    return Array.from(tipos).sort();
+}
+
 // Función para mostrar modal de producto
 function mostrarModalProducto(producto = null) {
     productoEditando = producto;
@@ -460,6 +493,17 @@ function mostrarModalProducto(producto = null) {
         option.value = categoria;
         option.textContent = categoriasActuales[categoria].nombre;
         categoriaSelect.appendChild(option);
+    });
+    
+    // Llenar opciones de tipos
+    const tipoSelect = document.getElementById('productoTipo');
+    tipoSelect.innerHTML = '<option value="">Seleccionar tipo...</option>';
+    const tiposUnicos = obtenerTiposUnicos();
+    tiposUnicos.forEach(tipo => {
+        const option = document.createElement('option');
+        option.value = tipo;
+        option.textContent = tipo;
+        tipoSelect.appendChild(option);
     });
     
     // Configurar el input de imagen para preview
