@@ -15,10 +15,27 @@ let bannerEditando = null;
 document.addEventListener('DOMContentLoaded', function() {
     inicializarSistema();
     cargarProductosExistentes();
-    cargarCategoriasExistentes();
+    cargarCategoriasDesdeServidor();
     cargarBannersExistentes();
     verificarSesion();
 });
+
+function obtenerCategoriasPorDefecto() {
+    return {
+        bolsas: { nombre: 'Bolsas', descripcion: 'Bolsas de residuos y basura', icono: 'fas fa-trash', tipos: [] },
+        guantes: { nombre: 'Guantes', descripcion: 'Guantes de protección', icono: 'fas fa-hand-paper', tipos: [] },
+        Desinfectantes: { nombre: 'Desinfectantes', descripcion: 'Productos desinfectantes', icono: 'fas fa-spray-can', tipos: [] },
+        Resmas: { nombre: 'Resmas', descripcion: 'Papel para impresión', icono: 'fas fa-file-alt', tipos: [] },
+        Papel: { nombre: 'Papel', descripcion: 'Productos de papel', icono: 'fas fa-toilet-paper', tipos: [] },
+        Quimicos: { nombre: 'Químicos', descripcion: 'Productos químicos de limpieza', icono: 'fas fa-flask', tipos: [] },
+        Dispensadores: { nombre: 'Dispensadores', descripcion: 'Dispensadores y contenedores', icono: 'fas fa-pump-soap', tipos: [] },
+        Segvial: { nombre: 'Seguridad Vial', descripcion: 'Productos de seguridad vial', icono: 'fas fa-road', tipos: [] },
+        Electrodomesticos: { nombre: 'Electrodomésticos', descripcion: 'Electrodomésticos', icono: 'fas fa-plug', tipos: [] },
+        Indumentaria: { nombre: 'Indumentaria', descripcion: 'Ropa y calzado de trabajo', icono: 'fas fa-tshirt', tipos: [] },
+        Barridoylimpieza: { nombre: 'Barrido y Limpieza', descripcion: 'Productos para limpieza', icono: 'fas fa-broom', tipos: [] },
+        Herramientas: { nombre: 'Herramientas', descripcion: 'Herramientas y equipos', icono: 'fas fa-tools', tipos: [] }
+    };
+}
 
 // Función para inicializar el sistema
 function inicializarSistema() {
@@ -169,28 +186,29 @@ function cargarProductosExistentes() {
 }
 
 // Función para cargar categorías existentes
-function cargarCategoriasExistentes() {
-    const categoriasGuardadas = localStorage.getItem('categorias');
-    if (categoriasGuardadas) {
-        categoriasActuales = JSON.parse(categoriasGuardadas);
-    } else {
-        // Categorías por defecto basadas en los productos existentes
-        categoriasActuales = {
-            bolsas: { nombre: 'Bolsas', descripcion: 'Bolsas de residuos y basura', icono: 'fas fa-trash' },
-            guantes: { nombre: 'Guantes', descripcion: 'Guantes de protección', icono: 'fas fa-hand-paper' },
-            Desinfectantes: { nombre: 'Desinfectantes', descripcion: 'Productos desinfectantes', icono: 'fas fa-spray-can' },
-            Resmas: { nombre: 'Resmas', descripcion: 'Papel para impresión', icono: 'fas fa-file-alt' },
-            Papel: { nombre: 'Papel', descripcion: 'Productos de papel', icono: 'fas fa-toilet-paper' },
-            Quimicos: { nombre: 'Químicos', descripcion: 'Productos químicos de limpieza', icono: 'fas fa-flask' },
-            Dispensadores: { nombre: 'Dispensadores', descripcion: 'Dispensadores y contenedores', icono: 'fas fa-pump-soap' },
-            Segvial: { nombre: 'Seguridad Vial', descripcion: 'Productos de seguridad vial', icono: 'fas fa-road' },
-            Electrodomesticos: { nombre: 'Electrodomésticos', descripcion: 'Electrodomésticos', icono: 'fas fa-plug' },
-            Indumentaria: { nombre: 'Indumentaria', descripcion: 'Ropa y calzado de trabajo', icono: 'fas fa-tshirt' },
-            Barridoylimpieza: { nombre: 'Barrido y Limpieza', descripcion: 'Productos para limpieza', icono: 'fas fa-broom' },
-            Herramientas: { nombre: 'Herramientas', descripcion: 'Herramientas y equipos', icono: 'fas fa-tools' }
-        };
-        localStorage.setItem('categorias', JSON.stringify(categoriasActuales));
-    }
+function cargarCategoriasDesdeServidor() {
+    fetch('cargar_categorias.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.categorias) {
+                categoriasActuales = data.categorias;
+                Object.keys(categoriasActuales).forEach(k => {
+                    if (!Array.isArray(categoriasActuales[k].tipos)) categoriasActuales[k].tipos = [];
+                });
+            } else {
+                categoriasActuales = obtenerCategoriasPorDefecto();
+                guardarCategoriasEnServidor();
+            }
+            cargarCategoriasGrid();
+            actualizarDashboard();
+        })
+        .catch(() => {
+            // Backend no disponible (p. ej., ejecutando en 127.0.0.1:5500). Usar por defecto y mostrar UI.
+            categoriasActuales = Object.keys(categoriasActuales).length ? categoriasActuales : obtenerCategoriasPorDefecto();
+            cargarCategoriasGrid();
+            actualizarDashboard();
+            console.warn('No se pudo cargar categorias desde servidor. ¿Estás sirviendo con PHP/Apache?');
+        });
 }
 
 // Función para cargar banners existentes desde el servidor
@@ -495,21 +513,178 @@ function mostrarModalProducto(producto = null) {
         categoriaSelect.appendChild(option);
     });
     
-    // Llenar opciones de tipos
+    // Llenar opciones de tipos según categoría seleccionada
     const tipoSelect = document.getElementById('productoTipo');
-    tipoSelect.innerHTML = '<option value="">Seleccionar tipo...</option>';
-    const tiposUnicos = obtenerTiposUnicos();
-    tiposUnicos.forEach(tipo => {
-        const option = document.createElement('option');
-        option.value = tipo;
-        option.textContent = tipo;
-        tipoSelect.appendChild(option);
-    });
+    const categoriaInicial = categoriaSelect.value;
+    llenarTiposParaCategoria(categoriaInicial, tipoSelect, producto?.tipo || '');
+
+    // Actualizar tipos cuando cambia la categoría
+    categoriaSelect.onchange = () => {
+        llenarTiposParaCategoria(categoriaSelect.value, tipoSelect, '');
+    };
     
     // Configurar el input de imagen para preview
     configurarInputImagen();
     
     new bootstrap.Modal(modal).show();
+}
+
+// Devuelve lista de tipos definidos para una categoría (local) con fallback
+function obtenerTiposParaCategoria(categoriaClave) {
+    const categoria = categoriasActuales[categoriaClave];
+    let tipos = [];
+    if (categoria && Array.isArray(categoria.tipos) && categoria.tipos.length > 0) {
+        tipos = categoria.tipos.slice();
+    } else {
+        // Fallback: calcular a partir de productos existentes de esa categoría
+        const tiposSet = new Set();
+        if (productosActuales[categoriaClave]) {
+            productosActuales[categoriaClave].forEach(p => {
+                if (p.tipo && p.tipo.trim() !== '') tiposSet.add(p.tipo.trim());
+            });
+        }
+        tipos = Array.from(tiposSet);
+    }
+    return tipos.sort();
+}
+
+// Rellena las opciones del select de tipos para una categoría dada
+function llenarTiposParaCategoria(categoriaClave, tipoSelect, tipoSeleccionado) {
+    tipoSelect.innerHTML = '<option value="">Seleccionar tipo...</option>';
+    const tipos = obtenerTiposParaCategoria(categoriaClave);
+    tipos.forEach(tipo => {
+        const option = document.createElement('option');
+        option.value = tipo;
+        option.textContent = tipo;
+        tipoSelect.appendChild(option);
+    });
+    if (tipoSeleccionado) {
+        // Si el tipo no está en la lista, añadirlo temporalmente para poder seleccionarlo
+        if (!tipos.includes(tipoSeleccionado)) {
+            const opt = document.createElement('option');
+            opt.value = tipoSeleccionado;
+            opt.textContent = tipoSeleccionado;
+            tipoSelect.appendChild(opt);
+        }
+        tipoSelect.value = tipoSeleccionado;
+    }
+}
+
+// --- Gestión de Tipos (Modal) ---
+function mostrarModalTipos(preselectCategoriaClave = '') {
+    // Asegurar que cada categoría tenga arreglo de tipos
+    Object.keys(categoriasActuales).forEach(k => {
+        if (!Array.isArray(categoriasActuales[k].tipos)) categoriasActuales[k].tipos = [];
+    });
+    // Llenar select de categorías
+    const select = document.getElementById('tipoCategoriaSelect');
+    if (!select) return;
+    select.innerHTML = '';
+    Object.keys(categoriasActuales).forEach(clave => {
+        const opt = document.createElement('option');
+        opt.value = clave;
+        opt.textContent = categoriasActuales[clave].nombre;
+        select.appendChild(opt);
+    });
+    if (preselectCategoriaClave && categoriasActuales[preselectCategoriaClave]) {
+        select.value = preselectCategoriaClave;
+    }
+    // Render listado de tipos
+    renderTiposListado();
+    // Cambiar render al cambiar categoría
+    select.onchange = renderTiposListado;
+    new bootstrap.Modal(document.getElementById('modalTipos')).show();
+}
+
+function renderTiposListado() {
+    const cont = document.getElementById('tiposListadoContainer');
+    if (!cont) return;
+    const select = document.getElementById('tipoCategoriaSelect');
+    const clave = select ? select.value : '';
+    const categoria = categoriasActuales[clave];
+    const tipos = (categoria && Array.isArray(categoria.tipos)) ? categoria.tipos : [];
+    let html = '<div class="mt-2">';
+    if (tipos.length === 0) {
+        html += '<p class="text-muted">No hay tipos definidos para esta categoría.</p>';
+    } else {
+        html += '<div class="d-flex flex-wrap gap-2">';
+        tipos.forEach(t => {
+            html += `<span class=\"badge bg-secondary\">${t}
+                <button type=\"button\" class=\"btn btn-sm btn-light ms-1 py-0 px-1\" onclick=\"editarTipo('${clave}','${t.replace(/'/g, "\\'")}')\"><i class=\"fas fa-pen\"></i></button>
+                <button type=\"button\" class=\"btn btn-sm btn-light ms-1 py-0 px-1\" onclick=\"eliminarTipo('${clave}','${t.replace(/'/g, "\\'")}')\"><i class=\"fas fa-times\"></i></button>
+            </span>`;
+        });
+        html += '</div>';
+    }
+    html += '</div>';
+    cont.innerHTML = html;
+}
+
+function guardarTipo() {
+    const clave = document.getElementById('tipoCategoriaSelect').value;
+    const input = document.getElementById('tipoNombre');
+    const nombre = (input.value || '').trim();
+    if (!clave) { alert('Seleccione una categoría'); return; }
+    if (!nombre) { alert('Ingrese un nombre de tipo'); return; }
+    if (!Array.isArray(categoriasActuales[clave].tipos)) categoriasActuales[clave].tipos = [];
+    if (!categoriasActuales[clave].tipos.includes(nombre)) {
+        categoriasActuales[clave].tipos.push(nombre);
+        categoriasActuales[clave].tipos.sort();
+        guardarCategoriasEnServidor(() => {
+            renderTiposListado();
+            input.value = '';
+        });
+    } else {
+        alert('Ese tipo ya existe en la categoría.');
+    }
+}
+
+function eliminarTipo(clave, tipo) {
+    if (!categoriasActuales[clave] || !Array.isArray(categoriasActuales[clave].tipos)) return;
+    categoriasActuales[clave].tipos = categoriasActuales[clave].tipos.filter(t => t !== tipo);
+    guardarCategoriasEnServidor(() => {
+        renderTiposListado();
+    });
+}
+
+function editarTipo(clave, tipoActual) {
+    const nuevoNombre = prompt('Editar tipo', tipoActual);
+    if (nuevoNombre === null) return; // cancelado
+    const nombre = (nuevoNombre || '').trim();
+    if (!nombre) { alert('El nombre no puede estar vacío'); return; }
+    if (!categoriasActuales[clave] || !Array.isArray(categoriasActuales[clave].tipos)) return;
+    const tipos = categoriasActuales[clave].tipos;
+    const idx = tipos.indexOf(tipoActual);
+    if (idx === -1) return;
+    if (tipos.includes(nombre) && nombre !== tipoActual) {
+        alert('Ya existe un tipo con ese nombre en la categoría');
+        return;
+    }
+    tipos[idx] = nombre;
+    tipos.sort();
+    guardarCategoriasEnServidor(() => {
+        renderTiposListado();
+    });
+}
+
+// Guardar categorías en servidor
+function guardarCategoriasEnServidor(callback) {
+    fetch('guardar_categorias.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ categorias: categoriasActuales })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (!data.success) {
+            alert('Error al guardar categorías: ' + (data.error || 'desconocido'));
+        }
+        if (typeof callback === 'function') callback();
+    })
+    .catch(() => {
+        alert('Error de conexión al guardar categorías');
+        if (typeof callback === 'function') callback();
+    });
 }
 
 // Función para configurar el input de imagen
@@ -664,17 +839,18 @@ function guardarCategoria() {
     const nuevaCategoria = {
         nombre,
         descripcion,
-        icono: icono || 'fas fa-box'
+        icono: icono || 'fas fa-box',
+        tipos: []
     };
     
     // Generar clave única para la categoría
-    const clave = nombre.toLowerCase().replace(/\s+/g, '');
+    const clave = nombre.replace(/\s+/g, '');
     categoriasActuales[clave] = nuevaCategoria;
-    
-    localStorage.setItem('categorias', JSON.stringify(categoriasActuales));
-    bootstrap.Modal.getInstance(document.getElementById('modalCategoria')).hide();
-    cargarCategoriasGrid();
-    actualizarDashboard();
+    guardarCategoriasEnServidor(() => {
+        bootstrap.Modal.getInstance(document.getElementById('modalCategoria')).hide();
+        cargarCategoriasGrid();
+        actualizarDashboard();
+    });
 }
 
 // Función para cargar grid de categorías
@@ -686,6 +862,9 @@ function cargarCategoriasGrid() {
         const categoria = categoriasActuales[clave];
         const col = document.createElement('div');
         col.className = 'col-md-4 mb-3';
+        const tiposChips = Array.isArray(categoria.tipos) && categoria.tipos.length > 0
+            ? `<div class="mt-2">${categoria.tipos.map(t => `<span class=\"badge bg-secondary me-1\">${t}</span>`).join(' ')}</div>`
+            : '';
         col.innerHTML = `
             <div class="card">
                 <div class="card-body">
@@ -695,8 +874,12 @@ function cargarCategoriasGrid() {
                                 <i class="${categoria.icono} me-2"></i>${categoria.nombre}
                             </h5>
                             <p class="card-text">${categoria.descripcion}</p>
+                            ${tiposChips}
                         </div>
                         <div>
+                            <button class="btn btn-sm btn-outline-primary me-2" onclick="mostrarModalTipos('${clave}')">
+                                <i class="fas fa-sitemap"></i>
+                            </button>
                             <button class="btn btn-sm btn-danger" onclick="eliminarCategoria('${clave}')">
                                 <i class="fas fa-trash"></i>
                             </button>
@@ -713,9 +896,10 @@ function cargarCategoriasGrid() {
 function eliminarCategoria(clave) {
     if (confirm('¿Estás seguro de que quieres eliminar esta categoría?')) {
         delete categoriasActuales[clave];
-        localStorage.setItem('categorias', JSON.stringify(categoriasActuales));
-        cargarCategoriasGrid();
-        actualizarDashboard();
+        guardarCategoriasEnServidor(() => {
+            cargarCategoriasGrid();
+            actualizarDashboard();
+        });
     }
 }
 

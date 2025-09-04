@@ -16,8 +16,13 @@ function obtenerCategoriasUnicas() {
 
 // Función para obtener todos los tipos únicos por categoría
 function obtenerTiposPorCategoria(categoria) {
+    // Prioridad: tipos definidos en servidor (categorias.json) cacheados en memoria
+    if (window.__categoriasCache && window.__categoriasCache[categoria] && Array.isArray(window.__categoriasCache[categoria].tipos) && window.__categoriasCache[categoria].tipos.length > 0) {
+        return window.__categoriasCache[categoria].tipos.slice().sort();
+    }
+
+    // Fallback: inferir desde productos
     const tipos = new Set();
-    
     if (typeof productos !== 'undefined' && productos[categoria]) {
         productos[categoria].forEach(producto => {
             if (producto.tipo && producto.tipo.trim() !== '') {
@@ -25,7 +30,6 @@ function obtenerTiposPorCategoria(categoria) {
             }
         });
     }
-    
     return Array.from(tipos).sort();
 }
 
@@ -145,21 +149,32 @@ function toggleSubcategories(element) {
 
 // Función para inicializar la sidebar dinámica
 function inicializarSidebarDinamica() {
-    // Esperar a que los productos se carguen
-    if (typeof productos !== 'undefined' && Object.keys(productos).length > 0) {
-        generarSidebarDinamica();
-    } else {
-        // Si los productos no están cargados, esperar un poco más
-        setTimeout(() => {
+    // Cargar categorías desde servidor para cachear tipos
+    fetch('cargar_categorias.php')
+        .then(r => r.json())
+        .then(data => {
+            if (data.success && data.categorias) {
+                window.__categoriasCache = data.categorias;
+            }
+        })
+        .catch(() => {})
+        .finally(() => {
+            // Esperar a que los productos se carguen
             if (typeof productos !== 'undefined' && Object.keys(productos).length > 0) {
                 generarSidebarDinamica();
             } else {
-                console.log('Los productos no se han cargado aún. La sidebar se generará cuando estén disponibles.');
-                // Intentar nuevamente después de un tiempo
-                setTimeout(inicializarSidebarDinamica, 2000);
+                // Si los productos no están cargados, esperar un poco más
+                setTimeout(() => {
+                    if (typeof productos !== 'undefined' && Object.keys(productos).length > 0) {
+                        generarSidebarDinamica();
+                    } else {
+                        console.log('Los productos no se han cargado aún. La sidebar se generará cuando estén disponibles.');
+                        // Intentar nuevamente después de un tiempo
+                        setTimeout(inicializarSidebarDinamica, 2000);
+                    }
+                }, 1000);
             }
-        }, 1000);
-    }
+        });
 }
 
 // Inicializar cuando se carga la página

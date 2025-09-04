@@ -274,9 +274,14 @@
                     <div id="categoriasSection" class="seccion-admin d-none">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h2>Gestionar Categorías</h2>
-                            <button class="btn btn-primary" onclick="mostrarModalCategoria()">
-                                <i class="fas fa-plus me-2"></i>Agregar Categoría
-                            </button>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-secondary" onclick="mostrarModalTipos()">
+                                    <i class="fas fa-sitemap me-2"></i>Gestionar Tipos
+                                </button>
+                                <button class="btn btn-primary" onclick="mostrarModalCategoria()">
+                                    <i class="fas fa-plus me-2"></i>Agregar Categoría
+                                </button>
+                            </div>
                         </div>
                         <div class="row" id="categoriasGrid">
                             <!-- Las categorías se cargarán dinámicamente -->
@@ -407,6 +412,43 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" onclick="guardarProducto()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tipos -->
+    <div class="modal fade" id="modalTipos" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gestionar Tipos por Categoría</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formTipos" class="mb-3">
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-5">
+                                <label class="form-label">Categoría</label>
+                                <select class="form-select" id="tipoCategoriaSelect" required></select>
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-label">Nuevo Tipo</label>
+                                <input type="text" class="form-control" id="tipoNombre" placeholder="Ej: Nitrilo, Intercalada...">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-primary w-100" onclick="guardarTipo()">
+                                    <i class="fas fa-plus me-1"></i>Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="tiposListadoContainer">
+                        <!-- Se llena dinámicamente con los tipos por categoría -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
