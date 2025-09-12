@@ -4,7 +4,7 @@
             "nombre": "Bolsas Residuo Negra",
             "descripcion": "Bolsas 100 x 110 de 40 Micrones x 100 u. ",
             "precio": 21435.4,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/6896047f98edd_1754662015.jpg"
@@ -13,7 +13,7 @@
             "nombre": "Bolsas Residuo Tambor",
             "descripcion": "Bolsas 100 x 120 de 36 Micrones x 100 u.",
             "precio": 25700.4,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/6896048f0900b_1754662031.jpg"
@@ -22,7 +22,7 @@
             "nombre": "Bolsas Residuo Negra",
             "descripcion": "Bolsas 60 x 90 de 30 Micrones x 100u.",
             "precio": 8423.5,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/689604ba4b08e_1754662074.jpg"
@@ -38,10 +38,12 @@
         },
         {
             "nombre": "Bolsa de residuos azul",
-            "imagen": "..\/imgs\/productos\/bolsas\/bolsa residuos azul.jpg",
             "descripcion": "Bolsas 100 x 110 Residuos Peligrosos Azul de 45 Micrones x 100 u.",
             "precio": 0,
-            "categoria": "bolsas"
+            "tipo": "Bolsas",
+            "marca": "",
+            "categoria": "bolsas",
+            "imagen": "..\/imgs\/productos\/bolsas\/bolsa residuos azul.jpg"
         },
         {
             "nombre": "Bolsa transparente",
@@ -54,7 +56,7 @@
             "nombre": "Bolsas de basura Eco",
             "descripcion": "Bolsas 100 x 110 de Residuos Verde x 100 u - Ideal Reciclaje.",
             "precio": 32410.6,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/BolsaResiduoVerde.jpg"
@@ -63,7 +65,7 @@
             "nombre": "Bolsa de Residuo Amarilla",
             "descripcion": "Bolsas de Residuos Peligrosos 100x110 45 mic",
             "precio": 0,
-            "tipo": "bolsas",
+            "tipo": "Bolsas",
             "marca": "Ecobolsa",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/68960e2b9582f_1754664491.jpg"

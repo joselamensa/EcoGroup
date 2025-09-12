@@ -90,31 +90,55 @@ function generarSidebarDinamica() {
         
         sidebarHTML += `
             <li class="list-group-item" onclick="toggleSubcategories(this)">
-                ${nombreLegible}
+                <div class="category-header">
+                    <span>${nombreLegible}</span>
+                    <span class="badge">${tipos.length + marcas.length + 1}</span>
+                </div>
                 <ul class="sub-list" style="display: none;">
                     <a href="./productos.html?categoria=${categoria}">
-                        <li class="list-group-item">Todos</li>
+                        <li class="sub-item">
+                            <span>Todos</span>
+                            <span class="badge">${typeof productos !== 'undefined' && productos[categoria] ? productos[categoria].length : 0}</span>
+                        </li>
                     </a>
         `;
         
         // Agregar tipos únicos
-        tipos.forEach(tipo => {
-            sidebarHTML += `
-                <a href="./productos.html?categoria=${categoria}&tipo=${tipo}">
-                    <li class="list-group-item">${tipo}</li>
-                </a>
-            `;
-        });
-        
-        // Agregar marcas únicas (solo para ciertas categorías)
-        if (categoria === 'Desinfectantes' || categoria === 'Quimicos') {
-            marcas.forEach(marca => {
+        if (tipos.length > 0) {
+            tipos.forEach(tipo => {
+                const productosConTipo = typeof productos !== 'undefined' && productos[categoria] 
+                    ? productos[categoria].filter(p => p.tipo === tipo).length 
+                    : 0;
+                    
                 sidebarHTML += `
-                    <a href="./productos.html?categoria=${categoria}&marca=${marca}">
-                        <li class="list-group-item">${marca}</li>
+                    <a href="./productos.html?categoria=${categoria}&tipo=${encodeURIComponent(tipo)}">
+                        <li class="sub-item">
+                            <span>${tipo}</span>
+                            <span class="badge">${productosConTipo}</span>
+                        </li>
                     </a>
                 `;
             });
+        }
+        
+        // Agregar marcas únicas (solo para ciertas categorías)
+        if (categoria === 'Desinfectantes' || categoria === 'Quimicos') {
+            if (marcas.length > 0) {
+                marcas.forEach(marca => {
+                    const productosConMarca = typeof productos !== 'undefined' && productos[categoria] 
+                        ? productos[categoria].filter(p => p.marca === marca).length 
+                        : 0;
+                        
+                    sidebarHTML += `
+                        <a href="./productos.html?categoria=${categoria}&marca=${marca}">
+                            <li class="sub-item">
+                                <span>${marca}</span>
+                                <span class="badge">${productosConMarca}</span>
+                            </li>
+                        </a>
+                    `;
+                });
+            }
         }
         
         sidebarHTML += `

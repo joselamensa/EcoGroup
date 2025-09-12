@@ -187,30 +187,65 @@ function cargarProductosExistentes() {
 
 // Función para cargar categorías existentes
 function cargarCategoriasDesdeServidor() {
+    console.log('Cargando categorías desde servidor...');
+    
     fetch('cargar_categorias.php')
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response status:', response.status);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Datos recibidos del servidor:', data);
+            
             if (data.success && data.categorias) {
                 categoriasActuales = data.categorias;
+                console.log('Categorías cargadas exitosamente:', Object.keys(categoriasActuales));
+                
+                // Asegurar que cada categoría tenga el array 'tipos'
                 Object.keys(categoriasActuales).forEach(k => {
-                    if (!Array.isArray(categoriasActuales[k].tipos)) categoriasActuales[k].tipos = [];
+                    if (!Array.isArray(categoriasActuales[k].tipos)) {
+                        categoriasActuales[k].tipos = [];
+                    }
                 });
+                
+                // Cargar la UI de categorías si estamos en esa sección
+                const categoriasSection = document.getElementById('categoriasSection');
+                if (categoriasSection && !categoriasSection.classList.contains('d-none')) {
+                    cargarCategoriasGrid();
+                }
+                
+                // Actualizar dashboard
+                actualizarDashboard();
+                
+                console.log('Categorías procesadas correctamente');
             } else {
-                categoriasActuales = obtenerCategoriasPorDefecto();
-                guardarCategoriasEnServidor();
+                console.warn('Respuesta del servidor sin datos válidos:', data);
+                throw new Error('Datos de categorías inválidos');
             }
-            cargarCategoriasGrid();
-            actualizarDashboard();
         })
-        .catch(() => {
-            // Backend no disponible (p. ej., ejecutando en 127.0.0.1:5500). Usar por defecto y mostrar UI.
-            categoriasActuales = Object.keys(categoriasActuales).length ? categoriasActuales : obtenerCategoriasPorDefecto();
+        .catch(error => {
+            console.error('Error al cargar categorías desde servidor:', error);
+            
+            // Usar categorías por defecto como fallback
+            categoriasActuales = obtenerCategoriasPorDefecto();
+            console.log('Usando categorías por defecto:', Object.keys(categoriasActuales));
+            
+            // Intentar guardar las categorías por defecto en el servidor
+            guardarCategoriasEnServidor();
+            
+            // Cargar la UI
             cargarCategoriasGrid();
             actualizarDashboard();
-            console.warn('No se pudo cargar categorias desde servidor. ¿Estás sirviendo con PHP/Apache?');
+            
+            // Mostrar mensaje de advertencia (opcional)
+            if (document.getElementById('adminDashboard') && !document.getElementById('adminDashboard').classList.contains('d-none')) {
+                mostrarMensajeAdvertencia('Categorías cargadas desde configuración local');
+            }
         });
 }
-
 // Función para cargar banners existentes desde el servidor
 function cargarBannersExistentes() {
     fetch('cargar_banners.php')
@@ -278,25 +313,41 @@ function cargarBannersExistentes() {
         });
 }
 
-// Función para actualizar el dashboard
+// También agrega esta función mejorada para actualizar el dashboard
 function actualizarDashboard() {
-    const totalProductos = Object.values(productosActuales).flat().length;
-    const totalCategorias = Object.keys(categoriasActuales).length;
-    const productosSinPrecio = Object.values(productosActuales).flat().filter(p => !p.precio || p.precio <= 0).length;
-    const totalBanners = bannersActuales.length;
-    const bannersActivos = bannersActuales.filter(b => b.activo).length;
-    const ultimaActualizacion = localStorage.getItem('ultimaActualizacion') || 'Nunca';
+    // Verificar que los elementos existan antes de actualizarlos
+    const totalProductosEl = document.getElementById('totalProductos');
+    const totalCategoriasEl = document.getElementById('totalCategorias');
+    const productosSinPrecioEl = document.getElementById('productosSinPrecio');
+    const ultimaActualizacionEl = document.getElementById('ultimaActualizacion');
+    const totalBannersEl = document.getElementById('totalBanners');
 
-    document.getElementById('totalProductos').textContent = totalProductos;
-    document.getElementById('totalCategorias').textContent = totalCategorias;
-    document.getElementById('productosSinPrecio').textContent = productosSinPrecio;
-    document.getElementById('ultimaActualizacion').textContent = ultimaActualizacion;
-    
-    // Agregar información de banners si existe el elemento
-    const bannerElement = document.getElementById('totalBanners');
-    if (bannerElement) {
-        bannerElement.textContent = totalBanners;
+    if (totalProductosEl) {
+        const totalProductos = Object.values(productosActuales).flat().length;
+        totalProductosEl.textContent = totalProductos;
     }
+    
+    if (totalCategoriasEl) {
+        const totalCategorias = Object.keys(categoriasActuales).length;
+        totalCategoriasEl.textContent = totalCategorias;
+    }
+    
+    if (productosSinPrecioEl) {
+        const productosSinPrecio = Object.values(productosActuales).flat().filter(p => !p.precio || p.precio <= 0).length;
+        productosSinPrecioEl.textContent = productosSinPrecio;
+    }
+    
+    if (ultimaActualizacionEl) {
+        const ultimaActualizacion = localStorage.getItem('ultimaActualizacion') || 'Nunca';
+        ultimaActualizacionEl.textContent = ultimaActualizacion;
+    }
+    
+    if (totalBannersEl) {
+        const totalBanners = bannersActuales.length;
+        totalBannersEl.textContent = totalBanners;
+    }
+    
+    console.log('Dashboard actualizado - Categorías:', Object.keys(categoriasActuales).length);
 }
 
 // Función para cargar la tabla de productos
@@ -633,6 +684,8 @@ function guardarTipo() {
         guardarCategoriasEnServidor(() => {
             renderTiposListado();
             input.value = '';
+            // Sincronizar el nuevo tipo en productos.json
+            sincronizarTiposEnProductos(clave, null, nombre);
         });
     } else {
         alert('Ese tipo ya existe en la categoría.');
@@ -664,6 +717,8 @@ function editarTipo(clave, tipoActual) {
     tipos.sort();
     guardarCategoriasEnServidor(() => {
         renderTiposListado();
+        // Sincronizar el cambio de tipo en productos.json
+        sincronizarTiposEnProductos(clave, tipoActual, nombre);
     });
 }
 
@@ -1728,4 +1783,61 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error al generar archivo:', error);
         alert('Error al generar el archivo: ' + error.message);
     }
+}
+
+// Función para sincronizar tipos entre categorias.json y productos.json
+function sincronizarTiposEnProductos(categoria, tipoAnterior, tipoNuevo) {
+    // Si es un tipo nuevo (tipoAnterior es null), no necesitamos actualizar productos
+    if (tipoAnterior === null) {
+        console.log(`Tipo nuevo "${tipoNuevo}" agregado a categoría "${categoria}"`);
+        return;
+    }
+    
+    // Si es una edición de tipo, actualizar en productos.json
+    fetch('actualizar_tipo_productos.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            categoria: categoria,
+            tipo_anterior: tipoAnterior,
+            tipo_nuevo: tipoNuevo
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log(`Tipo actualizado exitosamente: "${tipoAnterior}" → "${tipoNuevo}"`);
+            console.log(`Productos actualizados: ${data.productos_actualizados}`);
+        } else {
+            console.error('Error al sincronizar tipos:', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error al sincronizar tipos:', error);
+    });
+}
+
+// Función para sincronizar tipos desde productos hacia categorias.json
+function sincronizarTiposDesdeProductos() {
+    if (!confirm('¿Estás seguro de que quieres sincronizar los tipos desde productos.json hacia categorias.json? Esto actualizará las categorías con los tipos encontrados en los productos.')) {
+        return;
+    }
+    
+    fetch('sincronizar_tipos.php?accion=sincronizar')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(`Sincronización exitosa!\n\nTipos agregados: ${data.tipos_agregados}\nCategorías actualizadas: ${data.categorias_actualizadas}`);
+                // Recargar las categorías desde el servidor
+                cargarCategoriasDesdeServidor();
+            } else {
+                alert('Error al sincronizar: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al sincronizar tipos: ' + error.message);
+        });
 } 

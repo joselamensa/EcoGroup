@@ -1,0 +1,145 @@
+{
+    "bolsas": {
+        "nombre": "Bolsas",
+        "descripcion": "Bolsas de residuos y basura",
+        "icono": "fas fa-trash",
+        "tipos": [
+            "Bolsas"
+        ]
+    },
+    "guantes": {
+        "nombre": "Guantes",
+        "descripcion": "Guantes de protección",
+        "icono": "fas fa-hand-paper",
+        "tipos": [
+            "Higiene",
+            "Latex",
+            "Nitrilo",
+            "Seguridad",
+            "latex"
+        ]
+    },
+    "Desinfectantes": {
+        "nombre": "Desinfectantes",
+        "descripcion": "Productos desinfectantes",
+        "icono": "fas fa-spray-can",
+        "tipos": [
+            "Desinfectante",
+            "Max Aroma",
+            "Wurth"
+        ]
+    },
+    "Resmas": {
+        "nombre": "Resmas",
+        "descripcion": "Papel para impresión",
+        "icono": "fas fa-file-alt",
+        "tipos": [
+            "PapelImpresora"
+        ]
+    },
+    "Papel": {
+        "nombre": "Papel",
+        "descripcion": "Productos de papel",
+        "icono": "fas fa-toilet-paper",
+        "tipos": [
+            "Bobina",
+            "Papeltermico",
+            "bobina",
+            "higienico",
+            "intercalada",
+            "servilleta"
+        ]
+    },
+    "Quimicos": {
+        "nombre": "Químicos",
+        "descripcion": "Productos químicos de limpieza",
+        "icono": "fas fa-flask",
+        "tipos": [
+            "Alcohol",
+            "Antigrasa",
+            "Cera",
+            "Cloro",
+            "Desinfectantes",
+            "Desodorantesdepiso",
+            "Detergente",
+            "Jabondemano",
+            "Lavandina",
+            "Limpiavidrios"
+        ]
+    },
+    "Dispensadores": {
+        "nombre": "Dispensadores",
+        "descripcion": "Dispensadores y contenedores",
+        "icono": "fas fa-pump-soap",
+        "tipos": [
+            "Canasto",
+            "Dispenser",
+            "Pulverizador",
+            "Regadera",
+            "Tanque"
+        ]
+    },
+    "Segvial": {
+        "nombre": "Seguridad Vial",
+        "descripcion": "Productos de seguridad vial",
+        "icono": "fas fa-road",
+        "tipos": [
+            "Cono",
+            "Delineador",
+            "Valla",
+            "delineador",
+            "tachas",
+            "topes"
+        ]
+    },
+    "Electrodomesticos": {
+        "nombre": "Electrodomésticos",
+        "descripcion": "Electrodomésticos",
+        "icono": "fas fa-plug",
+        "tipos": [
+            "Horno",
+            "Pava"
+        ]
+    },
+    "Indumentaria": {
+        "nombre": "Indumentaria",
+        "descripcion": "Ropa y calzado de trabajo",
+        "icono": "fas fa-tshirt",
+        "tipos": [
+            "Anteojos",
+            "Seguridadvial",
+            "Zapato"
+        ]
+    },
+    "Barridoylimpieza": {
+        "nombre": "Barrido y Limpieza",
+        "descripcion": "Productos para limpieza",
+        "icono": "fas fa-broom",
+        "tipos": [
+            "Balde",
+            "Cabos",
+            "Carro",
+            "Cepillo",
+            "Escobillon",
+            "Escobillones",
+            "Esponjas",
+            "Mopas",
+            "Secadores",
+            "Señales",
+            "Sopapa",
+            "Trapos"
+        ]
+    },
+    "Herramientas": {
+        "nombre": "Herramientas",
+        "descripcion": "Herramientas y equipos",
+        "icono": "fas fa-tools",
+        "tipos": [
+            "Aspiradoras",
+            "Compresores",
+            "Escalera",
+            "Taladro",
+            "Taladros"
+        ]
+    }
+}

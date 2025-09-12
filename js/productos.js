@@ -1,5 +1,5 @@
 // Archivo generado automáticamente desde productos.json
-// Última actualización: 2025-08-15 21:27:49
+// Última actualización: 2025-09-12 02:40:01
 
 const productos = {
     "bolsas": [
@@ -7,7 +7,7 @@ const productos = {
             "nombre": "Bolsas Residuo Negra",
             "descripcion": "Bolsas 100 x 110 de 40 Micrones x 100 u. ",
             "precio": 21435.4,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/6896047f98edd_1754662015.jpg"
@@ -16,7 +16,7 @@ const productos = {
             "nombre": "Bolsas Residuo Tambor",
             "descripcion": "Bolsas 100 x 120 de 36 Micrones x 100 u.",
             "precio": 25700.4,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/6896048f0900b_1754662031.jpg"
@@ -25,7 +25,7 @@ const productos = {
             "nombre": "Bolsas Residuo Negra",
             "descripcion": "Bolsas 60 x 90 de 30 Micrones x 100u.",
             "precio": 8423.5,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/689604ba4b08e_1754662074.jpg"
@@ -41,10 +41,12 @@ const productos = {
         },
         {
             "nombre": "Bolsa de residuos azul",
-            "imagen": "..\/imgs\/productos\/bolsas\/bolsa residuos azul.jpg",
             "descripcion": "Bolsas 100 x 110 Residuos Peligrosos Azul de 45 Micrones x 100 u.",
             "precio": 0,
-            "categoria": "bolsas"
+            "tipo": "Bolsas",
+            "marca": "",
+            "categoria": "bolsas",
+            "imagen": "..\/imgs\/productos\/bolsas\/bolsa residuos azul.jpg"
         },
         {
             "nombre": "Bolsa transparente",
@@ -57,7 +59,7 @@ const productos = {
             "nombre": "Bolsas de basura Eco",
             "descripcion": "Bolsas 100 x 110 de Residuos Verde x 100 u - Ideal Reciclaje.",
             "precio": 32410.6,
-            "tipo": "",
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/BolsaResiduoVerde.jpg"
@@ -66,7 +68,7 @@ const productos = {
             "nombre": "Bolsa de Residuo Amarilla",
             "descripcion": "Bolsas de Residuos Peligrosos 100x110 45 mic",
             "precio": 0,
-            "tipo": "bolsas",
+            "tipo": "Bolsas",
             "marca": "Ecobolsa",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/68960e2b9582f_1754664491.jpg"
@@ -1262,15 +1264,6 @@ const productos = {
             "imagen": "..\/imgs\/productos\/Barridoylimpieza\/689b84475ec32_1755022407.png"
         },
         {
-            "nombre": "Barredor Plástico Doméstico ",
-            "descripcion": "Barredor Plástico Doméstico Acrílico Completo\n35 x 12 cm ",
-            "precio": 0,
-            "tipo": "Escobillon",
-            "marca": "Royco",
-            "categoria": "Barridoylimpieza",
-            "imagen": "..\/imgs\/productos\/Barridoylimpieza\/689b84eeea971_1755022574.png"
-        },
-        {
             "nombre": "Barredor Profesional Plástico",
             "descripcion": "Barredor Profesional Plástico Acrílico Completo 45 x 15 cm",
             "precio": 23077.3,
@@ -1278,15 +1271,6 @@ const productos = {
             "marca": "Royco",
             "categoria": "Barridoylimpieza",
             "imagen": "..\/imgs\/productos\/Barridoylimpieza\/689b8661460ab_1755022945.png"
-        },
-        {
-            "nombre": "Barredor Profesional Plástico",
-            "descripcion": "Barredor Profesional Plástico Acrílico Completo\n60 x 15 cm",
-            "precio": 0,
-            "tipo": "Escobillon",
-            "marca": "Royco",
-            "categoria": "Barridoylimpieza",
-            "imagen": "..\/imgs\/productos\/Barridoylimpieza\/689b8ca921d01_1755024553.png"
         }
     ],
     "Herramientas": [
