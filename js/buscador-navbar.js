@@ -13,52 +13,59 @@ function inicializarBuscadorNavbar() {
     
     // Función para realizar búsqueda
     function realizarBusqueda(query) {
-        if (query.trim() === '') {
-            // Si está vacío, mostrar todos los productos
-            if (typeof cargarProductos === 'function') {
-                cargarProductos();
-            }
+        console.log('Realizando búsqueda:', query);
+        
+        // Limpiar query
+        query = query.trim();
+        
+        // Si no hay query, redirigir a productos.html sin parámetros
+        if (query === '') {
+            console.log('Query vacío, redirigiendo a productos.html sin filtros');
+            window.location.href = window.location.pathname;
             return;
         }
         
-        // Realizar búsqueda usando la función existente
-        if (typeof buscarProductos === 'function') {
-            buscarProductos(query);
-        } else {
-            // Fallback: buscar en productos existentes
-            buscarEnProductosExistentes(query);
-        }
+        // Actualizar URL con el query de búsqueda y recargar
+        const currentUrl = new URL(window.location);
+        currentUrl.searchParams.set('query', query);
+        window.location.href = currentUrl.toString();
     }
     
     // Función de búsqueda fallback
     function buscarEnProductosExistentes(query) {
-        if (typeof productos === 'undefined') {
+        if (typeof productos === 'undefined' || !productos || Object.keys(productos).length === 0) {
             console.log('Productos no cargados aún');
             return;
         }
         
         const resultados = [];
-        const queryLower = query.toLowerCase();
+        const queryLower = query.toLowerCase().trim();
+        
+        console.log('Buscando en productos:', Object.keys(productos).length, 'categorías');
         
         // Buscar en todas las categorías
         Object.keys(productos).forEach(categoria => {
-            productos[categoria].forEach(producto => {
-                const nombre = (producto.nombre || '').toLowerCase();
-                const descripcion = (producto.descripcion || '').toLowerCase();
-                const marca = (producto.marca || '').toLowerCase();
-                const tipo = (producto.tipo || '').toLowerCase();
-                
-                if (nombre.includes(queryLower) || 
-                    descripcion.includes(queryLower) || 
-                    marca.includes(queryLower) || 
-                    tipo.includes(queryLower)) {
-                    resultados.push({
-                        ...producto,
-                        categoria: categoria
-                    });
-                }
-            });
+            if (productos[categoria] && Array.isArray(productos[categoria])) {
+                productos[categoria].forEach(producto => {
+                    const nombre = (producto.nombre || '').toLowerCase();
+                    const descripcion = (producto.descripcion || '').toLowerCase();
+                    const marca = (producto.marca || '').toLowerCase();
+                    const tipo = (producto.tipo || '').toLowerCase();
+                    
+                    if (nombre.includes(queryLower) || 
+                        descripcion.includes(queryLower) || 
+                        marca.includes(queryLower) || 
+                        tipo.includes(queryLower)) {
+                        resultados.push({
+                            ...producto,
+                            categoria: categoria
+                        });
+                    }
+                });
+            }
         });
+        
+        console.log('Resultados encontrados:', resultados.length);
         
         // Mostrar resultados
         mostrarResultadosBusqueda(resultados, query);
@@ -111,6 +118,9 @@ function inicializarBuscadorNavbar() {
         const precio = producto.precio || 0;
         const precioFormateado = precio.toLocaleString('es-AR');
         
+        // Generar ID único para este producto
+        const idUnico = generarIdUnicoProducto(producto.nombre, producto.descripcion);
+        
         div.innerHTML = `
             <div class="card h-100">
                 <img src="../${producto.imagen}" class="card-img-top" alt="${producto.nombre}" 
@@ -121,12 +131,20 @@ function inicializarBuscadorNavbar() {
                     <p class="card-text flex-grow-1">${producto.descripcion}</p>
                     <div class="mt-auto">
                         <p class="card-text"><strong>Precio: $${precioFormateado}</strong></p>
-                        <button class="btn btn-primary" onclick="agregarAlCarritoFlotante({
-                            nombre: '${producto.nombre}',
-                            descripcion: '${producto.descripcion}',
-                            precio: ${precio},
-                            imagen: '../${producto.imagen}'
-                        })">Agregar al carrito</button>
+                        <div class="input-group">
+                            <input type="number" class="form-control form-control-sm" 
+                                   value="1" min="1" 
+                                   id="cantidad-${idUnico}">
+                            <button class="btn btn-primary btn-sm" 
+                                    onclick="agregarAlCarritoFlotante({
+                                        nombre: '${producto.nombre.replace(/'/g, "\\'")}',
+                                        descripcion: '${producto.descripcion.replace(/'/g, "\\'")}',
+                                        precio: ${precio},
+                                        imagen: '../${producto.imagen}'
+                                    }, parseInt(document.getElementById('cantidad-${idUnico}').value))">
+                                <i class="fas fa-cart-plus me-1"></i>Agregar
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -178,86 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (inputDesktop) inputDesktop.value = q;
             if (inputMobile) inputMobile.value = q;
             
-            // Esperar a que los productos se carguen antes de ejecutar la búsqueda
-            function ejecutarBusquedaInicial() {
-                if (typeof productos !== 'undefined' && productos) {
-                    // Intentar usar la función nativa si existe
-                    if (typeof buscarProductos === 'function') {
-                        buscarProductos(q);
-                    } else {
-                        // Fallback interno
-                        const resultados = [];
-                        const queryLower = q.toLowerCase();
-                        Object.keys(productos).forEach(categoria => {
-                            productos[categoria].forEach(producto => {
-                                const nombre = (producto.nombre || '').toLowerCase();
-                                const descripcion = (producto.descripcion || '').toLowerCase();
-                                const marca = (producto.marca || '').toLowerCase();
-                                const tipo = (producto.tipo || '').toLowerCase();
-                                if (nombre.includes(queryLower) || descripcion.includes(queryLower) || marca.includes(queryLower) || tipo.includes(queryLower)) {
-                                    resultados.push({...producto, categoria});
-                                }
-                            });
-                        });
-                        
-                        const container = document.getElementById('productos-container');
-                        if (!container) return;
-                        
-                        if (resultados.length === 0) {
-                            container.innerHTML = `
-                                <div class="col-12 text-center">
-                                    <div class="alert alert-info">
-                                        <h4>No se encontraron productos</h4>
-                                        <p>No se encontraron productos que coincidan con "${q}"</p>
-                                        <button class="btn btn-primary" onclick="cargarProductos()">Ver todos los productos</button>
-                                    </div>
-                                </div>
-                            `;
-                            return;
-                        }
-                        
-                        container.innerHTML = '';
-                        
-                        // Mostrar mensaje de resultados
-                        const mensajeResultados = document.createElement('div');
-                        mensajeResultados.className = 'col-12 mb-3';
-                        mensajeResultados.innerHTML = `
-                            <div class="alert alert-success">
-                                <strong>${resultados.length}</strong> producto(s) encontrado(s) para "${q}"
-                                <button class="btn btn-sm btn-outline-primary ms-2" onclick="cargarProductos()">Ver todos</button>
-                            </div>
-                        `;
-                        container.appendChild(mensajeResultados);
-                        
-                        // Mostrar productos encontrados
-                        resultados.forEach(p => {
-                            const div = document.createElement('div');
-                            div.className = 'col-md-4 col-lg-3 mb-4';
-                            const precio = p.precio || 0;
-                            const precioFormateado = precio.toLocaleString('es-AR');
-                            div.innerHTML = `
-                                <div class="card h-100">
-                                    <img src="../${p.imagen}" class="card-img-top" alt="${p.nombre}" style="height:200px; object-fit:cover;" onerror="this.src='../imgs/productos/default.jpg'">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">${p.nombre}</h5>
-                                        <p class="card-text flex-grow-1">${p.descripcion}</p>
-                                        <div class="mt-auto">
-                                            <p class="card-text"><strong>Precio: $${precioFormateado}</strong></p>
-                                            <button class="btn btn-primary" onclick="agregarAlCarritoFlotante({nombre: '${p.nombre}', descripcion: '${p.descripcion}', precio: ${precio}, imagen: '../${p.imagen}'})">Agregar al carrito</button>
-                                        </div>
-                                    </div>
-                                </div>`;
-                            container.appendChild(div);
-                        });
-                    }
-                } else {
-                    // Si los productos aún no están cargados, esperar un poco más
-                    setTimeout(ejecutarBusquedaInicial, 500);
-                }
-            }
-            
-            // Ejecutar la búsqueda inicial después de un pequeño delay para asegurar que los productos estén cargados
-            setTimeout(ejecutarBusquedaInicial, 1000);
+            // Usar el sistema de paginación directamente - este parámetro ya está siendo procesado por paginacion.js
+            console.log('Parámetro de búsqueda detectado en URL:', q);
         }
     } catch(e) { 
         console.log('Error al procesar parámetro query:', e);

@@ -265,6 +265,31 @@ function agregarProductoDestacado(nombre, descripcion, precio, imagen) {
     agregarAlCarritoFlotante(producto, 1);
 }
 
+// Función para actualizar cantidad de productos en el carrito
+function actualizarCantidad(descripcion, cambio) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const index = carrito.findIndex(item => item.descripcion === descripcion);
+    
+    if (index !== -1) {
+        carrito[index].cantidad += cambio;
+        if (carrito[index].cantidad <= 0) {
+            carrito.splice(index, 1);
+        }
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarContadorCarritoFlotante();
+        cargarCarritoFlotante(); // Actualizar la vista del carrito
+    }
+}
+
+// Función para eliminar producto del carrito
+function eliminarDelCarrito(descripcion) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito = carrito.filter(item => item.descripcion !== descripcion);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarContadorCarritoFlotante();
+    cargarCarritoFlotante(); // Actualizar la vista del carrito
+}
+
 // Función para mostrar mensaje de "Agregado al carrito"
 function mostrarMensajeAgregadoFlotante() {
     // Crear elemento de mensaje

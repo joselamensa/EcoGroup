@@ -78,8 +78,21 @@ function generarSidebarDinamica() {
     
     const categorias = obtenerCategoriasUnicas();
     let sidebarHTML = `
-        <div class="sidebar">
-            <h4>Categorías</h4>
+        <!-- Botón para abrir sidebar en móviles -->
+        <button class="btn btn-primary d-md-none mb-3 w-100" id="sidebar-toggle-btn" onclick="toggleSidebarMobile()">
+            <i class="fas fa-filter me-2"></i>Filtrar Productos
+        </button>
+        
+        <!-- Overlay para móviles -->
+        <div class="sidebar-overlay" id="sidebar-overlay" onclick="cerrarSidebarMobile()"></div>
+        
+        <div class="sidebar" id="sidebar-content">
+            <div class="sidebar-header d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Categorías</h4>
+                <button class="btn btn-sm btn-outline-secondary d-md-none" onclick="cerrarSidebarMobile()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             <ul class="list-group">
     `;
     
@@ -95,7 +108,7 @@ function generarSidebarDinamica() {
                     <span class="badge">${tipos.length + marcas.length + 1}</span>
                 </div>
                 <ul class="sub-list" style="display: none;">
-                    <a href="./productos.html?categoria=${categoria}">
+                    <a href="./productos.html?categoria=${categoria}" onclick="cerrarSidebarAlNavegar()">
                         <li class="sub-item">
                             <span>Todos</span>
                             <span class="badge">${typeof productos !== 'undefined' && productos[categoria] ? productos[categoria].length : 0}</span>
@@ -111,7 +124,7 @@ function generarSidebarDinamica() {
                     : 0;
                     
                 sidebarHTML += `
-                    <a href="./productos.html?categoria=${categoria}&tipo=${encodeURIComponent(tipo)}">
+                    <a href="./productos.html?categoria=${categoria}&tipo=${encodeURIComponent(tipo)}" onclick="cerrarSidebarAlNavegar()">
                         <li class="sub-item">
                             <span>${tipo}</span>
                             <span class="badge">${productosConTipo}</span>
@@ -130,7 +143,7 @@ function generarSidebarDinamica() {
                         : 0;
                         
                     sidebarHTML += `
-                        <a href="./productos.html?categoria=${categoria}&marca=${marca}">
+                        <a href="./productos.html?categoria=${categoria}&marca=${marca}" onclick="cerrarSidebarAlNavegar()">
                             <li class="sub-item">
                                 <span>${marca}</span>
                                 <span class="badge">${productosConMarca}</span>
@@ -209,4 +222,36 @@ document.addEventListener('DOMContentLoaded', function() {
 // Función para recargar la sidebar (útil para actualizaciones)
 function recargarSidebar() {
     generarSidebarDinamica();
+}
+
+// Funciones para manejar la sidebar en móviles
+function toggleSidebarMobile() {
+    const sidebar = document.getElementById('sidebar-content');
+    const overlay = document.getElementById('sidebar-overlay');
+    const body = document.body;
+    
+    if (sidebar && overlay) {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('sidebar-open');
+    }
+}
+
+function cerrarSidebarMobile() {
+    const sidebar = document.getElementById('sidebar-content');
+    const overlay = document.getElementById('sidebar-overlay');
+    const body = document.body;
+    
+    if (sidebar && overlay) {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('sidebar-open');
+    }
+}
+
+// Cerrar sidebar al hacer clic en un enlace (móviles)
+function cerrarSidebarAlNavegar() {
+    if (window.innerWidth <= 768) {
+        cerrarSidebarMobile();
+    }
 }

@@ -469,29 +469,47 @@ carousel-inner {
     padding-left: 20px;
 }
 
-/* Add these styles to your existing CSS file */
+/* Estilos mejorados para sidebar en móviles */
 
 @media (max-width: 767px) {
     .sidebar-container {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar {
         position: fixed;
         top: 0;
         left: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: 100%;
+        width: 85%;
+        max-width: 350px;
+        height: 100vh;
         z-index: 1030;
         transition: left 0.3s ease-in-out;
         background-color: #fff;
         overflow-y: auto;
+        border-radius: 0;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .sidebar-container.active {
+    .sidebar.active {
         left: 0;
     }
 
-    .sidebar {
-        height: 100%;
-        padding-top: 60px;
+    .sidebar-header {
+        background: #2c3e50;
+        color: #ffffff;
+        padding: 15px 20px;
+        border-bottom: 1px solid #34495e;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .sidebar-header h4 {
+        margin: 0;
+        font-size: 1.1rem;
     }
 
     .sidebar-overlay {
@@ -503,10 +521,53 @@ carousel-inner {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1020;
+        transition: opacity 0.3s ease-in-out;
     }
 
     .sidebar-overlay.active {
         display: block;
+        opacity: 1;
+    }
+
+    #sidebar-toggle-btn {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    #sidebar-toggle-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    }
+
+    .sidebar .list-group {
+        padding: 0 20px 20px 20px;
+    }
+
+    .sidebar .list-group-item {
+        border-radius: 8px;
+        margin-bottom: 5px;
+        border: 1px solid #e9ecef;
+    }
+
+    .category-header {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+
+    .sub-list {
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin: 5px 0;
+    }
+
+    .sub-item {
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 }
 
