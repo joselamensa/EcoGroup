@@ -105,13 +105,11 @@ function generarSidebarDinamica() {
             <li class="list-group-item" onclick="toggleSubcategories(this)">
                 <div class="category-header">
                     <span>${nombreLegible}</span>
-                    <span class="badge">${tipos.length + marcas.length + 1}</span>
                 </div>
                 <ul class="sub-list" style="display: none;">
                     <a href="./productos.html?categoria=${categoria}" onclick="cerrarSidebarAlNavegar()">
                         <li class="sub-item">
                             <span>Todos</span>
-                            <span class="badge">${typeof productos !== 'undefined' && productos[categoria] ? productos[categoria].length : 0}</span>
                         </li>
                     </a>
         `;
@@ -127,7 +125,6 @@ function generarSidebarDinamica() {
                     <a href="./productos.html?categoria=${categoria}&tipo=${encodeURIComponent(tipo)}" onclick="cerrarSidebarAlNavegar()">
                         <li class="sub-item">
                             <span>${tipo}</span>
-                            <span class="badge">${productosConTipo}</span>
                         </li>
                     </a>
                 `;
@@ -146,7 +143,6 @@ function generarSidebarDinamica() {
                         <a href="./productos.html?categoria=${categoria}&marca=${marca}" onclick="cerrarSidebarAlNavegar()">
                             <li class="sub-item">
                                 <span>${marca}</span>
-                                <span class="badge">${productosConMarca}</span>
                             </li>
                         </a>
                     `;
