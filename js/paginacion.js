@@ -186,7 +186,7 @@ class PaginacionManager {
         const idUnico = this.generarIdUnico(producto.nombre, producto.descripcion);
         
         return `
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="card h-100 product-card" data-producto-id="${idUnico}">
                     <div class="position-relative">
                         <img src="${imagen}" 
