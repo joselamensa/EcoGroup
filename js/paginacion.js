@@ -329,12 +329,6 @@ class PaginacionManager {
                         ${this.filtrosActivos.busqueda || this.filtrosActivos.categoria || this.filtrosActivos.marca || this.filtrosActivos.tipo ? 
                             '<button class="btn btn-outline-secondary btn-sm me-2" onclick="window.location.href=window.location.pathname">Limpiar filtros</button>' : 
                             ''}
-                        <label class="mb-0 text-muted">Productos por página:</label>
-                        <select id="productosPorPagina" class="form-select form-select-sm" style="width: auto;">
-                            <option value="12" ${this.productosPorPagina === 12 ? 'selected' : ''}>12</option>
-                            <option value="24" ${this.productosPorPagina === 24 ? 'selected' : ''}>24</option>
-                            <option value="48" ${this.productosPorPagina === 48 ? 'selected' : ''}>48</option>
-                        </select>
                     </div>
                 </div>
             </div>

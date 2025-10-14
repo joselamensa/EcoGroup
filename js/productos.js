@@ -1,5 +1,5 @@
 // Archivo generado automáticamente desde productos.json
-// Última actualización: 2025-10-14 08:13:33
+// Última actualización: 2025-10-15 01:06:59
 
 const productos = {
     "bolsas": [
@@ -1403,14 +1403,14 @@ const productos = {
             "imagen": "..\/imgs\/productos\/Herramientas\/68960f15ef66b_1754664725.webp"
         }
     ],
-    "PapeleriaGastronomica": [
+    "Papeleria Gastronomica": [
         {
             "nombre": "Papel Aluminio",
             "descripcion": "Papel Aluminio 5 mt x 28 cm",
             "precio": 1897.3,
             "tipo": "Papel",
             "marca": "Romyl",
-            "categoria": "PapeleriaGastronomica",
+            "categoria": "Papeleria Gastronomica",
             "imagen": "..\/imgs\/productos\/PapeleriaGastronomica\/68c96370c50ec_1758028656.png"
         },
         {
@@ -1419,7 +1419,7 @@ const productos = {
             "precio": 1563.5,
             "tipo": "Papel",
             "marca": "Romyl ",
-            "categoria": "PapeleriaGastronomica",
+            "categoria": "Papeleria Gastronomica",
             "imagen": "..\/imgs\/productos\/PapeleriaGastronomica\/68ed23a763727_1760371623.jpg"
         },
         {
@@ -1428,7 +1428,7 @@ const productos = {
             "precio": 1691.6,
             "tipo": "Papel",
             "marca": "Romyl",
-            "categoria": "PapeleriaGastronomica",
+            "categoria": "Papeleria Gastronomica",
             "imagen": "..\/imgs\/productos\/PapeleriaGastronomica\/68ed248c80a80_1760371852.webp"
         }
     ],
@@ -1443,7 +1443,6 @@ const productos = {
             "imagen": "..\/imgs\/productos\/Absorbentes\/68d3f6bc63185_1758721724.png"
         }
     ],
-    "CestosyTachos": [],
     "Contenedores": [
         {
             "nombre": "Cesto Basura Royco",
@@ -1471,33 +1470,6 @@ const productos = {
             "marca": "Royco",
             "categoria": "Contenedores",
             "imagen": "..\/imgs\/productos\/Contenedores\/68ed1ceaa11d5_1760369898.jpg"
-        },
-        {
-            "nombre": "Tacho Contenedor Basura 120 Lts",
-            "descripcion": "Contenedor 2 Ruedas 120 Lts - Varios Colores\nMade in Germany.",
-            "precio": 154728.8,
-            "tipo": "Contenedores",
-            "marca": "ESE",
-            "categoria": "Contenedores",
-            "imagen": "..\/imgs\/productos\/default.jpg"
-        },
-        {
-            "nombre": "Tacho Contenedor Basura 240 Lts",
-            "descripcion": "Contenedor 2 Ruedas 240 Lts - Varios Colores\nMade in Germany.",
-            "precio": 224356.7,
-            "tipo": "Contenedores",
-            "marca": "ESE",
-            "categoria": "Contenedores",
-            "imagen": "..\/imgs\/productos\/default.jpg"
-        },
-        {
-            "nombre": "Tacho Contenedor Basura 1100 Lts",
-            "descripcion": "Contenedor 4 Ruedas 1100 Lts - Varios Colores\nMade in Germany.",
-            "precio": 928372.5,
-            "tipo": "Contenedores",
-            "marca": "ESE",
-            "categoria": "Contenedores",
-            "imagen": "..\/imgs\/productos\/default.jpg"
         },
         {
             "nombre": "Cesto Push ",
@@ -1534,44 +1506,6 @@ const productos = {
             "marca": "ESE",
             "categoria": "Contenedores",
             "imagen": "..\/imgs\/productos\/Contenedores\/68ed814940ab0_1760395593.jpeg"
-        }
-    ],
-    "Alfombras": [
-        {
-            "nombre": "Alfombra Rulo PVC",
-            "descripcion": "Alfombra Alto Transito 15 mm \nCon o sin Logo - Cotizar Medida",
-            "precio": 0,
-            "tipo": "Alto Transito",
-            "marca": "HERMIDA",
-            "categoria": "Alfombras",
-            "imagen": "..\/imgs\/productos\/Alfombras\/68ed834c10f9f_1760396108.png"
-        },
-        {
-            "nombre": "Alfombra Rulo PVC",
-            "descripcion": "Alfombra Alto Transito 15 mm \nCon o sin Logo - Cotizar Medida",
-            "precio": 0,
-            "tipo": "Alto Transito",
-            "marca": "HERMIDA",
-            "categoria": "Alfombras",
-            "imagen": "..\/imgs\/productos\/Alfombras\/68ed834f95cb2_1760396111.png"
-        },
-        {
-            "nombre": "Alfombra Felpudo",
-            "descripcion": "Alfombra Felpudo \n60 x 90 - 90 x 120",
-            "precio": 0,
-            "tipo": "Felpudo",
-            "marca": "HERMIDA",
-            "categoria": "Alfombras",
-            "imagen": "..\/imgs\/productos\/Alfombras\/68ed84cbc7b8f_1760396491.png"
-        },
-        {
-            "nombre": "Alfombra Felpudo",
-            "descripcion": "Alfombra Felpudo \n60 x 90 - 90 x 120",
-            "precio": 0,
-            "tipo": "Felpudo",
-            "marca": "HERMIDA",
-            "categoria": "Alfombras",
-            "imagen": "..\/imgs\/productos\/Alfombras\/68ed84ce9b4fc_1760396494.png"
         }
     ]
 };
