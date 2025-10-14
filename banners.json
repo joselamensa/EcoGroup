@@ -10,32 +10,22 @@
         "url": ""
     },
     {
-        "id": 2,
-        "titulo": "Clientes que Confían",
-        "descripcion": "Banner de confianza de clientes",
-        "imagen": ".\/imgs\/banners\/confianclientepc2.webp",
-        "tipo": "desktop",
-        "orden": 2,
-        "activo": true,
-        "url": ""
-    },
-    {
-        "id": 3,
-        "titulo": "Banner Secundario",
-        "descripcion": "Banner secundario promocional",
-        "imagen": ".\/imgs\/banners\/Banner2-.webp",
-        "tipo": "desktop",
-        "orden": 3,
-        "activo": true,
-        "url": ""
-    },
-    {
         "id": 4,
         "titulo": "Banner Mobile",
         "descripcion": "Banner para dispositivos móviles",
         "imagen": ".\/imgs\/banners\/banner1celu.webp",
         "tipo": "mobile",
         "orden": 1,
+        "activo": true,
+        "url": ""
+    },
+    {
+        "id": 2,
+        "titulo": "Clientes que Confían",
+        "descripcion": "Banner de confianza de clientes",
+        "imagen": ".\/imgs\/banners\/confianclientepc2.webp",
+        "tipo": "desktop",
+        "orden": 2,
         "activo": true,
         "url": ""
     }

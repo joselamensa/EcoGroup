@@ -15,8 +15,7 @@
             "Higiene",
             "Latex",
             "Nitrilo",
-            "Seguridad",
-            "latex"
+            "Seguridad"
         ]
     },
     "Desinfectantes": {
@@ -26,6 +25,7 @@
         "tipos": [
             "Desinfectante",
             "Max Aroma",
+            "Sc Jhonson",
             "Wurth"
         ]
     },
@@ -34,7 +34,7 @@
         "descripcion": "Papel para impresión",
         "icono": "fas fa-file-alt",
         "tipos": [
-            "PapelImpresora"
+            "Papel Impresora"
         ]
     },
     "Papel": {
@@ -43,11 +43,11 @@
         "icono": "fas fa-toilet-paper",
         "tipos": [
             "Bobina",
-            "Papeltermico",
-            "bobina",
-            "higienico",
-            "intercalada",
-            "servilleta"
+            "Higienico",
+            "Papel Termico",
+            "Servilleta",
+            "Toalla Intercalada",
+            "bobina"
         ]
     },
     "Quimicos": {
@@ -60,11 +60,11 @@
             "Cera",
             "Cloro",
             "Desinfectantes",
-            "Desodorantesdepiso",
+            "Desodorantes de Piso",
             "Detergente",
-            "Jabondemano",
+            "Jabon de Manos",
             "Lavandina",
-            "Limpiavidrios"
+            "Limpia Vidrios"
         ]
     },
     "Dispensadores": {
@@ -140,6 +140,44 @@
             "Escalera",
             "Taladro",
             "Taladros"
+        ]
+    },
+    "PapeleriaGastronomica": {
+        "nombre": "Papeleria Gastronomica ",
+        "descripcion": "Productos Gastronómicos",
+        "icono": "fas fa-box",
+        "tipos": [
+            "Bandejas",
+            "Bolsas",
+            "Descartables",
+            "Papel"
+        ]
+    },
+    "Absorbentes": {
+        "nombre": "Absorbentes ",
+        "descripcion": "Absorbente Mineral",
+        "icono": "fas fa-box",
+        "tipos": [
+            "Mineral"
+        ]
+    },
+    "Contenedores": {
+        "nombre": "Contenedores ",
+        "descripcion": "Cestos y Tachos",
+        "icono": "fas fa-box",
+        "tipos": [
+            "Cestos - Tachos",
+            "Contenedores"
+        ]
+    },
+    "Alfombras": {
+        "nombre": "Alfombras",
+        "descripcion": "",
+        "icono": "fas fa-box",
+        "tipos": [
+            "Alto Transito",
+            "Anti Fatiga",
+            "Felpudo"
         ]
     }
 }

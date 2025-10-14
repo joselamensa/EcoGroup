@@ -1,12 +1,12 @@
 // Archivo generado automáticamente desde productos.json
-// Última actualización: 2025-09-12 02:40:01
+// Última actualización: 2025-10-14 08:13:33
 
 const productos = {
     "bolsas": [
         {
             "nombre": "Bolsas Residuo Negra",
             "descripcion": "Bolsas 100 x 110 de 40 Micrones x 100 u. ",
-            "precio": 21435.4,
+            "precio": 22142,
             "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
@@ -15,7 +15,7 @@ const productos = {
         {
             "nombre": "Bolsas Residuo Tambor",
             "descripcion": "Bolsas 100 x 120 de 36 Micrones x 100 u.",
-            "precio": 25700.4,
+            "precio": 27756.4,
             "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
@@ -24,7 +24,7 @@ const productos = {
         {
             "nombre": "Bolsas Residuo Negra",
             "descripcion": "Bolsas 60 x 90 de 30 Micrones x 100u.",
-            "precio": 8423.5,
+            "precio": 9097.3,
             "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
@@ -33,8 +33,8 @@ const productos = {
         {
             "nombre": "Bolsas Residuo Negra",
             "descripcion": "Bolsas 45 x 60 de 25 Micrones x 100u.",
-            "precio": 3726.8,
-            "tipo": "",
+            "precio": 4024.95,
+            "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
             "imagen": "..\/imgs\/productos\/bolsas\/689604c2b6021_1754662082.jpg"
@@ -50,15 +50,17 @@ const productos = {
         },
         {
             "nombre": "Bolsa transparente",
-            "imagen": "..\/imgs\/productos\/bolsas\/bolsa transparente.jpg",
             "descripcion": "Bolsas 100 x 110 Residuos Transparentes de 45 Micrones x 50 u.",
-            "precio": 38698.7,
-            "categoria": "bolsas"
+            "precio": 39085.9,
+            "tipo": "Bolsas",
+            "marca": "",
+            "categoria": "bolsas",
+            "imagen": "..\/imgs\/productos\/bolsas\/bolsa transparente.jpg"
         },
         {
             "nombre": "Bolsas de basura Eco",
             "descripcion": "Bolsas 100 x 110 de Residuos Verde x 100 u - Ideal Reciclaje.",
-            "precio": 32410.6,
+            "precio": 34031,
             "tipo": "Bolsas",
             "marca": "",
             "categoria": "bolsas",
@@ -108,7 +110,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle S x 100 u.",
-            "precio": 4900,
+            "precio": 5900,
             "categoria": "guantes"
         },
         {
@@ -117,7 +119,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle M x 100 u.",
-            "precio": 4900,
+            "precio": 5900,
             "categoria": "guantes"
         },
         {
@@ -126,7 +128,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle L x 100 u.",
-            "precio": 4900,
+            "precio": 5900,
             "categoria": "guantes"
         },
         {
@@ -135,7 +137,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle XL x 100 u.",
-            "precio": 4900,
+            "precio": 5900,
             "categoria": "guantes"
         },
         {
@@ -144,7 +146,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/nitrilolila.png",
             "descripcion": "Guantes de Nitrilo Lila talle S x 100 u.",
-            "precio": 4966,
+            "precio": 5966,
             "categoria": "guantes"
         },
         {
@@ -153,7 +155,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/nitrilolila.png",
             "descripcion": "Guantes de Nitrilo Negro Lila talle M x 100 u.",
-            "precio": 4966,
+            "precio": 5966,
             "categoria": "guantes"
         },
         {
@@ -162,7 +164,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/nitrilolila.png",
             "descripcion": "Guantes de Nitrilo Negro Lila talle L x 100 u.",
-            "precio": 4966,
+            "precio": 5966,
             "categoria": "guantes"
         },
         {
@@ -171,7 +173,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/nitrilolila.png",
             "descripcion": "Guantes de Nitrilo Negro Lila talle XL x 100 u.",
-            "precio": 4966,
+            "precio": 5966,
             "categoria": "guantes"
         },
         {
@@ -225,89 +227,89 @@ const productos = {
             "nombre": "Desodorante de Ambientes Glade",
             "descripcion": "Glade Desodorante de Ambientes Aerosol 380 ml",
             "precio": 3198.4,
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
+            "tipo": "Sc Jhonson",
+            "marca": "",
             "categoria": "Desinfectantes",
             "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/AersolGlade.webp"
         },
         {
             "nombre": "Lustrador de Muebles Blem",
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Blem Original.png",
             "descripcion": "Aerosol Lustramuebles Blem Original 380 ml",
             "precio": 5040,
-            "categoria": "Desinfectantes"
+            "tipo": "Sc Jhonson",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Blem Original.png"
         },
         {
             "nombre": "Lysoform Aerosol Desinfectante",
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Lysoform-aerosol-desin.webp",
             "descripcion": "Desinfectante de ambientes en aerosol",
             "precio": 3358.4,
-            "categoria": "Desinfectantes"
+            "tipo": "Sc Jhonson",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Lysoform-aerosol-desin.webp"
         },
         {
             "nombre": "Raid",
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Raid .webp",
             "descripcion": "Insecticida en aerosol para el control de plagas.",
             "precio": 7824,
-            "categoria": "Desinfectantes"
+            "tipo": "Sc Jhonson",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Raid .webp"
         },
         {
             "nombre": "Pato Purific",
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Pato Purific.webp",
             "descripcion": "Gel limpiador para el inodoro.",
             "precio": 3744.4,
-            "categoria": "Desinfectantes"
+            "tipo": "Sc Jhonson",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Pato Purific.webp"
         },
         {
             "nombre": "Mister Musculo",
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Mister Musculo Crema.jpg",
             "descripcion": "Crema limpiadora de hornos, elimina grasa y suciedad de manera efectiva.",
             "precio": 3518.4,
-            "categoria": "Desinfectantes"
+            "tipo": "Sc Jhonson",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/Mister Musculo Crema.jpg"
         },
         {
             "nombre": "Ceramicol",
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/lustramuebles ceramicol.webp",
             "descripcion": "Lustrador para muebles y más...",
             "precio": 3983.4,
-            "categoria": "Desinfectantes"
+            "tipo": "Sc Jhonson",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/lustramuebles ceramicol.webp"
         },
         {
             "nombre": "Off",
-            "tipo": "Desinfectante",
-            "marca": "scjhonson",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/off.webp",
             "descripcion": "Insecticida en aerosol.",
             "precio": 0,
-            "categoria": "Desinfectantes"
+            "tipo": "Sc Jhonson",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/scjhonson\/off.webp"
         },
         {
             "nombre": "Limpia Metales Acero Inox Würth",
-            "tipo": "Wurth",
-            "imagen": "..\/imgs\/productos\/Aromatizantes\/wurth\/limpiadordemetals.webp",
-            "marca": "wurth",
             "descripcion": "Limpiador En Spray Para Acero Inoxidable Würth 400 Ml",
             "precio": 24359,
-            "categoria": "Desinfectantes"
+            "tipo": "Wurth",
+            "marca": "",
+            "categoria": "Desinfectantes",
+            "imagen": "..\/imgs\/productos\/Aromatizantes\/wurth\/limpiadordemetals.webp"
         },
         {
             "nombre": "Aromatizante de Ambiente Max Aroma",
             "descripcion": "Aromatizante Max Aroma Fragancias Mixtas - X 12 U",
             "precio": 31932,
             "tipo": "Max Aroma",
-            "marca": "maxaroma",
+            "marca": "",
             "categoria": "Desinfectantes",
             "imagen": "..\/imgs\/productos\/Aromatizantes\/maxaroma\/maxaroma.jpg"
         }
@@ -315,7 +317,7 @@ const productos = {
     "Resmas": [
         {
             "nombre": "Resma Ledesma Autor 75 grs.",
-            "tipo": "PapelImpresora",
+            "tipo": "Papel Impresora",
             "imagen": "..\/imgs\/productos\/resmas\/a4caja.webp",
             "marca": "Ledesma",
             "descripcion": "Resma Autor 75 grs Blanco Caja x10u.",
@@ -324,7 +326,7 @@ const productos = {
         },
         {
             "nombre": "Resma Ledesma Autor 75 grs.",
-            "tipo": "PapelImpresora",
+            "tipo": "Papel Impresora",
             "imagen": "..\/imgs\/productos\/resmas\/autor75.png",
             "marca": "Ledesma",
             "descripcion": "Resma Autor 75 grs Blanco Caja x1u.",
@@ -333,7 +335,7 @@ const productos = {
         },
         {
             "nombre": "Resma Ledesma Punax 75grs",
-            "tipo": "PapelImpresora",
+            "tipo": "Papel Impresora",
             "imagen": "..\/imgs\/productos\/resmas\/punax10.png",
             "marca": "Ledesma",
             "descripcion": "Resma Punax 75 grs Blanco Caja x 10u.",
@@ -342,7 +344,7 @@ const productos = {
         },
         {
             "nombre": "Resma Ledesma Punax 75grs",
-            "tipo": "PapelImpresora",
+            "tipo": "Papel Impresora",
             "imagen": "..\/imgs\/productos\/resmas\/punax.webp",
             "marca": "Ledesma",
             "descripcion": "Resma Punax 75 grs Blanco Caja x1u.",
@@ -353,16 +355,16 @@ const productos = {
     "Papel": [
         {
             "nombre": "Papel Higienico Elegante 300mts",
-            "tipo": "higienico",
+            "tipo": "Higienico",
             "imagen": "..\/imgs\/productos\/Papel\/elegante1047.jpg",
             "marca": "Elegante",
             "descripcion": "Papel Higienico Elegante, x 8 u, COD 1047, (cono grande).",
-            "precio": 26925.4,
+            "precio": 28132.5,
             "categoria": "Papel"
         },
         {
             "nombre": "Papel Higienico Elegante 300mts",
-            "tipo": "higienico",
+            "tipo": "Higienico",
             "imagen": "..\/imgs\/productos\/Papel\/1046.png",
             "marca": "Elegante",
             "descripcion": "Papel Higienico Elegante, x 8 u, COD 1046, (cono chico).",
@@ -371,7 +373,7 @@ const productos = {
         },
         {
             "nombre": "Papel Higienico Elegante 500mts",
-            "tipo": "higienico",
+            "tipo": "Higienico",
             "imagen": "..\/imgs\/productos\/Papel\/elegante1018.jpeg",
             "marca": "Elegante",
             "descripcion": "Papel Higienico Elegante, x 4 u, COD 1018.",
@@ -382,7 +384,7 @@ const productos = {
             "nombre": "Papel Higienico Elegante 30mts",
             "descripcion": "Papel Higienico Elegante Premium, 30mts x 24u, COD 919.",
             "precio": 10253,
-            "tipo": "higienico",
+            "tipo": "Higienico",
             "marca": "Elegante",
             "categoria": "Papel",
             "imagen": "..\/imgs\/productos\/Papel\/elegante919.webp"
@@ -416,7 +418,7 @@ const productos = {
         },
         {
             "nombre": "Servilleta Papel de Mesa x 1000 u.",
-            "tipo": "servilleta",
+            "tipo": "Servilleta",
             "imagen": "..\/imgs\/productos\/Papel\/elegante 290.webp",
             "marca": "Elegante",
             "descripcion": "Servillete de Mesa Elegante Papel Blanco Tissue COD 290.",
@@ -425,7 +427,7 @@ const productos = {
         },
         {
             "nombre": "Toalla De Papel Blancas Intercaladas",
-            "tipo": "intercalada",
+            "tipo": "Toalla Intercalada",
             "imagen": "..\/imgs\/productos\/Papel\/elegante10292.jpg",
             "marca": "Elegante",
             "descripcion": "Toalla Intercalada Premium x 2500 u.",
@@ -436,7 +438,7 @@ const productos = {
             "nombre": "Rollo de Papel Fiscal Térmico",
             "descripcion": "Rollos de Papel Térmico Fiscales 80x60 x 50 u.",
             "precio": 62574,
-            "tipo": "Papeltermico",
+            "tipo": "Papel Termico",
             "marca": "Paper Pro",
             "categoria": "Papel",
             "imagen": "..\/imgs\/productos\/bolsas\/689609120a1cc_1754663186.webp"
@@ -445,10 +447,19 @@ const productos = {
             "nombre": "Rollo de Papel Fiscal Posnet",
             "descripcion": "Rollos de Papel Térmico POSNET 57x20 x 50 u.",
             "precio": 16382.8,
-            "tipo": "Papeltermico",
+            "tipo": "Papel Termico",
             "marca": "Paper Pro",
             "categoria": "Papel",
             "imagen": "..\/imgs\/productos\/bolsas\/689a57ed50fea_1754945517.jpeg"
+        },
+        {
+            "nombre": "Papel Higiénico Eco",
+            "descripcion": "Papel Higiénico 8x300 mts - Economico. ",
+            "precio": 15270,
+            "tipo": "Higienico",
+            "marca": "ECOPAPEL",
+            "categoria": "Papel",
+            "imagen": "..\/imgs\/productos\/Papel\/68ac8663871fc_1756137059.png"
         }
     ],
     "Quimicos": [
@@ -483,7 +494,7 @@ const productos = {
             "nombre": "Limpiador de Vidrios QualiBest",
             "descripcion": "Limpiador Profesional de Vidrios 5 lts.",
             "precio": 5488.56,
-            "tipo": "Limpiavidrios",
+            "tipo": "Limpia Vidrios",
             "marca": "QualiQuimica",
             "categoria": "Quimicos",
             "imagen": "..\/imgs\/productos\/Quimicos\/688a7bbf1a961_1753906111.png"
@@ -510,7 +521,7 @@ const productos = {
             "nombre": "Limpiador Desodorante Qualibest",
             "descripcion": "Limpiador Desodorante de Piso Limón - Cherry - Floral - Lavanda x 5 lts.",
             "precio": 5488.56,
-            "tipo": "Desodorantesdepiso",
+            "tipo": "Desodorantes de Piso",
             "marca": "",
             "categoria": "Quimicos",
             "imagen": "..\/imgs\/productos\/Quimicos\/688a77ee6db84_1753905134.png"
@@ -549,7 +560,7 @@ const productos = {
             "tipo": "Desinfectantes",
             "marca": "Seiq",
             "categoria": "Quimicos",
-            "imagen": "..\/imgs\/productos\/Quimicos\/688a6c6489d46_1753902180.jpg"
+            "imagen": "..\/imgs\/productos\/Quimicos\/68ed28ba80a0e_1760372922.png"
         },
         {
             "nombre": "Detergente Vajilla Seiq",
@@ -558,7 +569,7 @@ const productos = {
             "tipo": "Detergente",
             "marca": "Seiq ",
             "categoria": "Quimicos",
-            "imagen": "..\/imgs\/productos\/Quimicos\/688a6ff83869c_1753903096.jpg"
+            "imagen": "..\/imgs\/productos\/Quimicos\/68ed26ce0e8ae_1760372430.png"
         },
         {
             "nombre": "Desengrasante y descarbonizante Seiq",
@@ -567,7 +578,7 @@ const productos = {
             "tipo": "Antigrasa",
             "marca": "Seiq",
             "categoria": "Quimicos",
-            "imagen": "..\/imgs\/productos\/Quimicos\/688a755dcb976_1753904477.jpg"
+            "imagen": "..\/imgs\/productos\/Quimicos\/68ed2727ad838_1760372519.png"
         },
         {
             "nombre": "Alcohol en Gel Seiq",
@@ -585,16 +596,16 @@ const productos = {
             "tipo": "Alcohol",
             "marca": "Seiq",
             "categoria": "Quimicos",
-            "imagen": "..\/imgs\/productos\/Quimicos\/688a768f93d44_1753904783.jpg"
+            "imagen": "..\/imgs\/productos\/Quimicos\/68ed2624939b1_1760372260.png"
         },
         {
             "nombre": "Jabón de Manos Seiq",
-            "descripcion": "Jabon de mano",
+            "descripcion": "Jabon de Manos x 5 lts \nCoco - Marina - Floral",
             "precio": 9067.8,
-            "tipo": "Jabondemano",
+            "tipo": "Jabon de Manos",
             "marca": "Seiq",
             "categoria": "Quimicos",
-            "imagen": "..\/imgs\/productos\/Quimicos\/688a9e1269afb_1753914898.webp"
+            "imagen": "..\/imgs\/productos\/Quimicos\/68ed2782d4893_1760372610.png"
         }
     ],
     "Dispensadores": [
@@ -900,7 +911,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/Romyl\/Escobillon caramelo .webp",
             "marca": "Romyl",
             "descripcion": "Escobillón Laqueado, 30 cm De Ancho, 6 Hileras",
-            "precio": 3720,
+            "precio": 3906.8,
             "categoria": "Barridoylimpieza"
         },
         {
@@ -909,7 +920,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/Romyl\/Escobillon Bicolor.jpg",
             "marca": "Romyl",
             "descripcion": "Escobillon Bicolor, 6 Hileras",
-            "precio": 1984.4,
+            "precio": 2083.6,
             "categoria": "Barridoylimpieza"
         },
         {
@@ -1271,6 +1282,15 @@ const productos = {
             "marca": "Royco",
             "categoria": "Barridoylimpieza",
             "imagen": "..\/imgs\/productos\/Barridoylimpieza\/689b8661460ab_1755022945.png"
+        },
+        {
+            "nombre": "Esponja Cocina Multiuso",
+            "descripcion": "Esponja con Salva Uña",
+            "precio": 1111,
+            "tipo": "Esponjas",
+            "marca": "Romyl",
+            "categoria": "Barridoylimpieza",
+            "imagen": "..\/imgs\/productos\/bolsas\/68c8771a4d6ae_1757968154.jpeg"
         }
     ],
     "Herramientas": [
@@ -1381,6 +1401,177 @@ const productos = {
             "marca": "Gamma",
             "categoria": "Herramientas",
             "imagen": "..\/imgs\/productos\/Herramientas\/68960f15ef66b_1754664725.webp"
+        }
+    ],
+    "PapeleriaGastronomica": [
+        {
+            "nombre": "Papel Aluminio",
+            "descripcion": "Papel Aluminio 5 mt x 28 cm",
+            "precio": 1897.3,
+            "tipo": "Papel",
+            "marca": "Romyl",
+            "categoria": "PapeleriaGastronomica",
+            "imagen": "..\/imgs\/productos\/PapeleriaGastronomica\/68c96370c50ec_1758028656.png"
+        },
+        {
+            "nombre": "Film Autoadherente ",
+            "descripcion": "Film Autoadherente 30 mts ",
+            "precio": 1563.5,
+            "tipo": "Papel",
+            "marca": "Romyl ",
+            "categoria": "PapeleriaGastronomica",
+            "imagen": "..\/imgs\/productos\/PapeleriaGastronomica\/68ed23a763727_1760371623.jpg"
+        },
+        {
+            "nombre": "Papel Manteca Romyl",
+            "descripcion": "Papel Manteca x 3 mts",
+            "precio": 1691.6,
+            "tipo": "Papel",
+            "marca": "Romyl",
+            "categoria": "PapeleriaGastronomica",
+            "imagen": "..\/imgs\/productos\/PapeleriaGastronomica\/68ed248c80a80_1760371852.webp"
+        }
+    ],
+    "Absorbentes": [
+        {
+            "nombre": "Absorbente Anken",
+            "descripcion": "Absorbente Mineral - Bolsa 20 kg",
+            "precio": 27830,
+            "tipo": "Mineral",
+            "marca": "ANKEN",
+            "categoria": "Absorbentes",
+            "imagen": "..\/imgs\/productos\/Absorbentes\/68d3f6bc63185_1758721724.png"
+        }
+    ],
+    "CestosyTachos": [],
+    "Contenedores": [
+        {
+            "nombre": "Cesto Basura Royco",
+            "descripcion": "Cesto a Pedal 30 lts - Varios Colores",
+            "precio": 69490.6,
+            "tipo": "Cestos - Tachos",
+            "marca": "Royco",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/bolsas\/68ed1a062dd8a_1760369158.jpg"
+        },
+        {
+            "nombre": "Cesto Basura Royco",
+            "descripcion": "Cesto a Pedal 60 lts - Varios Colores",
+            "precio": 110137,
+            "tipo": "Cestos - Tachos",
+            "marca": "Royco",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/Contenedores\/68ed1c195573b_1760369689.png"
+        },
+        {
+            "nombre": "Cesto Basura Royco",
+            "descripcion": "Cesto a Pedal 100 lts - Varios Colores",
+            "precio": 141695,
+            "tipo": "Cestos - Tachos",
+            "marca": "Royco",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/Contenedores\/68ed1ceaa11d5_1760369898.jpg"
+        },
+        {
+            "nombre": "Tacho Contenedor Basura 120 Lts",
+            "descripcion": "Contenedor 2 Ruedas 120 Lts - Varios Colores\nMade in Germany.",
+            "precio": 154728.8,
+            "tipo": "Contenedores",
+            "marca": "ESE",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/default.jpg"
+        },
+        {
+            "nombre": "Tacho Contenedor Basura 240 Lts",
+            "descripcion": "Contenedor 2 Ruedas 240 Lts - Varios Colores\nMade in Germany.",
+            "precio": 224356.7,
+            "tipo": "Contenedores",
+            "marca": "ESE",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/default.jpg"
+        },
+        {
+            "nombre": "Tacho Contenedor Basura 1100 Lts",
+            "descripcion": "Contenedor 4 Ruedas 1100 Lts - Varios Colores\nMade in Germany.",
+            "precio": 928372.5,
+            "tipo": "Contenedores",
+            "marca": "ESE",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/default.jpg"
+        },
+        {
+            "nombre": "Cesto Push ",
+            "descripcion": "Cesto de Basura Push - Tapa Vaiven 60 lts",
+            "precio": 66922.3,
+            "tipo": "Cestos - Tachos",
+            "marca": "Royco",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/Contenedores\/68ed806b71b2a_1760395371.jpg"
+        },
+        {
+            "nombre": "Tacho Contenedor",
+            "descripcion": "Contenedor 2 Ruedas con Tapa 120 lts \nMade In Germany",
+            "precio": 154728.8,
+            "tipo": "Contenedores",
+            "marca": "ESE",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/Contenedores\/68ed80c717337_1760395463.jpeg"
+        },
+        {
+            "nombre": "Tacho Contenedor",
+            "descripcion": "Contenedor 2 Ruedas con Tapa 240 lts \nMade In Germany",
+            "precio": 224356.7,
+            "tipo": "Contenedores",
+            "marca": "ESE",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/Contenedores\/68ed81153528e_1760395541.jpeg"
+        },
+        {
+            "nombre": "Tacho Contenedor",
+            "descripcion": "Contenedor 4 Ruedas con Tapa 1100 lts \nMade In Germany",
+            "precio": 928372.5,
+            "tipo": "Contenedores",
+            "marca": "ESE",
+            "categoria": "Contenedores",
+            "imagen": "..\/imgs\/productos\/Contenedores\/68ed814940ab0_1760395593.jpeg"
+        }
+    ],
+    "Alfombras": [
+        {
+            "nombre": "Alfombra Rulo PVC",
+            "descripcion": "Alfombra Alto Transito 15 mm \nCon o sin Logo - Cotizar Medida",
+            "precio": 0,
+            "tipo": "Alto Transito",
+            "marca": "HERMIDA",
+            "categoria": "Alfombras",
+            "imagen": "..\/imgs\/productos\/Alfombras\/68ed834c10f9f_1760396108.png"
+        },
+        {
+            "nombre": "Alfombra Rulo PVC",
+            "descripcion": "Alfombra Alto Transito 15 mm \nCon o sin Logo - Cotizar Medida",
+            "precio": 0,
+            "tipo": "Alto Transito",
+            "marca": "HERMIDA",
+            "categoria": "Alfombras",
+            "imagen": "..\/imgs\/productos\/Alfombras\/68ed834f95cb2_1760396111.png"
+        },
+        {
+            "nombre": "Alfombra Felpudo",
+            "descripcion": "Alfombra Felpudo \n60 x 90 - 90 x 120",
+            "precio": 0,
+            "tipo": "Felpudo",
+            "marca": "HERMIDA",
+            "categoria": "Alfombras",
+            "imagen": "..\/imgs\/productos\/Alfombras\/68ed84cbc7b8f_1760396491.png"
+        },
+        {
+            "nombre": "Alfombra Felpudo",
+            "descripcion": "Alfombra Felpudo \n60 x 90 - 90 x 120",
+            "precio": 0,
+            "tipo": "Felpudo",
+            "marca": "HERMIDA",
+            "categoria": "Alfombras",
+            "imagen": "..\/imgs\/productos\/Alfombras\/68ed84ce9b4fc_1760396494.png"
         }
     ]
 };
