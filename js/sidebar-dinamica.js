@@ -3,15 +3,15 @@
 
 // Función para obtener todas las categorías únicas
 function obtenerCategoriasUnicas() {
-    const categorias = new Set();
-    
-    if (typeof productos !== 'undefined') {
-        Object.keys(productos).forEach(categoria => {
-            categorias.add(categoria);
-        });
+    if (window.__categoriasCache && Object.keys(window.__categoriasCache).length > 0) {
+        return Object.keys(window.__categoriasCache);
     }
-    
-    return Array.from(categorias).sort();
+
+    if (typeof productos !== 'undefined') {
+        return Object.keys(productos).sort();
+    }
+
+    return [];
 }
 
 // Función para obtener todos los tipos únicos por categoría
@@ -50,6 +50,10 @@ function obtenerMarcasPorCategoria(categoria) {
 
 // Función para generar el nombre legible de una categoría
 function obtenerNombreLegibleCategoria(categoria) {
+    if (window.__categoriasCache && window.__categoriasCache[categoria] && window.__categoriasCache[categoria].nombre) {
+        return window.__categoriasCache[categoria].nombre;
+    }
+
     const nombresLegibles = {
         'bolsas': 'Bolsas',
         'guantes': 'Guantes',
@@ -183,7 +187,7 @@ function toggleSubcategories(element) {
 // Función para inicializar la sidebar dinámica
 function inicializarSidebarDinamica() {
     // Cargar categorías desde servidor para cachear tipos
-    fetch('cargar_categorias.php')
+    fetch('../cargar_categorias.php')
         .then(r => r.json())
         .then(data => {
             if (data.success && data.categorias) {

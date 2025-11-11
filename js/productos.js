@@ -1,5 +1,5 @@
 // Archivo generado automáticamente desde productos.json
-// Última actualización: 2025-11-11 18:31:20
+// Última actualización: 2025-11-11 20:43:00
 
 const productos = {
     "bolsas": [
@@ -1450,6 +1450,15 @@ const productos = {
             "marca": "ANKEN",
             "categoria": "Absorbentes",
             "imagen": "..\/imgs\/productos\/Absorbentes\/68d3f6bc63185_1758721724.png"
+        },
+        {
+            "nombre": "Barrera de Absorbente ",
+            "descripcion": "Barreras de absorbente x 5 unidades. 1.20 mts",
+            "precio": 38700,
+            "tipo": "Mineral",
+            "marca": "Anken",
+            "categoria": "Absorbentes",
+            "imagen": "..\/imgs\/productos\/Absorbentes\/691380c51835e_1762885829.png"
         }
     ],
     "Contenedores": [
