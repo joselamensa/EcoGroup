@@ -1,5 +1,5 @@
 // Archivo generado automáticamente desde productos.json
-// Última actualización: 2025-10-15 01:06:59
+// Última actualización: 2025-11-11 18:31:20
 
 const productos = {
     "bolsas": [
@@ -110,7 +110,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle S x 100 u.",
-            "precio": 5900,
+            "precio": 6370,
             "categoria": "guantes"
         },
         {
@@ -119,7 +119,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle M x 100 u.",
-            "precio": 5900,
+            "precio": 6370,
             "categoria": "guantes"
         },
         {
@@ -128,7 +128,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle L x 100 u.",
-            "precio": 5900,
+            "precio": 6370,
             "categoria": "guantes"
         },
         {
@@ -137,7 +137,7 @@ const productos = {
             "marca": "Mediglove",
             "imagen": "..\/imgs\/productos\/guantes\/MedigloveNegroReforzado.jpg",
             "descripcion": "Guantes de Nitrilo Negro talle XL x 100 u.",
-            "precio": 5900,
+            "precio": 6370,
             "categoria": "guantes"
         },
         {
@@ -271,7 +271,7 @@ const productos = {
         {
             "nombre": "Mister Musculo",
             "descripcion": "Crema limpiadora de hornos, elimina grasa y suciedad de manera efectiva.",
-            "precio": 3518.4,
+            "precio": 4158.4,
             "tipo": "Sc Jhonson",
             "marca": "",
             "categoria": "Desinfectantes",
@@ -446,7 +446,7 @@ const productos = {
         {
             "nombre": "Rollo de Papel Fiscal Posnet",
             "descripcion": "Rollos de Papel Térmico POSNET 57x20 x 50 u.",
-            "precio": 16382.8,
+            "precio": 16500,
             "tipo": "Papel Termico",
             "marca": "Paper Pro",
             "categoria": "Papel",
@@ -460,13 +460,22 @@ const productos = {
             "marca": "ECOPAPEL",
             "categoria": "Papel",
             "imagen": "..\/imgs\/productos\/Papel\/68ac8663871fc_1756137059.png"
+        },
+        {
+            "nombre": "Rollo de Cocina Arranque",
+            "descripcion": "Rollo De Cocina 50 paños X 24 Un. Hoja simple\n",
+            "precio": 13475,
+            "tipo": "bobina",
+            "marca": "",
+            "categoria": "Papel",
+            "imagen": "..\/imgs\/productos\/Papel\/6908d3e473ddd_1762186212.jpeg"
         }
     ],
     "Quimicos": [
         {
             "nombre": "Cera Brillo Intenso Negro",
             "descripcion": "Cera Autobrillo Negra 5 lts.",
-            "precio": 13721.4,
+            "precio": 14858,
             "tipo": "Cera",
             "marca": "QualiQuimica",
             "categoria": "Quimicos",
@@ -475,7 +484,7 @@ const productos = {
         {
             "nombre": "Cera Brillo Intenso Natural",
             "descripcion": "Cera Brillo Intenso 5 lts.",
-            "precio": 13721.4,
+            "precio": 14858,
             "tipo": "Cera",
             "marca": "QualiQuimica",
             "categoria": "Quimicos",
@@ -484,7 +493,7 @@ const productos = {
         {
             "nombre": "Eliminador de Olores",
             "descripcion": "Eliminador de Olores 5 lts. Ideal para baños. ",
-            "precio": 8528.08,
+            "precio": 9794,
             "tipo": "Desinfectantes",
             "marca": "QualiQuimica",
             "categoria": "Quimicos",
@@ -493,7 +502,7 @@ const productos = {
         {
             "nombre": "Limpiador de Vidrios QualiBest",
             "descripcion": "Limpiador Profesional de Vidrios 5 lts.",
-            "precio": 5488.56,
+            "precio": 5943.6,
             "tipo": "Limpia Vidrios",
             "marca": "QualiQuimica",
             "categoria": "Quimicos",
@@ -502,7 +511,7 @@ const productos = {
         {
             "nombre": "Desengrasante para Piso D500 QualiBest",
             "descripcion": "Desengrasante Profesional Ideal Grasas Pesadas 5 lts.",
-            "precio": 25105.8,
+            "precio": 26360.6,
             "tipo": "Antigrasa",
             "marca": "QualiQuimica",
             "categoria": "Quimicos",
@@ -511,7 +520,7 @@ const productos = {
         {
             "nombre": "Limpiador Multiuso Qualibest",
             "descripcion": "Limpiador Para todo tipo de Grasas 5 lts.",
-            "precio": 11434.5,
+            "precio": 12381.3,
             "tipo": "Antigrasa",
             "marca": "QualiQuimica",
             "categoria": "Quimicos",
@@ -520,7 +529,7 @@ const productos = {
         {
             "nombre": "Limpiador Desodorante Qualibest",
             "descripcion": "Limpiador Desodorante de Piso Limón - Cherry - Floral - Lavanda x 5 lts.",
-            "precio": 5488.56,
+            "precio": 5943.6,
             "tipo": "Desodorantes de Piso",
             "marca": "",
             "categoria": "Quimicos",
@@ -556,7 +565,7 @@ const productos = {
         {
             "nombre": "Quita Sarro SX 185 Seiq X5 lts ",
             "descripcion": "Desincrustante de Sarro y Desinfectantes. ",
-            "precio": 10671,
+            "precio": 12456,
             "tipo": "Desinfectantes",
             "marca": "Seiq",
             "categoria": "Quimicos",
@@ -565,7 +574,7 @@ const productos = {
         {
             "nombre": "Detergente Vajilla Seiq",
             "descripcion": "Detergente Vajilla al 15% x 5 lts. ",
-            "precio": 11448.5,
+            "precio": 12658.2,
             "tipo": "Detergente",
             "marca": "Seiq ",
             "categoria": "Quimicos",
@@ -574,7 +583,7 @@ const productos = {
         {
             "nombre": "Desengrasante y descarbonizante Seiq",
             "descripcion": "Para hornos y parrillas x 5 lts.",
-            "precio": 14780,
+            "precio": 16341.8,
             "tipo": "Antigrasa",
             "marca": "Seiq",
             "categoria": "Quimicos",
@@ -583,7 +592,7 @@ const productos = {
         {
             "nombre": "Alcohol en Gel Seiq",
             "descripcion": "Alcohol en Gel x5 lts. ",
-            "precio": 17122.3,
+            "precio": 19677.6,
             "tipo": "Alcohol",
             "marca": "Seiq",
             "categoria": "Quimicos",
@@ -592,7 +601,7 @@ const productos = {
         {
             "nombre": "Alcohol Etílico Seiq ",
             "descripcion": "Alcohol Etílico al 70% x 5 lts. ",
-            "precio": 13759.5,
+            "precio": 15814,
             "tipo": "Alcohol",
             "marca": "Seiq",
             "categoria": "Quimicos",
@@ -633,7 +642,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/dispensers\/dispenserjabon.jpg",
             "marca": "Ecoplastico",
             "descripcion": "Dispenser Para Jabón Líquido Nova Tecla Gris",
-            "precio": 19460.7,
+            "precio": 25384.8,
             "categoria": "Dispensadores"
         },
         {
@@ -642,7 +651,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/dispensers\/dispenserjabonazul.jpg",
             "marca": "Ecoplastico",
             "descripcion": "Dispenser Para Jabón Líquido Nova Tecla Azul",
-            "precio": 19460.7,
+            "precio": 25384.8,
             "categoria": "Dispensadores"
         },
         {
@@ -651,7 +660,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/dispensers\/dispensadoracero.png",
             "marca": "Ecometal",
             "descripcion": "Jabonera Acero 304 Inox Esmerilado ",
-            "precio": 56337,
+            "precio": 61568.43,
             "categoria": "Dispensadores"
         },
         {
@@ -660,7 +669,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/dispensers\/dispensadorpapel.jpg",
             "marca": "Ecometal",
             "descripcion": "Dispenser de Papel Higienico Acero 304 Esmerilado",
-            "precio": 78027.3,
+            "precio": 85272.33,
             "categoria": "Dispensadores"
         },
         {
@@ -669,7 +678,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/dispensers\/toallaintercalada.png",
             "marca": "Ecometal",
             "descripcion": "Dispenser de Toalla Intercalada Acero 304.",
-            "precio": 58822.5,
+            "precio": 64283.7,
             "categoria": "Dispensadores"
         },
         {
@@ -738,7 +747,7 @@ const productos = {
         {
             "nombre": "Dispenser Jabon Liquido ECO",
             "descripcion": "Dispenser para Jabon Liquido ",
-            "precio": 11804,
+            "precio": 12659,
             "tipo": "Dispenser",
             "marca": "",
             "categoria": "Dispensadores",
@@ -747,7 +756,7 @@ const productos = {
         {
             "nombre": "Dispenser Papel Higienco ECO",
             "descripcion": "Dispenser Porta Rollo Jumbo PH hasta 600 mts",
-            "precio": 11395.5,
+            "precio": 12698,
             "tipo": "Dispenser",
             "marca": "",
             "categoria": "Dispensadores",
@@ -965,7 +974,7 @@ const productos = {
             "imagen": "..\/imgs\/productos\/Romyl\/Limpiavidrio.webp",
             "marca": "La Gauchita",
             "descripcion": "Limpiavidrios Con Cabo La Gauchita Lava Y Seca Color Blanco",
-            "precio": 5482,
+            "precio": 6694.7,
             "categoria": "Barridoylimpieza"
         },
         {
@@ -1506,6 +1515,46 @@ const productos = {
             "marca": "ESE",
             "categoria": "Contenedores",
             "imagen": "..\/imgs\/productos\/Contenedores\/68ed814940ab0_1760395593.jpeg"
+        }
+    ],
+    "Alfombras": [
+        {
+            "nombre": "Alfombra Rulo PVC",
+            "descripcion": "Alfombra Pvc Rulo 15 mm - Cotizar Medida \nCon o sin logo",
+            "precio": 0,
+            "tipo": "Alto Transito",
+            "marca": "HERMIDA",
+            "categoria": "Alfombras",
+            "imagen": "..\/imgs\/productos\/Alfombras\/68ef96ceaff9d_1760532174.png"
+        },
+        {
+            "nombre": "Alfombra Captor Jet ",
+            "descripcion": "Alfombra Pelfuda Captor Jet - Cotizar Medidas\nCon o sin logo",
+            "precio": 0,
+            "tipo": "Felpudo",
+            "marca": "",
+            "categoria": "Alfombras",
+            "imagen": "..\/imgs\/productos\/Alfombras\/68ef99325d8ce_1760532786.png"
+        },
+        {
+            "nombre": "Alfombra Anti Fatiga ",
+            "descripcion": "Alfombra Anti Fatiga para el Trabajador. \nCotizar medidas ",
+            "precio": 0,
+            "tipo": "Anti Fatiga",
+            "marca": "",
+            "categoria": "Alfombras",
+            "imagen": "..\/imgs\/productos\/Alfombras\/68ef9d2b04964_1760533803.jpg"
+        }
+    ],
+    "OrdenadordeFilas": [
+        {
+            "nombre": "Poste Ordenador de Fila",
+            "descripcion": "Poste Economico Negro \n90 cm - 7 kg",
+            "precio": 175633.9,
+            "tipo": "Postes",
+            "marca": "Maxiline",
+            "categoria": "OrdenadordeFilas",
+            "imagen": "..\/imgs\/productos\/OrdenadordeFilas\/68efff800b4a2_1760558976.jpg"
         }
     ]
 };

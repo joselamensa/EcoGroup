@@ -413,17 +413,29 @@ function cargarTablaProductos() {
                 <td>${categoriasActuales[categoria]?.nombre || categoria}</td>
                 <td>
                     <input type="number" class="form-control price-input" value="${producto.precio || ''}" 
-                           step="0.01" min="0" onchange="actualizarPrecio('${categoria}', '${producto.descripcion}', this.value)">
+                           step="0.01" min="0">
                 </td>
                 <td>
-                    <button class="btn btn-sm btn-primary me-1" onclick="editarProducto('${categoria}', '${producto.descripcion}')">
+                    <button class="btn btn-sm btn-primary me-1 btn-editar-producto">
                         <i class="fas fa-edit"></i>
                     </button>
-                    <button class="btn btn-sm btn-danger" onclick="eliminarProducto('${categoria}', '${producto.descripcion}')">
+                    <button class="btn btn-sm btn-danger btn-eliminar-producto">
                         <i class="fas fa-trash"></i>
                     </button>
                 </td>
             `;
+
+            const priceInput = row.querySelector('.price-input');
+            priceInput.addEventListener('change', (event) => {
+                actualizarPrecio(categoria, producto.descripcion, event.target.value, event.target);
+            });
+
+            const editButton = row.querySelector('.btn-editar-producto');
+            editButton.addEventListener('click', () => editarProducto(categoria, producto.descripcion));
+
+            const deleteButton = row.querySelector('.btn-eliminar-producto');
+            deleteButton.addEventListener('click', () => eliminarProducto(categoria, producto.descripcion));
+
             tabla.appendChild(row);
         });
     });
@@ -434,36 +446,38 @@ function cargarTablaProductos() {
 }
 
 // Función para actualizar precio de un producto
-function actualizarPrecio(categoria, descripcion, precio) {
-    const producto = productosActuales[categoria].find(p => p.descripcion === descripcion);
-    if (producto) {
-        const precioAnterior = producto.precio;
-        producto.precio = parseFloat(precio) || 0;
-        
-        // Guardar en el servidor via PHP
-        guardarProductosEnServidor();
-        
-        // Actualizar dashboard
-        actualizarDashboard();
-        
-        // Mostrar feedback visual
-        const input = event.target;
-        const originalColor = input.style.backgroundColor;
-        input.style.backgroundColor = '#d4edda'; // Verde claro
-        input.style.borderColor = '#28a745';
-        
-        setTimeout(() => {
-            input.style.backgroundColor = originalColor;
-            input.style.borderColor = '';
-        }, 1000);
-        
-        console.log(`Precio actualizado: ${producto.nombre} - $${precioAnterior} → $${producto.precio}`);
-        
-        // Mostrar mensaje de confirmación
-        mostrarMensajePrecioActualizado(producto.nombre, producto.precio);
-    } else {
-        console.error('Producto no encontrado:', categoria, descripcion);
+function actualizarPrecio(categoria, descripcion, precio, inputElement) {
+    if (!productosActuales[categoria]) {
+        console.error('Categoría no encontrada para actualizar precio:', categoria);
+        return;
     }
+
+    const producto = productosActuales[categoria].find(p => p.descripcion === descripcion);
+    if (!producto) {
+        console.error('Producto no encontrado:', categoria, descripcion);
+        return;
+    }
+
+    const precioAnterior = producto.precio;
+    producto.precio = parseFloat(precio) || 0;
+
+    guardarProductosEnServidor();
+    actualizarDashboard();
+
+    if (inputElement) {
+        const originalColor = inputElement.style.backgroundColor;
+        const originalBorder = inputElement.style.borderColor;
+        inputElement.style.backgroundColor = '#d4edda';
+        inputElement.style.borderColor = '#28a745';
+
+        setTimeout(() => {
+            inputElement.style.backgroundColor = originalColor;
+            inputElement.style.borderColor = originalBorder;
+        }, 1000);
+    }
+
+    console.log(`Precio actualizado: ${producto.nombre} - $${precioAnterior} → $${producto.precio}`);
+    mostrarMensajePrecioActualizado(producto.nombre, producto.precio);
 }
 
 // Función para mostrar mensaje de precio actualizado

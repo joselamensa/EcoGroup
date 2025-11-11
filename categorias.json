@@ -64,7 +64,8 @@
             "Detergente",
             "Jabon de Manos",
             "Lavandina",
-            "Limpia Vidrios"
+            "Limpia Vidrios",
+            "Sistema de Dilución"
         ]
     },
     "Dispensadores": {
@@ -90,15 +91,6 @@
             "delineador",
             "tachas",
             "topes"
-        ]
-    },
-    "Electrodomesticos": {
-        "nombre": "Electrodomésticos",
-        "descripcion": "Electrodomésticos",
-        "icono": "fas fa-plug",
-        "tipos": [
-            "Horno",
-            "Pava"
         ]
     },
     "Indumentaria": {
@@ -172,12 +164,28 @@
     },
     "Alfombras": {
         "nombre": "Alfombras",
-        "descripcion": "",
+        "descripcion": "Alfombras",
         "icono": "fas fa-box",
         "tipos": [
             "Alto Transito",
             "Anti Fatiga",
             "Felpudo"
+        ]
+    },
+    "OrdenadordeFilas": {
+        "nombre": "Ordenador de Filas",
+        "descripcion": "Ordenadores Retractiles ",
+        "icono": "fas fa-box",
+        "tipos": [
+            "Postes"
+        ]
+    },
+    "Fumigacion": {
+        "nombre": "Fumigacion ",
+        "descripcion": "Maquinas UV ",
+        "icono": "fas fa-box",
+        "tipos": [
+            "Atrapa Moscas UV"
         ]
     }
 }
