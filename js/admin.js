@@ -434,7 +434,7 @@ function cargarTablaProductos() {
             editButton.addEventListener('click', () => editarProducto(categoria, producto.descripcion));
 
             const deleteButton = row.querySelector('.btn-eliminar-producto');
-            deleteButton.addEventListener('click', () => eliminarProducto(categoria, producto.descripcion));
+            deleteButton.addEventListener('click', () => eliminarProducto(producto.id));
 
             tabla.appendChild(row);
         });
@@ -962,15 +962,32 @@ function editarProducto(categoria, descripcion) {
 }
 
 // Función para eliminar producto
-function eliminarProducto(categoria, descripcion) {
-    if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-        productosActuales[categoria] = productosActuales[categoria].filter(p => p.descripcion !== descripcion);
-        guardarProductosEnServidor();
-        cargarTablaProductos();
-        actualizarDashboard();
+function eliminarProducto(id) {
+    if (confirm('¿Estás seguro de que quieres eliminar este producto de forma permanente?')) {
+        
+        fetch('eliminar_producto.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: id })
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) {
+                // Éxito: Recargar los datos desde la BD para actualizar la tabla
+                cargarProductosDesdeJSON().then(() => {
+                    cargarTablaProductos();
+                    actualizarDashboard();
+                });
+            } else {
+                alert('Error al eliminar: ' + data.error);
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            alert('Error de conexión al intentar eliminar.');
+        });
     }
 }
-
 // Función para mostrar modal de categoría
 function mostrarModalCategoria() {
     document.getElementById('formCategoria').reset();
