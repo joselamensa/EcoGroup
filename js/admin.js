@@ -448,7 +448,7 @@ function cargarTablaProductos() {
 // Función para actualizar precio de un producto
 function actualizarPrecio(categoria, descripcion, precio, inputElement) {
     if (!productosActuales[categoria]) {
-        console.error('Categoría no encontrada para actualizar precio:', categoria);
+        console.error('Categoría no encontrada:', categoria);
         return;
     }
 
@@ -459,25 +459,57 @@ function actualizarPrecio(categoria, descripcion, precio, inputElement) {
     }
 
     const precioAnterior = producto.precio;
-    producto.precio = parseFloat(precio) || 0;
+    const nuevoPrecio = parseFloat(precio) || 0;
+    
+    // Actualizamos el objeto en memoria visualmente
+    producto.precio = nuevoPrecio;
 
-    guardarProductosEnServidor();
-    actualizarDashboard();
+    // --- CAMBIO CLAVE: Guardar SOLO este producto en la BD ---
+    // Preparamos los datos tal cual los espera guardar_producto_individual.php
+    const datosProducto = {
+        id: producto.id,
+        nombre: producto.nombre,
+        descripcion: producto.descripcion,
+        precio: nuevoPrecio,
+        categoria: categoria, // Clave de la categoría
+        tipo: producto.tipo,
+        marca: producto.marca,
+        imagen: producto.imagen
+    };
 
-    if (inputElement) {
-        const originalColor = inputElement.style.backgroundColor;
-        const originalBorder = inputElement.style.borderColor;
-        inputElement.style.backgroundColor = '#d4edda';
-        inputElement.style.borderColor = '#28a745';
-
-        setTimeout(() => {
-            inputElement.style.backgroundColor = originalColor;
-            inputElement.style.borderColor = originalBorder;
-        }, 1000);
-    }
-
-    console.log(`Precio actualizado: ${producto.nombre} - $${precioAnterior} → $${producto.precio}`);
-    mostrarMensajePrecioActualizado(producto.nombre, producto.precio);
+    fetch('guardar_producto_individual.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datosProducto)
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            console.log(`Precio actualizado en BD: ${producto.nombre} -> $${nuevoPrecio}`);
+            
+            // Feedback visual de éxito
+            if (inputElement) {
+                const originalColor = inputElement.style.backgroundColor;
+                inputElement.style.backgroundColor = '#d4edda'; // Verde claro
+                inputElement.style.borderColor = '#28a745';
+                setTimeout(() => {
+                    inputElement.style.backgroundColor = originalColor;
+                    inputElement.style.borderColor = '';
+                }, 1000);
+            }
+            mostrarMensajePrecioActualizado(producto.nombre, nuevoPrecio);
+            actualizarDashboard();
+        } else {
+            alert('Error al guardar precio: ' + data.error);
+            // Revertir cambio visual si falló
+            inputElement.value = precioAnterior;
+            producto.precio = precioAnterior;
+        }
+    })
+    .catch(err => {
+        console.error('Error de red:', err);
+        alert('Error de conexión al guardar el precio.');
+    });
 }
 
 // Función para mostrar mensaje de precio actualizado
@@ -541,54 +573,75 @@ function mostrarModalProducto(producto = null) {
     productoEditando = producto;
     const modal = document.getElementById('modalProducto');
     const titulo = document.getElementById('modalProductoTitulo');
-    
+    const categoriaSelect = document.getElementById('productoCategoria');
+    const tipoSelect = document.getElementById('productoTipo');
+
+    // 1. PRIMERO: Llenar las opciones de categorías (antes de intentar seleccionar nada)
+    categoriaSelect.innerHTML = '';
+    // Ordenar alfabéticamente si quieres, o dejar como viene
+    Object.keys(categoriasActuales).forEach(clave => {
+        const cat = categoriasActuales[clave];
+        const option = document.createElement('option');
+        // Usamos la clave como value (ej: 'bolsas')
+        option.value = clave; 
+        option.textContent = cat.nombre;
+        categoriaSelect.appendChild(option);
+    });
+
+    // Configurar el evento onchange una sola vez
+    categoriaSelect.onchange = () => {
+        llenarTiposParaCategoria(categoriaSelect.value, tipoSelect, '');
+    };
+
     if (producto) {
+        // --- MODO EDICIÓN ---
         titulo.textContent = 'Editar Producto';
-        // Llenar formulario con datos del producto
+        
+        // 2. SEGUNDO: Ahora que existen las opciones, seleccionamos la correcta
+        // Intentamos obtener la categoría. En SQLite guardamos 'categoria_clave', 
+        // pero el JS a veces usa 'categoria'. Probamos ambos.
+        const categoriaDelProducto = producto.categoria_clave || producto.categoria;
+        
+        if (categoriaDelProducto && categoriasActuales[categoriaDelProducto]) {
+            categoriaSelect.value = categoriaDelProducto;
+        }
+
+        // 3. TERCERO: Llenar los tipos basándonos en la categoría YA seleccionada
+        // Y pre-seleccionar el tipo del producto
+        llenarTiposParaCategoria(categoriaSelect.value, tipoSelect, producto.tipo);
+
+        // 4. Llenar el resto de campos
         document.getElementById('productoNombre').value = producto.nombre;
         document.getElementById('productoDescripcion').value = producto.descripcion;
         document.getElementById('productoPrecio').value = producto.precio || '';
-        document.getElementById('productoTipo').value = producto.tipo || '';
         document.getElementById('productoMarca').value = producto.marca || '';
-        // Seleccionar categoría
-        const categoriaSelect = document.getElementById('productoCategoria');
-        categoriaSelect.value = producto.categoria || '';
         
-        // Mostrar imagen actual si existe
+        // Imagen preview
         const previewImagen = document.getElementById('previewImagen');
-        if (producto.imagen && producto.imagen !== '../imgs/productos/default.jpg') {
-            previewImagen.src = producto.imagen;
+        // Ajuste para mostrar imagen correctamente quitando ../ si estamos en admin
+        let imgUrl = producto.imagen;
+        if (imgUrl && imgUrl.startsWith('../')) imgUrl = imgUrl.substring(3);
+
+        if (imgUrl && !imgUrl.includes('default')) {
+            previewImagen.src = imgUrl;
             previewImagen.classList.remove('d-none');
         } else {
             previewImagen.classList.add('d-none');
         }
+
     } else {
+        // --- MODO NUEVO PRODUCTO ---
         titulo.textContent = 'Agregar Producto';
         document.getElementById('formProducto').reset();
         document.getElementById('previewImagen').classList.add('d-none');
+        
+        // Llenar tipos para la primera categoría que aparezca seleccionada por defecto
+        if (categoriaSelect.value) {
+            llenarTiposParaCategoria(categoriaSelect.value, tipoSelect, '');
+        }
     }
     
-    // Llenar opciones de categorías
-    const categoriaSelect = document.getElementById('productoCategoria');
-    categoriaSelect.innerHTML = '';
-    Object.keys(categoriasActuales).forEach(categoria => {
-        const option = document.createElement('option');
-        option.value = categoria;
-        option.textContent = categoriasActuales[categoria].nombre;
-        categoriaSelect.appendChild(option);
-    });
-    
-    // Llenar opciones de tipos según categoría seleccionada
-    const tipoSelect = document.getElementById('productoTipo');
-    const categoriaInicial = categoriaSelect.value;
-    llenarTiposParaCategoria(categoriaInicial, tipoSelect, producto?.tipo || '');
-
-    // Actualizar tipos cuando cambia la categoría
-    categoriaSelect.onchange = () => {
-        llenarTiposParaCategoria(categoriaSelect.value, tipoSelect, '');
-    };
-    
-    // Configurar el input de imagen para preview
+    // Configurar el input de imagen para preview (por si no estaba configurado)
     configurarInputImagen();
     
     new bootstrap.Modal(modal).show();
@@ -777,7 +830,6 @@ function configurarInputImagen() {
     });
 }
 
-// Función para guardar producto
 function guardarProducto() {
     const nombre = document.getElementById('productoNombre').value;
     const descripcion = document.getElementById('productoDescripcion').value;
@@ -787,22 +839,53 @@ function guardarProducto() {
     const marca = document.getElementById('productoMarca').value;
     const inputImagen = document.getElementById('productoImagen');
     
-    if (!nombre || !descripcion || !categoria) {
-        alert('Por favor completa todos los campos obligatorios');
-        return;
-    }
+    // Obtener ID si estamos editando (IMPORTANTE)
+    // Asegúrate de que tu función 'mostrarModalProducto' guarde el ID en la variable global productoEditando
+    const idProducto = (productoEditando && productoEditando.id) ? productoEditando.id : null;
     
-    // Manejar la imagen
+    // Ruta de imagen actual (por defecto o la que tenía)
     let imagenPath = productoEditando ? productoEditando.imagen : '../imgs/productos/default.jpg';
-    
+
+    // Función interna para enviar los datos finalizados
+    const enviarDatosAlServidor = (rutaFinalImagen) => {
+        const datos = {
+            id: idProducto,
+            nombre: nombre,
+            descripcion: descripcion,
+            precio: precio,
+            categoria: categoria, // 'categoria' es la clave (ej: 'bolsas')
+            tipo: tipo,
+            marca: marca,
+            imagen: rutaFinalImagen
+        };
+
+        fetch('guardar_producto_individual.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(datos)
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                bootstrap.Modal.getInstance(document.getElementById('modalProducto')).hide();
+                // Recargar la tabla para ver cambios
+                cargarProductosDesdeServidor(); // Asegúrate de que esta función llame al nuevo cargar_productos.php
+                actualizarDashboard();
+            } else {
+                alert('Error: ' + data.error);
+            }
+        })
+        .catch(err => alert('Error de red: ' + err));
+    };
+
+    // Lógica de imagen: ¿Subimos nueva o usamos la vieja?
     if (inputImagen.files.length > 0) {
-        // Si hay una nueva imagen, subirla
-        subirImagen(inputImagen.files[0], categoria, function(nuevaImagenPath) {
-            guardarProductoConImagen(nombre, descripcion, precio, categoria, tipo, marca, nuevaImagenPath);
+        subirImagen(inputImagen.files[0], categoria, function(nuevaRuta) {
+            enviarDatosAlServidor(nuevaRuta);
         });
     } else {
-        // Si no hay nueva imagen, usar la existente
-        guardarProductoConImagen(nombre, descripcion, precio, categoria, tipo, marca, imagenPath);
+        enviarDatosAlServidor(imagenPath);
     }
 }
 

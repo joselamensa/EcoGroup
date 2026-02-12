@@ -1,56 +1,43 @@
 <?php
+// cargar_productos.php
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
-
-// Manejar preflight requests
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    exit(0);
-}
-
-// Verificar que sea una petición GET
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    http_response_code(405);
-    echo json_encode(['error' => 'Método no permitido']);
-    exit;
-}
-
-// Ruta del archivo productos.json
-$archivo_productos = 'productos.json';
 
 try {
-    // Verificar que el archivo existe
-    if (!file_exists($archivo_productos)) {
-        throw new Exception('Archivo de productos no encontrado');
+    $db = new PDO('sqlite:ecogroup.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Consultar todos los productos
+    $stmt = $db->query("SELECT * FROM productos");
+    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Reconstruir el formato que espera tu JS: { "categoria": [ array_de_productos ] }
+    $productos_formateados = [];
+
+    foreach ($resultados as $row) {
+        $cat = $row['categoria_clave'];
+        
+        if (!isset($productos_formateados[$cat])) {
+            $productos_formateados[$cat] = [];
+        }
+
+        // Limpiamos el array para quitar la clave 'categoria_clave' que es redundante dentro del objeto
+        $producto_limpio = $row;
+        // Opcional: convertir precio a número si viene como string
+        $producto_limpio['precio'] = floatval($row['precio']);
+        
+        $productos_formateados[$cat][] = $producto_limpio;
     }
-    
-    // Leer el contenido del archivo
-    $contenido = file_get_contents($archivo_productos);
-    
-    if ($contenido === false) {
-        throw new Exception('No se pudo leer el archivo de productos');
-    }
-    
-    // Decodificar el JSON
-    $productos = json_decode($contenido, true);
-    
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        throw new Exception('Error al decodificar JSON: ' . json_last_error_msg());
-    }
-    
-    // Respuesta exitosa
+
+    // Enviamos la respuesta exactamente como el frontend la quiere
+    // Nota: enviamos 'productos' como clave raíz si tu JS lo espera, o directo el array.
+    // Viendo tu cargar_productos.php anterior, devolvía { success: true, productos: {...} }
     echo json_encode([
         'success' => true,
-        'productos' => $productos,
-        'timestamp' => date('Y-m-d H:i:s'),
-        'ultima_modificacion' => date('Y-m-d H:i:s', filemtime($archivo_productos))
+        'productos' => $productos_formateados
     ]);
-    
+
 } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode([
-        'error' => 'Error al cargar productos: ' . $e->getMessage()
-    ]);
+    echo json_encode(['error' => $e->getMessage()]);
 }
-?> 
+?>

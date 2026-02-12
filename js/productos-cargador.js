@@ -27,68 +27,59 @@ function normalizarRutaImagen(rutaImagen, desdeAdmin = false) {
 // Variable global para almacenar los productos
 let productos = {};
 
-// Función para cargar productos desde el archivo JSON
 async function cargarProductosDesdeJSON() {
     try {
-        // Determinar la ruta correcta según la página
-        let rutaJSON;
+        let rutaPHP;
         if (window.location.pathname.includes('admin.html')) {
-            rutaJSON = 'productos.json';
+            rutaPHP = 'cargar_productos.php';
+        } else if (window.location.pathname.includes('/htmls/')) {
+            rutaPHP = '../cargar_productos.php';
         } else {
-            rutaJSON = '../productos.json';
+            rutaPHP = './cargar_productos.php';
         }
         
-        console.log('Intentando cargar JSON desde:', rutaJSON);
-        console.log('URL actual:', window.location.pathname);
+        const response = await fetch(rutaPHP + '?t=' + new Date().getTime());
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         
-        const response = await fetch(rutaJSON);
-        console.log('Response status:', response.status);
-        console.log('Response ok:', response.ok);
+        const data = await response.json();
         
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (data.success && data.productos) {
+            productos = data.productos;
+            
+            // --- FIX: NORMALIZAR RUTAS PARA EL ADMIN ---
+            if (window.location.pathname.includes('admin.html')) {
+                Object.keys(productos).forEach(cat => {
+                    productos[cat].forEach(prod => {
+                        // Si la ruta empieza con ../ y estamos en admin, se lo quitamos
+                        if (prod.imagen && prod.imagen.startsWith('../')) {
+                            prod.imagen = prod.imagen.substring(3);
+                        }
+                    });
+                });
+            }
+            // -------------------------------------------
+
+            console.log('✅ Productos cargados.');
+        } else {
+            productos = {};
+        }
+
+        // Ejecutar funciones según la página
+        if (window.location.pathname.includes('admin.html') && typeof cargarTablaProductos === 'function') {
+            // Forzamos la actualización de la variable global del admin
+            if (typeof productosActuales !== 'undefined') productosActuales = productos;
+            cargarTablaProductos();
+            actualizarDashboard();
         }
         
-        const jsonText = await response.text();
-        console.log('JSON raw text (primeros 200 chars):', jsonText.substring(0, 200));
+        if (window.location.pathname.includes('productos.html')) cargarProductos();
         
-        productos = JSON.parse(jsonText);
-        console.log('Productos parseados:', productos);
-        console.log('Tipo de productos:', typeof productos);
-        console.log('Es array?', Array.isArray(productos));
-        console.log('Keys:', Object.keys(productos));
-        
-        // Normalizar rutas de imágenes según la página
-        Object.keys(productos).forEach(categoria => {
-            productos[categoria].forEach(producto => {
-                if (producto.imagen) {
-                    if (window.location.pathname.includes('admin.html')) {
-                        // En admin, quitar '../' para mostrar correctamente
-                        producto.imagen = normalizarRutaImagen(producto.imagen, true);
-                    } else if (window.location.pathname.includes('productos.html')) {
-                        // En productos, agregar '../' si no lo tiene
-                        producto.imagen = normalizarRutaImagen(producto.imagen, false);
-                    }
-                }
-            });
-        });
-        
-        console.log('Productos cargados desde JSON:', productos);
-        
-        // Sincronizar con el admin si estamos en admin.html
-        if (window.location.pathname.includes('admin.html')) {
-            sincronizarConAdmin();
+        if (window.location.pathname.includes('index.html') && typeof cargarPreciosProductosDestacados === 'function') {
+            cargarPreciosProductosDestacados();
         }
-        
-        // Si estamos en la página de productos, cargarlos
-        if (window.location.pathname.includes('productos.html')) {
-            console.log('Ejecutando cargarProductos() desde productos.html');
-            cargarProductos();
-        }
+
     } catch (error) {
-        console.error('Error cargando productos desde JSON:', error);
-        // Fallback: cargar productos hardcodeados si falla
-        cargarProductosHardcodeados();
+        console.error('❌ Error:', error);
     }
 }
 

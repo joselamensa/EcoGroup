@@ -1,68 +1,44 @@
 <?php
+// guardar_banners.php - Versión SQLite
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
 
-// Manejar preflight requests
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    exit(0);
-}
+$input = json_decode(file_get_contents('php://input'), true);
 
-// Verificar que sea una petición POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['error' => 'Método no permitido']);
+if (!isset($input['banners'])) {
+    echo json_encode(['error' => 'No hay datos']);
     exit;
 }
-
-// Obtener el contenido JSON
-$input = file_get_contents('php://input');
-$data = json_decode($input, true);
-
-if (json_last_error() !== JSON_ERROR_NONE) {
-    http_response_code(400);
-    echo json_encode(['error' => 'JSON inválido: ' . json_last_error_msg()]);
-    exit;
-}
-
-// Verificar que se hayan enviado los banners
-if (!isset($data['banners']) || !is_array($data['banners'])) {
-    http_response_code(400);
-    echo json_encode(['error' => 'No se enviaron datos de banners válidos']);
-    exit;
-}
-
-$banners = $data['banners'];
-$archivo_banners = 'banners.json';
 
 try {
-    // Crear respaldo del archivo actual si existe
-    if (file_exists($archivo_banners)) {
-        $backup_name = 'banners_backup_' . date('Y-m-d_H-i-s') . '.json';
-        copy($archivo_banners, $backup_name);
+    $db = new PDO('sqlite:ecogroup.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $db->beginTransaction();
+
+    // 1. Limpiar tabla actual
+    $db->exec("DELETE FROM banners");
+
+    // 2. Insertar nuevos
+    $stmt = $db->prepare("INSERT INTO banners (titulo, descripcion, imagen, tipo, orden, activo, url) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+    foreach ($input['banners'] as $b) {
+        $stmt->execute([
+            $b['titulo'] ?? '',
+            $b['descripcion'] ?? '',
+            $b['imagen'] ?? '',
+            $b['tipo'] ?? 'desktop',
+            $b['orden'] ?? 0,
+            $b['activo'] ? 1 : 0, // Convertir true/false a 1/0
+            $b['url'] ?? ''
+        ]);
     }
-    
-    // Guardar los nuevos datos de banners
-    $contenido_json = json_encode($banners, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    
-    if (file_put_contents($archivo_banners, $contenido_json, LOCK_EX) === false) {
-        throw new Exception('No se pudo escribir el archivo de banners');
-    }
-    
-    // Respuesta exitosa
-    echo json_encode([
-        'success' => true,
-        'message' => 'Banners guardados correctamente',
-        'archivo' => $archivo_banners,
-        'total_banners' => count($banners),
-        'timestamp' => date('Y-m-d H:i:s')
-    ]);
-    
+
+    $db->commit();
+    echo json_encode(['success' => true, 'message' => 'Banners guardados en BD']);
+
 } catch (Exception $e) {
+    $db->rollBack();
     http_response_code(500);
-    echo json_encode([
-        'error' => 'Error al guardar banners: ' . $e->getMessage()
-    ]);
+    echo json_encode(['success' => false, 'error' => $e->getMessage()]);
 }
-?> 
+?>
